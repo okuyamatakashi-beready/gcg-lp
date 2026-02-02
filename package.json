@@ -1,0 +1,17 @@
+{
+  "name": "gcg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass css/style.scss css/style.css --no-source-map --style=compressed",
+    "watch": "sass --watch css/style.scss:css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}

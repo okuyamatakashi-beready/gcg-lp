@@ -1,0 +1,45 @@
+.section {
+    padding: 100px 0;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        padding: 60px 0;
+    }
+
+    &__title {
+        font-size: 48px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 60px;
+        letter-spacing: 0.05em;
+        font-family: serif; // Assuming a serif font for elegance based on "GCG" image impression
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &--submit {
+        background-color: #333;
+        color: #fff;
+        padding: 15px 60px;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: bold;
+
+        &:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+        }
+    }
+}

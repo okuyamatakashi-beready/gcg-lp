@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+$layout-width-inner: 1200px;
+$layout-width-base: 1920px;
+$breakpoint-sp: 768px;
+
+$font-color-base: #333;
+$font-family-base: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+
+/* ==========================================================================
+   Reset & Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family-base;
+    color: $font-color-base;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+.container {
+    max-width: $layout-width-inner;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        padding: 0 16px;
+    }
+}
+
+@import "modules/common";
+@import "modules/header";
+@import "modules/mv";
+@import "modules/about";
+@import "modules/service";
+@import "modules/news";
+@import "modules/contact";
+@import "modules/footer";
