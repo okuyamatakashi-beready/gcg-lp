@@ -19,7 +19,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ./ # サーバー上のアップロード先ディレクトリ (例: /public_html/gcg/ )
+          server-dir: /stg.gcg.llc-beready.com/public_html/
           exclude: |
             **/.git*
             **/.git*/**
