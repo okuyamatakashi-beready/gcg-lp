@@ -19,7 +19,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /stg.gcg.llc-beready.com/public_html/
+          server-dir: /llc-beready.com/public_html/stg.gcg.llc-beready.com/
           exclude: |
             **/.git*
             **/.git*/**
