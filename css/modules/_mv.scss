@@ -5,28 +5,24 @@
     min-height: 600px;
     display: flex;
     align-items: center;
-    background-color: #f5f5f5;
+    justify-content: center;
+    background-color: #fff;
     overflow: hidden;
 
     &__bg {
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 100%;
         height: 100%;
-        background-image: url('../images/mv_bg.jpg'); // Placeholder
-        background-size: cover;
-        background-position: center;
         z-index: 0;
 
-        &::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        img {
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.3); // Overlay
+            object-fit: cover;
+            opacity: 0.8; // Blend with white background if needed, or remove opacity
         }
     }
 
@@ -34,29 +30,24 @@
         position: relative;
         z-index: 1;
         width: 100%;
+        max-width: $layout-width-inner;
+        padding: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    &__title {
-        font-size: 80px;
-        font-weight: 700;
-        line-height: 1.1;
-        letter-spacing: 0.02em;
-        margin: 0 0 24px;
-        color: #333;
+    &__logo {
+        width: 100%;
+        max-width: 400px; // Adjust based on logo size preference
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 40px;
+            max-width: 250px;
         }
-    }
 
-    &__lead {
-        font-size: 24px;
-        font-weight: 400;
-        color: #666;
-        margin: 0;
-
-        @media screen and (max-width: $breakpoint-sp) {
-            font-size: 16px;
+        img {
+            width: 100%;
+            height: auto;
         }
     }
 }
