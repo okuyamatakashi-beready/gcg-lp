@@ -58,9 +58,12 @@ a {
 }
 
 @import "modules/common";
+@import "modules/common-modules";
 @import "modules/header";
 @import "modules/mv";
 @import "modules/about";
+@import "modules/course";
+@import "modules/vision";
 @import "modules/service";
 @import "modules/news";
 @import "modules/contact";

@@ -1,38 +1,44 @@
-'use strict';
-
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('GCG Script Loaded');
+    // MV Animation (if any JS needed, though mostly CSS)
 
-    const hamburger = document.querySelector('.js-hamburger');
-    const nav = document.querySelector('.header__nav');
-
-    if (hamburger && nav) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('is-active');
-            nav.classList.toggle('is-active');
-        });
-    }
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    // Smooth Scroll
+    const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
+    smoothScrollTrigger.forEach(a => {
+        a.addEventListener('click', e => {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            const target = document.querySelector(targetId);
-            if (target) {
-                // Close menu if open
-                hamburger.classList.remove('is-active');
-                nav.classList.remove('is-active');
-
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+            let href = a.getAttribute('href');
+            let targetElement = document.getElementById(href.replace('#', ''));
+            const rect = targetElement.getBoundingClientRect().top;
+            const offset = window.pageYOffset;
+            const target = rect + offset;
+            window.scrollTo({
+                top: target,
+                behavior: 'smooth',
+            });
         });
     });
+
+    // Course Slider
+    if (document.querySelector('.course__slider')) {
+        const courseSwiper = new Swiper('.course__slider', {
+            loop: true,
+            speed: 600,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            spaceBetween: 40,
+            navigation: {
+                nextEl: '.course__next',
+                prevEl: '.course__prev',
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                768: {
+                    spaceBetween: 60,
+                }
+            }
+        });
+    }
 });

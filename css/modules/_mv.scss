@@ -18,13 +18,145 @@
         height: 100%;
         z-index: 0;
 
-        img {
+        .mv__base-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.8; // Blend with white background if needed, or remove opacity
+            z-index: -1;
+            opacity: 1; // Or 0.8 if desired
         }
     }
+
+    &__img {
+        position: absolute;
+        opacity: 0;
+        // Common animation properties
+        animation-duration: 1.0s;
+        animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+        animation-fill-mode: forwards;
+
+        &--01 {
+            top: 0;
+            left: -4%;
+            width: 33%; // Increased for overlap
+            // max-width: 514px; // Removed to allow scaling
+            animation-name: slideInTopLeft;
+            animation-delay: 0.2s;
+        }
+
+        &--03 {
+            bottom: 0;
+            left: 0;
+            width: 45%; // Increased for overlap
+            // max-width: 830px; // Removed to allow scaling
+            animation-name: slideInBottomLeft;
+            animation-delay: 0.4s;
+        }
+
+        &--04 {
+            top: 0;
+            right: 0;
+            width: 29.4%;
+            max-width: 565px;
+            animation-name: slideInTopRight;
+            animation-delay: 0.6s;
+        }
+
+        &--05 {
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            width: 8.5%;
+            max-width: 164px;
+            animation-name: slideInRight;
+            animation-delay: 0.8s;
+        }
+
+        &--02 {
+            bottom: 13%;
+            left: 6%; // Slightly offset to separate/layer
+            width: 25.7%; // 416px / 1920px
+            max-width: 416px;
+            z-index: 2; // Ensure it's above 03
+            animation-name: slideInBottomLeft;
+            animation-delay: 0.5s;
+        }
+
+        &--06 {
+            bottom: 10%;
+            right: 0;
+            width: 30.2%; // 580px / 1920px
+            max-width: 580px;
+            animation-name: slideInBottomRight;
+            animation-delay: 0.9s;
+            // Overlap with 05 (Right Center) will happen naturally as this is Bottom Right
+        }
+    }
+
+    @keyframes slideInTopLeft {
+        0% {
+            opacity: 0;
+            transform: translate(-100%, -100%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes slideInBottomLeft {
+        0% {
+            opacity: 0;
+            transform: translate(-100%, 100%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes slideInTopRight {
+        0% {
+            opacity: 0;
+            transform: translate(100%, -100%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes slideInRight {
+        0% {
+            opacity: 0;
+            transform: translate(100%, -50%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0, -50%);
+        }
+    }
+
+    @keyframes slideInBottomRight {
+        0% {
+            opacity: 0;
+            transform: translate(100%, 100%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+    }
+
 
     &__content {
         position: relative;
@@ -33,13 +165,29 @@
         max-width: $layout-width-inner;
         padding: 0 20px;
         display: flex;
+        flex-direction: column; // Stack logo and tagline
         justify-content: center;
         align-items: center;
+        transform: translateY(-60px); // Shift up by 60px as requested
+    }
+
+    &__tagline {
+        font-size: 32px;
+        font-weight: 500;
+        text-align: center;
+        letter-spacing: 0.1em;
+        margin-bottom: 30px;
+        line-height: 1.8;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 20px; // Adjusted proportionally
+            margin-bottom: 20px;
+        }
     }
 
     &__logo {
         width: 100%;
-        max-width: 400px; // Adjust based on logo size preference
+        max-width: 670px; // Adjust based on logo size preference
 
         @media screen and (max-width: $breakpoint-sp) {
             max-width: 250px;

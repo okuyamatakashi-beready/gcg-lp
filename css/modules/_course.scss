@@ -1,0 +1,76 @@
+.course {
+    padding: 80px 0;
+    width: 100%;
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        max-width: 1200px; // Wider container to hold arrows
+        margin: 0 auto;
+        padding: 0 20px; // Safe padding
+    }
+
+    &__slider-wrap {
+        width: 100%;
+        max-width: 1000px; // Visible slider area
+        margin: 0 auto;
+        overflow: hidden; // Clip side slides here
+        position: relative;
+    }
+
+    &__slider {
+        width: 100%;
+        padding: 40px 0;
+        overflow: visible; // Allow slides to overflow inside the wrapper
+    }
+
+    .swiper-slide {
+        width: 600px;
+        height: auto;
+        opacity: 0.4;
+        transition: opacity 0.3s;
+
+        &.swiper-slide-active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 80%;
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px; // Slightly larger touch area
+        height: auto;
+        cursor: pointer;
+        z-index: 20;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 40px;
+        }
+    }
+
+    &__prev {
+        left: 0; // At edge of 1200px container
+    }
+
+    &__next {
+        right: 0; // At edge of 1200px container
+    }
+}

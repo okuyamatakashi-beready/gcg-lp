@@ -1,0 +1,145 @@
+.vision {
+    position: relative;
+    width: 100%;
+
+    &__top {
+        background-image: url(../images/vision-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 150px 0 100px;
+        width: 100%;
+    }
+
+    &__inner {
+        max-width: 1420px;
+        margin: 0 auto;
+        padding: 0 40px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 0 20px;
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+    &__img {
+        width: 54%; // Approx 768px / 1420px
+        max-width: 768px;
+        flex-shrink: 0;
+        margin-left: -5%; // Reduced stick out to fit
+    }
+
+
+
+    &__text {
+        width: 50%;
+        font-size: clamp(14px, 1.7vw, 24px);
+        line-height: 2.0;
+        text-align: center;
+        font-weight: 500;
+
+        p {
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 18px;
+            text-align: center; // Center text on mobile often looks better, or keep left if strict
+
+            br {
+                display: none; // Disable manual breaks on mobile if they break awkward
+            }
+        }
+    }
+
+    &__row--2 {
+        margin-top: 120px;
+        align-items: flex-start;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            flex-direction: column-reverse;
+            margin-top: 80px;
+        }
+    }
+
+    &__text--green {
+        text-align: left;
+        width: 45%;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+        }
+    }
+
+    &__sub-title {
+        color: #00a051;
+        font-size: 26px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        line-height: 1.5;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 22px;
+        }
+    }
+
+    &__desc {
+        font-size: 16px;
+        line-height: 1.8;
+
+        p {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__img--right {
+        width: 50%;
+        margin-left: 0;
+        margin-right: -5%;
+        text-align: right;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+
+    &__caption {
+        font-size: 11px;
+        color: #666;
+        margin-top: 10px;
+        line-height: 1.4;
+        text-align: right;
+        display: inline-block;
+    }
+
+    &__bottom-img {
+        margin-top: 80px;
+        text-align: center;
+
+        img {
+            width: 400px;
+            max-width: 80%;
+            height: auto;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            margin-top: 50px;
+        }
+    }
+}

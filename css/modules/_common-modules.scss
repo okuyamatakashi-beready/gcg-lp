@@ -1,0 +1,49 @@
+/* Common Title with Logo */
+.c-title {
+    font-size: 48px;
+    font-weight: 500;
+    margin: 0 auto 60px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    padding-bottom: 20px;
+    width: fit-content;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 15px;
+        background-image: url(../images/vision_underline.png);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center bottom;
+    }
+
+    &__logo {
+        width: 206px; // Fixed width as requested
+        height: auto;
+        vertical-align: middle;
+    }
+
+    @media screen and (max-width: $breakpoint-sp) {
+        font-size: 32px;
+        margin: 0 auto 30px;
+
+        &__logo {
+            width: 150px; // Slightly smaller on mobile? 206px might be too big for 32px text?
+            // "206px" request might be desktop specific.
+            // 206px is quite wide.
+            // I'll keep it 206px on desktop.
+            // On mobile I'll set it max-width or smaller.
+            // Or just leave it responsive via img? But here we set width on container/img class?
+            // The class is applied to the <img> tag in current HTML structure.
+            // HTML: <img ... class="vision__logo"> 
+            // So .c-title__logo should target the img.
+        }
+    }
+}

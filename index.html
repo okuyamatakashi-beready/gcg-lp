@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap" rel="stylesheet">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -45,31 +48,125 @@
     <main class="main">
         <div class="mv">
             <div class="mv__bg">
-                <img src="./images/mv-bg.png" alt="" role="presentation">
+                <img src="./images/mv-bg.png" alt="" class="mv__base-bg" role="presentation">
+                <img src="./images/mv-img01.png" alt="" class="mv__img mv__img--01" role="presentation">
+                <img src="./images/mv-img03.png" alt="" class="mv__img mv__img--03" role="presentation">
+                <img src="./images/mv-img02.png" alt="" class="mv__img mv__img--02" role="presentation">
+                <img src="./images/mv-img04.png" alt="" class="mv__img mv__img--04" role="presentation">
+                <img src="./images/mv-img05.png" alt="" class="mv__img mv__img--05" role="presentation">
+                <img src="./images/mv-img06.png" alt="" class="mv__img mv__img--06" role="presentation">
             </div>
             <div class="mv__content">
+                <p class="mv__tagline">
+                    これからの世界に必要なのは、<br>
+                    「正解」よりも「問いを立てる力」。
+                </p>
                 <div class="mv__logo">
                     <img src="./images/logo.png" alt="GCG">
                 </div>
             </div>
         </div>
 
-        <div class="container">
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="about__inner">
+                <p class="about__text">
+                    変化の時代を生きる子どもたちに必要な、<br>
+                    “新しい価値を生み出す力”。
+                </p>
+                <p class="about__text">
+                    Gakken Creative Garden (GCG) は、<br>
+                    小学校受験で問われるレベルの思考力を育みながら、<br>
+                    受験のために型にはめるのではなく、子ども自身の興味や違和感を出発点に、<br>
+                    多様な視点と出会い、思考と創造を深めていく学びの場です。
+                </p>
+                <p class="about__text">
+                    考えることを、急がせない。<br>
+                    わかる前の「気づき」を、大切に。
+                </p>
+            </div>
+        </section>
 
-            <!-- About Section -->
-            <section id="about" class="section about">
-                <h2 class="section__title">About</h2>
-                <div class="about__inner">
-                    <div class="about__img">
-                        <img src="./images/about.jpg" alt="About Us" width="600" height="400" loading="lazy">
-                    </div>
-                    <div class="about__text">
-                        <h3 class="about__sub">Our Mission</h3>
-                        <p>To bridge cultures and connect people through innovative communication solutions. We adhere
-                            to the highest standards of excellence.</p>
+        <!-- Course Section -->
+        <section id="course" class="section course">
+            <div class="course__inner">
+                <div class="course__slider-wrap">
+                    <div class="swiper course__slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./images/course01.png" alt="Creative Thinking">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/course02.png" alt="Inquiry Reading">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/course03.png" alt="Course 03">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/course01.png" alt="Creative Thinking">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/course02.png" alt="Inquiry Reading">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./images/course03.png" alt="Course 03">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </section>
+                <!-- Navigation Arrows (Custom) -->
+                <div class="course__nav course__prev">
+                    <img src="./images/arrow_prev.png" alt="Prev">
+                </div>
+                <div class="course__nav course__next">
+                    <img src="./images/arrow_next.png" alt="Next">
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section id="vision" class="section vision">
+            <div class="vision__top">
+                <div class="vision__inner">
+                    <h2 class="c-title">
+                        <img src="./images/logo.png" alt="GCG" class="c-title__logo"> 教室のビジョン
+                    </h2>
+                    <div class="vision__row">
+                        <div class="vision__img">
+                            <img src="./images/vision-img.png" alt="Children viewing through magnifier">
+                        </div>
+                        <div class="vision__text">
+                            <p>AIが答えを出す時代に、<br>子どもたちに必要なのは「正解を選ぶ力」ではなく、<br>「問いを生み出す力」。</p>
+                            <p>GCGは、知育（小学校受験レベルの思考力）・<br>創造・自然・テクノロジーを分けずに循環させながら、<br>0→1の創造性と、1→100の思考力を<br>幼児期から育てていきます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vision__inner">
+                <div class="vision__row vision__row--2">
+                    <div class="vision__text vision__text--green">
+                        <h3 class="vision__sub-title">「正解」を教える教育から<br class="u-sp-none">「問い」を生み出す教育へ。</h3>
+                        <div class="vision__desc">
+                            <p>AIが瞬時に答えを出す時代。<br>お子様が大人になる20年後、知識の量そのものに価値は<br class="u-sp-none">なくなっているかもしれません。</p>
+                            <p>今、私たちが子どもたちに手渡せる最高のギフト。<br>それは、自らを感じ、考え、新しい価値を創造する「人間だけの力」です。<br>既存の枠組みに当てはめるのではなく、内側にある100の可能性を解き放つこと。<br>10年後、20年後の世界を、凛として歩むための知性と感性を、今ここで。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="vision__img vision__img--right">
+                        <img src="./images/vision-img02.png" alt="Children engaging in creative learning">
+                        <p class="vision__caption">提供元：株式会社ハタプロ<br>(https://hatapro.co.jp/)</p>
+                    </div>
+                </div>
+
+                <div class="vision__bottom-img">
+                    <img src="./images/vision-img03.png" alt="Child exploring nature">
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
 
             <!-- Service Section -->
             <section id="service" class="section service">
@@ -150,6 +247,8 @@
         </div>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js" defer></script>
 </body>
 
