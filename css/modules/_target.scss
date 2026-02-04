@@ -1,0 +1,356 @@
+.target {
+    width: 100%;
+    position: relative;
+    background-image: url(../images/target-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0 150px;
+    color: #fff; // Default text white? Or dark?
+    // Design shows dark text on light blobs. But section bg is green?
+    // User bg is target-bg.png.
+    // Text inside blobs should be dark.
+
+    @media screen and (max-width: $breakpoint-sp) {
+        padding: 60px 0 100px;
+    }
+
+    &__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+        text-align: center;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 0 20px;
+        }
+    }
+
+    &__title {
+        color: #fff;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__intro {
+        font-size: 16px;
+        color: #fff;
+        font-weight: 500;
+        margin-bottom: 80px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 14px;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 0; // Zig-zag positioning might rely on margins or positions
+        position: relative;
+        max-width: 1000px; // Limit width for zig zag
+        margin: 0 auto;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            gap: 40px;
+        }
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: center; // Default center
+        width: 100%;
+        margin-bottom: -50px; // Overlap?
+
+        @media screen and (max-width: $breakpoint-sp) {
+            margin-bottom: 0;
+            display: block; // Stack
+        }
+
+        &--01 {
+            justify-content: flex-start; // Left
+            margin-left: 100px;
+
+            .target__bg-img {
+                width: 615px; // Adjust size here
+            }
+
+            .target__text-box {
+                top: 50%;
+                left: 50%;
+                transform: translate(-56%, -46%);
+            }
+
+            @media screen and (max-width: $breakpoint-sp) {
+                margin-left: 0;
+
+                .target__bg-img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &--02 {
+            justify-content: flex-end; // Right
+            margin-right: 100px;
+            margin-top: -50px; // Overlap prev?
+
+            .target__bg-img {
+                width: 420px;
+            }
+
+            .target__text-box {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            @media screen and (max-width: $breakpoint-sp) {
+                margin-right: 0;
+                margin-top: 0;
+
+                .target__bg-img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &--03 {
+            justify-content: flex-start;
+            margin-left: 50px;
+
+            .target__bg-img {
+                width: 440px;
+            }
+
+            .target__text-box {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            @media screen and (max-width: $breakpoint-sp) {
+                margin-left: 0;
+
+                .target__bg-img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &--04 {
+            justify-content: flex-end;
+            margin-right: 50px;
+
+            .target__bg-img {
+                width: 440px;
+            }
+
+            .target__text-box {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            @media screen and (max-width: $breakpoint-sp) {
+                margin-right: 0;
+
+                .target__bg-img {
+                    width: 100%;
+                }
+            }
+        }
+
+        &--05 {
+            justify-content: center;
+            margin-top: 50px; // Spacing
+
+            .target__bg-img {
+                width: 400px;
+            }
+
+            .target__text-box {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            @media screen and (max-width: $breakpoint-sp) {
+                margin-top: 0;
+
+                .target__bg-img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        width: fit-content; // To wrap image size
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+        }
+    }
+
+    &__bg-img {
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 0 40px; // Padding inside shape
+        text-align: center;
+        color: #333; // Text inside shape is dark
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%; // Ensure centering vertically
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 0 30px;
+            // On SP, if images are stacked and contain shapes, absolute is still good.
+            // Assuming SP images target01--sp.png are shapes.
+        }
+    }
+
+    &__num {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: #e67e22; // Orange circle number?
+        color: #fff;
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 18px;
+        position: absolute;
+        top: 20px; // Adjust based on shape
+        left: 20px; // Adjust based on shape
+        // Or relative to text box?
+        // Let's make it relative in flow or absolute to box.
+        // Design shows number at top-left OF THE SHAPE?
+        // I'll try absolute top/left of text-box (which is centered) or content relative.
+        // Actually relative to `.target__content` might be safest.
+    }
+
+    // Override num position in specific items if needed
+    &__item--01 .target__num {
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+    }
+
+    // Wait, shapes are irregular.
+    // I'll assume approximate positioning for valid look.
+    // Numbers seem to be attached to the blob.
+
+    &__item-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.6;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__item-desc {
+        font-size: 20px;
+        line-height: 1.8;
+        font-weight: 500;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 13px;
+        }
+    }
+
+    &__deco-wrap {
+        position: absolute;
+        // Position relative to the list or item?
+        // Item 2 has decoration "Target Profile".
+        top: -80px;
+        left: -150px;
+        z-index: 10;
+        transform: rotate(-10deg);
+
+        @media screen and (max-width: $breakpoint-sp) {
+            top: -40px;
+            left: 0;
+            position: relative;
+            margin-bottom: 20px;
+            transform: none;
+            text-align: center;
+            width: 100%;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+
+            @media screen and (max-width: $breakpoint-sp) {
+                width: 150px;
+            }
+        }
+    }
+
+    &__item-deco {
+        position: absolute;
+        z-index: 2;
+
+        &--02 {
+            // Plant near item 5
+            top: -30px;
+            left: -20px;
+            width: 60px;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            display: none; // Simplify for SP unless critical
+        }
+    }
+
+    &__bottom-text {
+        margin-top: 100px;
+
+        p {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 2;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            margin-top: 60px;
+
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}

@@ -1,0 +1,199 @@
+.domain {
+    width: 100%;
+    padding: 100px 0;
+    position: relative;
+    background-color: #fff;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        background-image: url(../images/domain-bg--sp.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        padding: 80px 0 100px;
+    }
+
+    &__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 0 20px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-bottom: 40px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            margin-bottom: 30px;
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__illust {
+        position: absolute;
+        top: 15%;
+        right: -9%; // More right
+        width: 40%;
+        max-width: 525px;
+        z-index: 1;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            position: relative;
+            top: auto;
+            right: auto;
+            width: 80%;
+            margin: -20px auto 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__intro {
+        text-align: center;
+        margin-bottom: 100px;
+        position: relative; // Ensure z-index works if needed
+        z-index: 2;
+    }
+
+    &__desc {
+        font-size: 24px;
+        line-height: 2;
+        font-weight: 500;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 14px;
+            text-align: left;
+        }
+    }
+
+    &__deco-text {
+        position: absolute;
+        top: 30%;
+        left: -20%;
+        z-index: 0;
+
+        img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            position: relative;
+            top: auto;
+            left: auto;
+            text-align: center;
+            margin-bottom: 40px;
+
+            img {
+                width: 60%;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+    &__item {
+        width: 23%; // 4 items in row
+        text-align: center;
+        position: relative;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+            display: flex;
+            justify-content: center; // Center the item if it has max-width
+        }
+    }
+
+    &__img {
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block; // Remove inline gap
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+            // Check if user wants full width of screen? 
+            // "横幅いっぱいで表示されるように調整"
+            // Usually means width: 100% of container or screen?
+            // Container has padding 20px. 
+            // To be full screen width, we need negative margin on container or item.
+            // But usually full width of content area is fine.
+            // I'll keep it 100% of container for now.
+            margin-bottom: 0; // Text is absolute
+        }
+    }
+
+    &__item-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: #333;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            position: absolute;
+            top: 50%;
+            left: 50%; // Or right? User said "Inside shape".
+            // Shape layout depends on image.
+            // Assuming center or specific position per item?
+            // "シェイプの中に４つの項目のタイトルを表示する"
+            // Images are shapes. Text should be centered?
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+    }
+
+    &__item-ja {
+        font-size: 20px;
+        font-weight: 500;
+
+        &::after {
+            content: "/";
+            margin-left: 10px;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 18px; // Adjust for mobile fit
+        }
+    }
+
+    &__item-en {
+        font-size: 20px;
+        font-weight: 500;
+        font-family: $font-family-base; // Or specific EN font?
+        letter-spacing: 0.05em;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 14px; // Check fit
+        }
+    }
+}

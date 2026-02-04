@@ -1,0 +1,184 @@
+.feature {
+    width: 100%;
+    margin-top: -60px; // Overlap previous section
+    position: relative;
+    z-index: 2; // Ensure wave sits on top
+    background-image: url(../images/feature-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    padding: 200px 0 150px; // Increase top padding to compensate for pull-up
+
+    @media screen and (max-width: $breakpoint-sp) {
+        margin-top: -80px;
+        background-image: url(../images/feature-bg--sp.png);
+        background-size: 100% auto;
+        background-position: top center;
+        padding: 120px 0 100px;
+    }
+
+    &__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 0 20px;
+        }
+    }
+
+    &__title {
+        @media screen and (max-width: $breakpoint-sp) {
+            background-image: url(../images/feature-ttl-bg--sp.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            padding: 40px 0; // Adjust based on image aspect ratio
+            width: 100%;
+            height: auto;
+            // Ensure logo/text is centered
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 74px; // Remove gap for overlap
+        margin-top: 60px;
+        position: relative; // For absolute decos
+
+        @media screen and (max-width: $breakpoint-sp) {
+            flex-direction: column;
+            align-items: center;
+            gap: 40px; // Keep gap on mobile, or overlap vertically? 
+            // Usually vertical stack has gap.
+        }
+    }
+
+    &__illust {
+        position: absolute;
+        pointer-events: none;
+        z-index: 10;
+
+        &--01 {
+            bottom: 15%;
+            left: 28%;
+            transform: translateX(-50%);
+            width: 10%;
+            max-width: 140px;
+
+            @media screen and (max-width: $breakpoint-sp) {
+                position: static;
+                margin: -20px auto 20px;
+            }
+        }
+
+        &--02 {
+            top: -150px;
+            left: 62%;
+            transform: translateX(-50%);
+            width: 20%;
+            max-width: 115px;
+
+            @media screen and (max-width: $breakpoint-sp) {
+                top: -50px;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__item {
+        width: 400px; // Adjusted size
+        height: 560px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 50px 90px 50px; // Top, Right, Bottom, Left - push text to upper area
+        position: relative;
+        margin: 0 -60px; // Increased horizontal overlap
+
+        &--01 {
+            background-image: url(../images/feature-text01.png);
+            z-index: 1;
+
+            @media screen and (max-width: $breakpoint-sp) {
+                background-image: url(../images/feature-text01--sp.png);
+            }
+        }
+
+        &--02 {
+            background-image: url(../images/feature-text02.png);
+            z-index: 2; // Bring center to front
+
+            @media screen and (max-width: $breakpoint-sp) {
+                background-image: url(../images/feature-text02--sp.png);
+            }
+        }
+
+        &--03 {
+            background-image: url(../images/feature-text03.png);
+            z-index: 1;
+            width: 460px;
+            height: 640px;
+
+            @media screen and (max-width: $breakpoint-sp) {
+                background-image: url(../images/feature-text03--sp.png);
+                width: 100%;
+                height: 350px;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+            max-width: 350px; // Mobile width
+            height: 350px; // Mobile height
+            padding: 50px 30px;
+            margin: 0; // Reset margin for mobile
+        }
+
+        &-content {
+            width: 100%;
+        }
+    }
+
+    &__item-title {
+        font-size: 20px;
+        font-weight: 700;
+        text-align: left;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        position: relative;
+        display: inline-block; // For icon positioning
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 18px;
+        }
+    }
+
+    &__search-icon {
+        width: 24px;
+        height: auto;
+        vertical-align: middle;
+        margin-left: 5px;
+    }
+
+    &__desc {
+        font-size: 14px;
+        line-height: 1.8;
+        font-weight: 500;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 13px;
+        }
+    }
+}
