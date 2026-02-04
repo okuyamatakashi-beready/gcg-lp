@@ -68,54 +68,44 @@
     }
 
     &__row--2 {
-        margin-top: 120px;
-        align-items: flex-start;
+        display: flex;
+        align-items: center; // Vertically center
+        justify-content: space-between;
+        max-width: 1080px; // User request
+        margin: 120px auto 0;
+        position: relative; // Keep for safety
 
         @media screen and (max-width: $breakpoint-sp) {
             flex-direction: column-reverse;
             margin-top: 80px;
+            align-items: flex-start;
         }
     }
 
     &__text--green {
         text-align: left;
-        width: 45%;
+        width: 60%; // User request
+        position: relative;
+        z-index: 2; // Text on top
 
         @media screen and (max-width: $breakpoint-sp) {
             width: 100%;
-        }
-    }
-
-    &__sub-title {
-        color: #00a051;
-        font-size: 26px;
-        font-weight: 700;
-        margin-bottom: 30px;
-        line-height: 1.5;
-
-        @media screen and (max-width: $breakpoint-sp) {
-            font-size: 22px;
-        }
-    }
-
-    &__desc {
-        font-size: 16px;
-        line-height: 1.8;
-
-        p {
-            margin-bottom: 24px;
         }
     }
 
     &__img--right {
-        width: 50%;
-        margin-left: 0;
-        margin-right: -5%;
-        text-align: right;
+        // Remove absolute positioning
+        position: relative;
+        width: 670px; // User request
+        max-width: none;
+        flex-shrink: 0; // Prevent shrinking
+        margin-left: -260px; // Force overlap (approx 670 + 60% of 1080 - 1080)
+        z-index: 1;
 
         @media screen and (max-width: $breakpoint-sp) {
             width: 100%;
-            margin-right: 0;
+            margin-left: 0;
+            margin-bottom: 30px;
         }
     }
 
