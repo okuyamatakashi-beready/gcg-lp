@@ -1781,7 +1781,7 @@ a:hover {
     transform: rotate(-10deg);
     width: 130px;
     margin: 0;
-    display: block;
+    display: none;
     opacity: 0.8;
   }
 }
