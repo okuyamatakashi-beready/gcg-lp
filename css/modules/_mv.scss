@@ -71,16 +71,17 @@
 
             @media screen and (max-width: $breakpoint-sp) {
                 width: 128%;
-                left: 0%;
-                max-width: 200%;
+                left: 50%;
+                margin-left: -64%; // Centering a 128% wide element
+                max-width: none;
                 bottom: 5%;
             }
         }
 
         &--04 {
             top: 266px;
-            right: -10%;
-            width: 10%; // Reduced from 32.4%
+            right: 2%;
+            width: 20%; // Adjusted for better visibility
             max-width: 450px;
             animation-name: slideInTopRight;
             animation-delay: 0.6s;

@@ -54,6 +54,7 @@
             img {
                 width: auto;
                 height: 40px;
+                display: none;
             }
         }
     }
@@ -83,10 +84,7 @@
     }
 
     &__nav-box {
-        display: none; // Hidden on PC
-
         @media screen and (max-width: $breakpoint-sp) {
-            display: block;
             background: url(../images/header__nav-bg.png) no-repeat center center;
             background-size: 100% 100%; // Fit to box
             width: 86%;

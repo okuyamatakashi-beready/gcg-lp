@@ -110,8 +110,7 @@
         gap: 60px;
 
         @media screen and (max-width: $breakpoint-sp) {
-            width: 100%;
-            gap: 40px;
+            display: contents; // Allow children to be reordered by parent list
         }
 
         &--left {
@@ -145,7 +144,36 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             padding: 50px 30px 30px;
-            margin-bottom: 0px;
+            margin-bottom: 40px; // Re-add margin-bottom as gap from col is lost
+        }
+
+        // Sequential ordering for SP
+        @media screen and (max-width: $breakpoint-sp) {
+            .qa__col--left &:nth-child(1) {
+                order: 1;
+            }
+
+            // Q1
+            .qa__col--right &:nth-child(1) {
+                order: 2;
+            }
+
+            // Q2
+            .qa__col--left &:nth-child(2) {
+                order: 3;
+            }
+
+            // Q3
+            .qa__col--right &:nth-child(2) {
+                order: 4;
+            }
+
+            // Q4
+            .qa__col--right &:nth-child(3) {
+                order: 5;
+            }
+
+            // Q5
         }
     }
 
