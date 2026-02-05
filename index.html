@@ -27,14 +27,17 @@
     <header class="header">
         <div class="header__inner">
             <h1 class="header__logo">
-                <a href="#"><img src="./images/logo.png" alt="GCG" width="120" height="40"></a>
+                <a href="#"><img src="./images/gakken-logo.png" alt="Gakken" width="120" height="40"></a>
             </h1>
             <nav class="header__nav">
                 <ul class="header__list">
-                    <li class="header__item"><a href="#about">About</a></li>
-                    <li class="header__item"><a href="#service">Service</a></li>
-                    <li class="header__item"><a href="#news">News</a></li>
-                    <li class="header__item"><a href="#contact" class="btn btn--nav">Contact</a></li>
+                    <li class="header__item"><a href="#vision">教室のビジョン</a></li>
+                    <li class="header__item"><a href="#feature">特長</a></li>
+                    <li class="header__item"><a href="#teacher">講師について</a></li>
+                    <li class="header__item"><a href="#flow">授業の流れ</a></li>
+                    <li class="header__item"><a href="#course">コースのご案内</a></li>
+                    <li class="header__item"><a href="#qa">よくある質問</a></li>
+                    <li class="header__item"><a href="#voice">保護者の声</a></li>
                 </ul>
             </nav>
             <button class="header__hamburger js-hamburger" aria-label="Menu">
@@ -47,6 +50,11 @@
 
     <main class="main">
         <div class="mv">
+            <!-- Static Logo for MV -->
+            <div class="mv__static-logo">
+                <img src="./images/gakken-logo.png" alt="Gakken">
+            </div>
+
             <div class="mv__bg">
                 <img src="./images/mv-bg.png" alt="" class="mv__base-bg" role="presentation">
                 <img src="./images/mv-img01.png" alt="" class="mv__img mv__img--01" role="presentation">
@@ -55,6 +63,14 @@
                 <img src="./images/mv-img04.png" alt="" class="mv__img mv__img--04" role="presentation">
                 <img src="./images/mv-img05.png" alt="" class="mv__img mv__img--05" role="presentation">
                 <img src="./images/mv-img06.png" alt="" class="mv__img mv__img--06" role="presentation">
+
+                <div class="mv__intro">
+                    <ul class="mv__intro-list">
+                        <li>・対象：0歳（5ヶ月）〜小学校高学年</li>
+                        <li>・場所：有明ガーデン4F</li>
+                        <li>・少人数制クラス</li>
+                    </ul>
+                </div>
             </div>
             <div class="mv__content">
                 <p class="mv__tagline">
@@ -70,17 +86,17 @@
         <!-- About Section -->
         <section id="about" class="section about">
             <div class="about__inner">
-                <p class="about__text">
+                <p class="about__text js-fade">
                     変化の時代を生きる子どもたちに必要な、<br>
                     “新しい価値を生み出す力”。
                 </p>
-                <p class="about__text">
+                <p class="about__text js-fade u-delay-100">
                     Gakken Creative Garden (GCG) は、<br>
                     小学校受験で問われるレベルの思考力を育みながら、<br>
                     受験のために型にはめるのではなく、子ども自身の興味や違和感を出発点に、<br>
                     多様な視点と出会い、思考と創造を深めていく学びの場です。
                 </p>
-                <p class="about__text">
+                <p class="about__text js-fade u-delay-200">
                     考えることを、急がせない。<br>
                     わかる前の「気づき」を、大切に。
                 </p>
@@ -89,26 +105,26 @@
 
         <!-- Pickup Section -->
         <section id="pickup" class="section pickup">
-            <div class="pickup__inner">
+            <div class="pickup__inner js-fade">
                 <div class="pickup__slider-wrap">
                     <div class="swiper pickup__slider">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
+                            <div class="swiper-slide js-pickup-slide" data-slide-index="0" style="cursor: pointer;">
                                 <img src="./images/course01.png" alt="Creative Thinking">
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide js-pickup-slide" data-slide-index="1" style="cursor: pointer;">
                                 <img src="./images/course02.png" alt="Inquiry Reading">
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide js-pickup-slide" data-slide-index="2" style="cursor: pointer;">
                                 <img src="./images/course03.png" alt="Course 03">
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide js-pickup-slide" data-slide-index="0" style="cursor: pointer;">
                                 <img src="./images/course01.png" alt="Creative Thinking">
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide js-pickup-slide" data-slide-index="1" style="cursor: pointer;">
                                 <img src="./images/course02.png" alt="Inquiry Reading">
                             </div>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide js-pickup-slide" data-slide-index="2" style="cursor: pointer;">
                                 <img src="./images/course03.png" alt="Course 03">
                             </div>
                         </div>
@@ -128,14 +144,14 @@
         <section id="vision" class="section vision">
             <div class="vision__top">
                 <div class="vision__inner">
-                    <h2 class="c-title">
+                    <h2 class="c-title js-fade">
                         <img src="./images/logo.png" alt="GCG" class="c-title__logo"> 教室のビジョン
                     </h2>
                     <div class="vision__row">
-                        <div class="vision__img">
+                        <div class="vision__img js-fade-left u-delay-100">
                             <img src="./images/vision-img.png" alt="Children viewing through magnifier">
                         </div>
-                        <div class="vision__text">
+                        <div class="vision__text js-fade u-delay-200">
                             <p>AIが答えを出す時代に、<br>子どもたちに必要なのは「正解を選ぶ力」ではなく、<br>「問いを生み出す力」。</p>
                             <p>GCGは、知育（小学校受験レベルの思考力）・<br>創造・自然・テクノロジーを分けずに循環させながら、<br>0→1の創造性と、1→100の思考力を<br>幼児期から育てていきます。
                             </p>
@@ -147,7 +163,7 @@
             <div class="vision__inner">
                 <div class="vision__row vision__row--2">
                     <div class="vision__text vision__text--green">
-                        <h3 class="vision__sub-title">「正解」を教える教育から「問い」を生み出す教育へ。</h3>
+                        <h3 class="vision__sub-title js-fade">「正解」を教える教育から「問い」を生み出す教育へ。</h3>
                         <div class="vision__desc">
                             <p>AIが瞬時に答えを出す時代。<br>お子様が大人になる20年後、知識の量そのものに価値は<br class="u-sp-none">なくなっているかもしれません。</p>
                             <p>今、私たちが子どもたちに手渡せる最高のギフト。<br>それは、自らを感じ、考え、新しい価値を創造する「人間だけの力」です。<br>既存の枠組みに当てはめるのではなく、内側にある100の可能性を解き放つこと。<br>10年後、20年後の世界を、凛として歩むための知性と感性を、今ここで。
@@ -167,11 +183,11 @@
         <!-- Difference Section -->
         <section id="difference" class="section difference">
             <div class="difference__inner">
-                <h2 class="c-title">
+                <h2 class="c-title js-fade">
                     <img src="./images/logo.png" alt="GCG" class="c-title__logo"> と他教室との違い
                 </h2>
                 <div class="difference__content">
-                    <div class="difference__col difference__col--general">
+                    <div class="difference__col difference__col--general js-fade">
                         <h3 class="difference__col-title">一般的な幼児教室は……</h3>
                         <ul class="difference__list">
                             <li>・正解を求める</li>
@@ -181,11 +197,11 @@
                         </ul>
                     </div>
 
-                    <div class="difference__arrow">
+                    <div class="difference__arrow js-fade u-delay-100">
                         <img src="./images/difference-arrow.png" alt="To GCG">
                     </div>
 
-                    <div class="difference__col difference__col--gcg">
+                    <div class="difference__col difference__col--gcg js-fade u-delay-200">
                         <div class="difference__gcg-box">
                             <h3 class="difference__col-title">
                                 <img src="./images/logo.png" alt="GCG" class="difference__col-logo"> は……
@@ -212,7 +228,7 @@
                     <img src="./images/logo.png" alt="GCG" class="c-title__logo"> の特長
                 </h2>
                 <div class="feature__list">
-                    <div class="feature__item feature__item--01">
+                    <div class="feature__item feature__item--01 js-fade">
                         <div class="feature__item-content">
                             <h3 class="feature__item-title">
                                 知育と創造を、<br>分けない学び
@@ -224,11 +240,11 @@
                         </div>
                     </div>
 
-                    <div class="feature__illust feature__illust--01">
+                    <div class="feature__illust feature__illust--01 js-fade u-delay-100">
                         <img src="./images/feature-illust01.png" alt="" role="presentation">
                     </div>
 
-                    <div class="feature__item feature__item--02">
+                    <div class="feature__item feature__item--02 js-fade u-delay-200">
                         <div class="feature__item-content">
                             <h3 class="feature__item-title">
                                 学研の知見を<br>土台に
@@ -240,7 +256,7 @@
                         </div>
                     </div>
 
-                    <div class="feature__item feature__item--03">
+                    <div class="feature__item feature__item--03 js-fade u-delay-400">
                         <div class="feature__illust feature__illust--02">
                             <img src="./images/feature-illust02.png" alt="" role="presentation">
                         </div>
@@ -262,7 +278,7 @@
         <section id="domain" class="section domain">
             <div class="domain__inner">
                 <div class="domain__header">
-                    <h2 class="c-title domain__title">
+                    <h2 class="c-title domain__title js-fade">
                         <img src="./images/logo.png" alt="GCG" class="c-title__logo"> 4領域の統合設計
                     </h2>
                     <div class="domain__illust">
@@ -270,7 +286,7 @@
                     </div>
                 </div>
 
-                <div class="domain__intro">
+                <div class="domain__intro js-fade u-delay-100">
                     <p class="domain__desc">
                         GCGは4領域の統合設計。<br>
                         単独ではなく掛け合わせることで「立体的成長」を実現します。
@@ -282,7 +298,7 @@
                 </div>
 
                 <div class="domain__list">
-                    <div class="domain__item">
+                    <div class="domain__item js-fade">
                         <div class="domain__img">
                             <picture>
                                 <source media="(max-width: 767px)" srcset="./images/domain01--sp.png">
@@ -295,7 +311,7 @@
                         </div>
                     </div>
 
-                    <div class="domain__item">
+                    <div class="domain__item js-fade u-delay-100">
                         <div class="domain__img">
                             <picture>
                                 <source media="(max-width: 767px)" srcset="./images/domain02--sp.png">
@@ -308,7 +324,7 @@
                         </div>
                     </div>
 
-                    <div class="domain__item">
+                    <div class="domain__item js-fade u-delay-200">
                         <div class="domain__img">
                             <picture>
                                 <source media="(max-width: 767px)" srcset="./images/domain03--sp.png">
@@ -321,7 +337,7 @@
                         </div>
                     </div>
 
-                    <div class="domain__item">
+                    <div class="domain__item js-fade u-delay-300">
                         <div class="domain__img">
                             <picture>
                                 <source media="(max-width: 767px)" srcset="./images/domain04--sp.png">
@@ -340,14 +356,14 @@
         <!-- Target Section -->
         <section id="target" class="section target">
             <div class="target__inner">
-                <h2 class="c-title target__title">
+                <h2 class="c-title target__title js-fade">
                     <img src="./images/logo-white.png" alt="GCG" class="c-title__logo"> で育む5つの力
                 </h2>
-                <p class="target__intro">GCGは「受験対策だけの教室」ではありません。</p>
+                <p class="target__intro js-fade">GCGは「受験対策だけの教室」ではありません。</p>
 
                 <div class="target__list">
                     <!-- Item 1 -->
-                    <div class="target__item target__item--01">
+                    <div class="target__item target__item--01 js-fade u-delay-100">
                         <div class="target__content">
                             <div class="target__bg-img">
                                 <picture>
@@ -363,7 +379,7 @@
                     </div>
 
                     <!-- Item 2 -->
-                    <div class="target__item target__item--02">
+                    <div class="target__item target__item--02 js-fade u-delay-200">
                         <div class="target__deco-wrap">
                             <img src="./images/target-illust02.png" alt="Target Profile" class="target__deco-profile"
                                 role="presentation">
@@ -383,7 +399,7 @@
                     </div>
 
                     <!-- Item 3 -->
-                    <div class="target__item target__item--03">
+                    <div class="target__item target__item--03 js-fade u-delay-300">
                         <div class="target__content">
                             <div class="target__bg-img">
                                 <picture>
@@ -399,7 +415,7 @@
                     </div>
 
                     <!-- Item 4 -->
-                    <div class="target__item target__item--04">
+                    <div class="target__item target__item--04 js-fade u-delay-400">
                         <div class="target__content">
                             <div class="target__bg-img">
                                 <picture>
@@ -415,7 +431,7 @@
                     </div>
 
                     <!-- Item 5 -->
-                    <div class="target__item target__item--05">
+                    <div class="target__item target__item--05 js-fade u-delay-500">
                         <img src="./images/target-illust01.png" alt="" class="target__item-deco target__item-deco--05"
                             role="presentation">
                         <div class="target__content">
@@ -441,20 +457,20 @@
         <!-- Teacher Section -->
         <section id="teacher" class="section teacher">
             <div class="teacher__inner">
-                <h2 class="c-title">
+                <h2 class="c-title js-fade">
                     <img src="./images/logo.png" alt="GCG" class="c-title__logo"> 講師について
                 </h2>
 
                 <div class="teacher__content">
                     <!-- Text Block 1 -->
-                    <div class="teacher__block teacher__block--01">
+                    <div class="teacher__block teacher__block--01 js-fade u-delay-100">
                         <p class="teacher__text">
                             GCG講師は、長年にわたり小学校受験指導に携わり、<br>多くの合格実績を積み重ねてきたプロフェッショナルです。<br>子どもの発達段階や受験で求められる力を熟知しているからこそ、<br>今、何を大切にすべきかを見極めた関わりができます。
                         </p>
                     </div>
 
                     <!-- Illustration -->
-                    <div class="teacher__illust">
+                    <div class="teacher__illust js-fade u-delay-200">
                         <!-- PC Image -->
                         <img src="./images/teacher-illust01.png" alt="Teachers" class="u-pc-only" role="presentation">
                         <!-- SP Image -->
@@ -462,7 +478,7 @@
                     </div>
 
                     <!-- Text Block 2 -->
-                    <div class="teacher__block teacher__block--02">
+                    <div class="teacher__block teacher__block--02 js-fade">
                         <p class="teacher__text">
                             ただし、私たちが目指しているのは「合格する子」を育てることそのものではありません。<br>
                             受験をゴールにするのではなく、その先の学びや人生につながる<br>思考力・感性・主体性を育てることを何よりも大切にしています。<br>
@@ -471,18 +487,18 @@
                     </div>
 
                     <!-- Values Section (Middle on SP, Bottom on PC) -->
-                    <div class="teacher__values">
+                    <div class="teacher__values js-fade">
                         <div class="teacher__values-title-wrap">
                             <h3 class="teacher__values-title">講師が大切にしていること</h3>
                         </div>
                         <div class="teacher__values-list">
-                            <div class="teacher__value-item teacher__value-item--01">
+                            <div class="teacher__value-item teacher__value-item--01 js-fade u-delay-100">
                                 子どもの発想を<br>否定せず、<br>まず受け止めること
                             </div>
-                            <div class="teacher__value-item teacher__value-item--02">
+                            <div class="teacher__value-item teacher__value-item--02 js-fade u-delay-200">
                                 答えを急がせず、<br>「考える時間」<br>を守ること
                             </div>
-                            <div class="teacher__value-item teacher__value-item--03">
+                            <div class="teacher__value-item teacher__value-item--03 js-fade u-delay-300">
                                 一人ひとりの<br>違いを尊重し、<br>学びを深めること
                             </div>
                         </div>
@@ -509,13 +525,13 @@
         <!-- Flow Section -->
         <section id="flow" class="section flow">
             <div class="flow__inner">
-                <h2 class="c-title">
+                <h2 class="c-title js-fade">
                     <img src="./images/logo.png" alt="GCG" class="c-title__logo"> 授業の流れ
                 </h2>
 
                 <div class="flow__list">
                     <!-- Item 01 -->
-                    <div class="flow__item flow__item--01">
+                    <div class="flow__item flow__item--01 js-fade">
                         <div class="flow__badge">前半</div>
                         <h3 class="flow__item-title">知育タイム</h3>
                         <div class="flow__line">
@@ -531,7 +547,7 @@
                     </div>
 
                     <!-- Item 02 -->
-                    <div class="flow__item flow__item--02">
+                    <div class="flow__item flow__item--02 js-fade u-delay-200">
                         <div class="flow__badge flow__badge--02">後半</div>
                         <h3 class="flow__item-title">創造タイム</h3>
                         <div class="flow__line">
@@ -559,14 +575,16 @@
         <section id="schedule" class="section schedule">
             <div class="schedule__inner">
                 <div class="schedule__title-wrap">
-                    <h2 class="c-title">
+                    <h2 class="c-title js-fade">
                         <img src="./images/logo.png" alt="GCG" class="c-title__logo"> の時間割
                     </h2>
-                    <img src="./images/schedule_text.png" alt="Timetable" class="schedule__title-deco">
+                    <img src="./images/schedule_text.png" alt="Timetable"
+                        class="schedule__title-deco js-fade u-delay-100">
                 </div>
 
                 <div class="schedule__content">
-                    <img src="./images/schedule_timetable.png" alt="Timetable" class="schedule__table-img">
+                    <img src="./images/schedule_timetable.png" alt="Timetable"
+                        class="schedule__table-img js-fade u-delay-200">
                 </div>
 
                 <div class="schedule__note">
@@ -583,14 +601,14 @@
         <section id="course" class="section course">
             <div class="course__inner">
                 <div class="course__title-wrap">
-                    <h2 class="c-title">
+                    <h2 class="c-title js-fade">
                         <img src="./images/logo.png" alt="GCG" class="c-title__logo"> コースのご案内
                     </h2>
-                    <img src="./images/course-text.png" alt="Course" class="course__title-deco">
+                    <img src="./images/course-text.png" alt="Course" class="course__title-deco js-fade u-delay-100">
                 </div>
 
                 <!-- Swiper -->
-                <div class="swiper course__slider">
+                <div class="swiper course__slider js-fade u-delay-200">
                     <div class="swiper-wrapper course__wrapper">
                         <!-- Course 01 -->
                         <div class="swiper-slide course__item">
@@ -631,7 +649,7 @@
         <!-- QA Section -->
         <section id="qa" class="section qa">
             <div class="qa__inner">
-                <div class="qa__title-wrap">
+                <div class="qa__title-wrap js-fade">
                     <img src="./images/logo.png" alt="GCG" class="qa__title-logo">
                     <span class="qa__title-text">よくある質問</span>
 
@@ -709,7 +727,7 @@
         <!-- Voice Section -->
         <section id="voice" class="section voice">
             <div class="voice__title-area">
-                <div class="voice__title">
+                <div class="voice__title js-fade">
                     <img src="./images/logo.png" alt="GCG" class="voice__logo">
                     <span class="voice__title-text">保護者の声</span>
                 </div>
@@ -718,7 +736,7 @@
             <div class="voice__inner">
                 <div class="voice__list">
                     <!-- Item 01 -->
-                    <div class="voice__item voice__item--01">
+                    <div class="voice__item voice__item--01 js-fade">
                         <p class="voice__text">
                             “自然とテクノロジー”の組み合わせが<br>
                             本当に新鮮で、ここでしか味わえない<br>
@@ -727,7 +745,7 @@
                     </div>
 
                     <!-- Item 02 -->
-                    <div class="voice__item voice__item--02">
+                    <div class="voice__item voice__item--02 js-fade u-delay-200">
                         <p class="voice__text">
                             AIロボットZukkuとのやり取りには<br>
                             子どもが大興奮でした。<br>
@@ -745,7 +763,7 @@
             <!-- Last Message -->
             <div class="voice__last">
                 <div class="container">
-                    <p class="voice__last-text">
+                    <p class="voice__last-text js-fade">
                         お子様の可能性を、型にはめるには早すぎます。<br>
                         自由に描き、何度でも描きなおせる「創造性の原点」を。<br>
                         まずは、親子でその空気感に触れてみてください。
@@ -760,16 +778,51 @@
         </div>
     </main>
 
+    <!-- Float Button -->
+    <a href="#contact" class="float-btn">
+        <div class="float-btn__inner">
+            <span class="float-btn__year">2026年</span>
+            <span class="float-btn__main">4月開校！</span>
+            <span class="float-btn__sub">お申し込みは<br>コチラ</span>
+        </div>
+    </a>
+
     <footer class="footer">
-        <div class="footer__inner">
-            <div class="footer__logo">GCG</div>
-            <ul class="footer__nav">
-                <li><a href="#about">About</a></li>
-                <li><a href="#service">Service</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <p class="footer__copy">&copy; 2024 Global Communication Group. All Rights Reserved.</p>
+        <div class="footer__top">
+            <div class="footer__inner">
+                <h2 class="footer__title">概 要</h2>
+                <div class="footer__row">
+                    <!-- Left Col -->
+                    <div class="footer__col">
+                        <h3 class="footer__sub-title">教室所在地</h3>
+                        <p class="footer__place-name">有明ガーデン</p>
+                        <p class="footer__address">
+                            〒135-0063<br>
+                            東京都江東区有明2丁目1-8 有明ガーデン4F<br>
+                            TEL. 050-3111-4850
+                        </p>
+                    </div>
+                    <!-- Right Col -->
+                    <div class="footer__col">
+                        <h3 class="footer__sub-title">運営会社</h3>
+                        <div class="footer__company-logo">
+                            <img src="./images/footer-company.png" alt="Gakken 学研Link">
+                        </div>
+                        <p class="footer__address">
+                            〒141-8411<br>
+                            東京都品川区西五反田二丁目11番8号<br>
+                            TEL.03-6431-1233 (代表)
+                        </p>
+                        <a href="https://gakken-link.co.jp/privacypolicy/" target="_blank"
+                            class="footer__privacy">&gt;プライバシーポリシーはこちらから</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__bottom-logo">
+                <img src="./images/gakken-logo-green.png" alt="Gakken">
+            </div>
         </div>
     </footer>
 

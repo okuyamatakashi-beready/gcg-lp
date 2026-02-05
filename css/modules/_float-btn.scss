@@ -1,0 +1,96 @@
+/* Float Button */
+.float-btn {
+    position: fixed;
+    top: 120px;
+    right: 24px;
+    width: 220px;
+    height: 220px;
+    /* Adjust height based on background aspect ratio or content */
+    z-index: 2000;
+    transition: opacity 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/floatBtn-bg.png) no-repeat center center / contain;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    font-family: "Kiwi Maru", serif;
+    animation: floatBubble 3s ease-in-out infinite;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 1.2;
+        padding-top: 10px;
+        /* Adjust for visual visual center of the blob */
+        padding-right: 15px;
+        /* The blob shape might need some padding offset */
+    }
+
+    &__year {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 2px;
+        letter-spacing: -0.05em;
+    }
+
+    &__main {
+        font-size: 40px;
+        font-weight: 500;
+        margin-bottom: 8px;
+        letter-spacing: -0.05em;
+        margin-left: 20px;
+    }
+
+    &__sub {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    @media screen and (max-width: $breakpoint-sp) {
+        width: 160px;
+        height: 145px;
+        top: 16px;
+        right: 16px;
+
+        &__inner {
+            padding-top: 5px;
+            padding-right: 10px;
+        }
+
+        &__year {
+            font-size: 11px;
+        }
+
+        &__main {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        &__sub {
+            font-size: 11px;
+        }
+    }
+}
+
+@keyframes floatBubble {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}

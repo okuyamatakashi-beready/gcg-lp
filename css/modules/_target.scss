@@ -31,6 +31,10 @@
         color: #fff;
         margin-bottom: 120px;
 
+        &::after {
+            background-image: url(../images/target_white_line.png);
+        }
+
         @media screen and (max-width: $breakpoint-sp) {
             margin-bottom: 20px;
         }
@@ -107,6 +111,7 @@
 
             .target__text-box {
                 top: 50%;
+                width: 88%;
                 left: 50%;
                 transform: translate(-24%, -69%);
             }
@@ -157,6 +162,7 @@
             .target__text-box {
                 top: 50%;
                 left: 50%;
+                width: 88%;
                 transform: translate(-24%, -56%);
             }
 

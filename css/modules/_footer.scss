@@ -1,48 +1,142 @@
+/* Footer */
 .footer {
-    background-color: #333;
+    width: 100%;
     color: #fff;
-    padding: 60px 0 30px;
+    font-family: $font-family-base;
+
+    &__top {
+        background-color: #7d7d7d;
+        /* Adjust based on design image */
+        padding: 60px 0;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 40px 0;
+        }
+    }
 
     &__inner {
-        max-width: $layout-width-inner;
+        max-width: 960px;
+        /* User request: 960px */
         margin: 0 auto;
         padding: 0 20px;
+    }
+
+    &__title {
+        font-size: 40px;
         text-align: center;
+        letter-spacing: 0.2em;
+        margin-bottom: 60px;
+        font-weight: 500;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
     }
 
-    &__logo {
-        font-size: 32px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        letter-spacing: 0.1em;
-    }
-
-    &__nav {
+    &__row {
         display: flex;
-        justify-content: center;
-        gap: 30px;
-        list-style: none;
-        margin: 0 0 40px;
-        padding: 0;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 60px;
+        /* Adjusted gap for 960px container */
 
         @media screen and (max-width: $breakpoint-sp) {
             flex-direction: column;
-            gap: 15px;
+            gap: 50px;
+        }
+    }
+
+    &__col {
+        width: 45%;
+        /* Fallback */
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+            text-align: center;
         }
 
-        a {
-            font-size: 14px;
-            color: #ccc;
-            transition: color 0.3s;
+        &:first-child {
+            width: auto;
+            flex: 1;
+            /* Take remaining space */
+        }
 
-            &:hover {
-                color: #fff;
+        &:last-child {
+            width: 400px;
+            /* Fixed width for logo column */
+            flex-shrink: 0;
+
+            .footer__sub-title {
+                text-align: center;
             }
         }
     }
 
-    &__copy {
-        font-size: 12px;
-        color: #888;
+    &__sub-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+    }
+
+    &__place-name {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 20px;
+        }
+    }
+
+    &__address {
+        font-size: 20px;
+        line-height: 1.8;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    &__company-logo {
+        margin-bottom: 20px;
+        background: #fff;
+        padding: 15px 30px;
+        display: inline-block;
+        width: 400px;
+        /* User request: 400px */
+
+        img {
+            width: 100%;
+            height: auto;
+            vertical-align: middle;
+        }
+    }
+
+    &__privacy {
+        display: inline-block;
+        font-size: 13px;
+        color: #fff;
+        text-decoration: none;
+        margin-top: 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__bottom {
+        background-color: #fff;
+        padding: 30px 0;
+        text-align: center;
+
+        &-logo {
+            width: 200px;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
     }
 }

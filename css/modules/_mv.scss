@@ -58,9 +58,9 @@
         }
 
         &--04 {
-            top: 0;
-            right: 0;
-            width: 29.4%;
+            top: -40px;
+            right: -60px;
+            width: 32.4%;
             max-width: 565px;
             animation-name: slideInTopRight;
             animation-delay: 0.6s;
@@ -68,7 +68,7 @@
 
         &--05 {
             top: 50%;
-            right: 0;
+            right: -30px;
             transform: translateY(-50%);
             width: 8.5%;
             max-width: 164px;
@@ -94,6 +94,51 @@
             animation-name: slideInBottomRight;
             animation-delay: 0.9s;
             // Overlap with 05 (Right Center) will happen naturally as this is Bottom Right
+        }
+    }
+
+    &__intro {
+        position: absolute;
+        bottom: 7%;
+        right: 24%;
+        /* margin-right: -450px; - Removed to align left of image */
+        /* Adjust based on layout */
+        width: 387px;
+        height: 207px;
+        background: url(../images/mv-intro-bg.png) no-repeat center center / contain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        animation: mvFadeIn 1s ease-out forwards;
+        animation-delay: 1.4s;
+
+        &-list {
+            list-style: none;
+            font-size: 20px;
+            margin-right: 10px;
+            font-weight: 500;
+            line-height: 1.6;
+            letter-spacing: -0.05em;
+            color: #333;
+            font-family: "Kiwi Maru", serif;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 260px;
+            height: auto;
+            top: auto;
+            bottom: 20px;
+            right: auto;
+            left: 50%;
+            margin-left: -130px;
+            padding: 20px 10px;
+            background-size: 100% 100%;
+
+            &-list {
+                font-size: 12px;
+                padding-left: 10px;
+            }
         }
     }
 
@@ -186,7 +231,7 @@
     }
 
     &__logo {
-        width: 100%;
+        width: 44%;
         max-width: 670px; // Adjust based on logo size preference
 
         @media screen and (max-width: $breakpoint-sp) {
@@ -197,5 +242,28 @@
             width: 100%;
             height: auto;
         }
+    }
+
+    &__static-logo {
+        position: absolute;
+        top: 60px;
+        left: 60px;
+        z-index: 10;
+
+        img {
+            width: 200px;
+            height: auto;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            top: 20px;
+            left: 20px;
+
+            img {
+                width: 100px;
+            }
+        }
+
+
     }
 }
