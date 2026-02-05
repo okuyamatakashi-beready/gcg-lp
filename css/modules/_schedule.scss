@@ -1,0 +1,88 @@
+.schedule {
+    width: 100%;
+    position: relative;
+    background-image: url(../images/schedule_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        padding: 60px 0;
+    }
+
+    &__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 0 20px;
+        }
+    }
+
+    &__title-wrap {
+        position: relative;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    &__title-deco {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        width: 275px;
+        margin-left: 20px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            width: 150px;
+            margin: 10px auto 0;
+            display: block;
+        }
+    }
+
+    &__content {
+        margin-top: 60px;
+        text-align: center;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            text-align: left;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 20px; // Scrollbar space
+            margin-right: -20px; // Bleed to edge
+            padding-right: 20px; // Spacer at end
+        }
+    }
+
+    &__table-img {
+        max-width: 100%;
+        height: auto;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); // Optional: add subtle shadow for pop
+        border-radius: 30px; // Match design roundness roughly
+
+        @media screen and (max-width: $breakpoint-sp) {
+            max-width: none;
+            width: 800px; // Ensure it's wide enough to be readable and scroll
+        }
+    }
+
+    &__note {
+        margin-top: 30px;
+        font-size: 20px;
+        line-height: 1.8;
+        text-align: left;
+        display: inline-block; // Center the block but align text left
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 12px;
+            display: block; // Full width on mobile
+        }
+    }
+}

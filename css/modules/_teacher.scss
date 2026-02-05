@@ -1,0 +1,303 @@
+.teacher {
+    width: 100%;
+    position: relative;
+    background-image: url(../images/teacher-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0;
+    margin-top: -60px;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        padding: 60px 0;
+    }
+
+    &__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        position: relative;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 0 20px;
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 2fr 0.8fr;
+        grid-template-areas:
+            "text1 illust"
+            "text2 photo"
+            "text3 photo"
+            "values values";
+        gap: 60px;
+        align-items: start;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+
+            .teacher__block--01 {
+                order: 1;
+            }
+
+            .teacher__illust {
+                order: 2;
+            }
+
+            .teacher__block--02 {
+                order: 3;
+            }
+
+            .teacher__values {
+                order: 4;
+            }
+
+            .teacher__block--03 {
+                order: 5;
+            }
+
+            .teacher__photo {
+                order: 6;
+            }
+        }
+    }
+
+    // Grid Areas
+    &__block--01 {
+        grid-area: text1;
+    }
+
+    &__block--02 {
+        grid-area: text2;
+    }
+
+    &__block--03 {
+        grid-area: text3;
+    }
+
+    &__illust {
+        grid-area: illust;
+        text-align: right;
+    }
+
+    &__photo {
+        grid-area: photo;
+        text-align: right;
+    }
+
+    &__values {
+        grid-area: values;
+    }
+
+
+    &__text {
+        font-size: 20px;
+        line-height: 2.0;
+        letter-spacing: -0.08em;
+
+        margin-bottom: 24px;
+        text-align: justify;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 14px;
+        }
+    }
+
+    &__illust {
+        position: absolute;
+        top: 16%;
+        right: -14%; // approx -200px / 1200px
+        width: 47%; // approx 565px / 1200px
+        z-index: 1;
+
+        // Reset grid area effectiveness for absolute element
+        grid-area: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: none;
+        }
+
+        .u-sp-only {
+            display: none;
+
+            @media screen and (max-width: $breakpoint-sp) {
+                display: block;
+                width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        .u-pc-only {
+            @media screen and (max-width: $breakpoint-sp) {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            position: relative;
+            top: auto;
+            right: auto;
+            width: 100%;
+            margin-left: 0;
+            text-align: center;
+
+            img {
+                max-width: 100%; // Reset for SP
+                width: 200px; // Adjust SP size if needed
+            }
+        }
+    }
+
+    &__photo {
+        position: absolute;
+        top: 34%; // Estimated position, adjust as needed
+        right: -12%; // Match illust alignment
+        width: 47.5%; // 570px / 1200px
+        z-index: 1;
+        grid-area: auto; // Remove from grid flow on PC
+
+        img {
+            max-width: none;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            position: relative;
+            top: auto;
+            right: auto;
+            width: 100%;
+            grid-area: photo; // Restore grid flow
+            text-align: center;
+
+            img {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    /* Values Section */
+    &__values-title-wrap {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    &__values-title {
+        background-image: url(../images/teacher-important-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 425px;
+        height: 208px; // Approximate height needed for bg? User didn't specify height but width 425.
+        // Assuming text centered inside
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        font-weight: 500;
+        color: #fff;
+        padding-bottom: 10px; // Optical adjustment
+
+        @media screen and (max-width: $breakpoint-sp) {
+            // Mobile adjustments? User didn't specify Title mobile styles, assuming responsive scale
+            width: 300px;
+            font-size: 20px;
+            background-size: contain;
+            background-position: center;
+            height: 90px;
+        }
+    }
+
+    &__values-list {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            flex-direction: column;
+            gap: 0;
+            background-image: url(../images/teacher-textbg02.png); // One big bg
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            padding: 40px 20px;
+            align-items: center;
+        }
+    }
+
+    &__value-item {
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 300px;
+        height: 300px; // Assuming square/circle blobs
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 1.6;
+        padding: 40px;
+        color: #333;
+
+        &--01 {
+            background-image: url(../images/teacher-textbg01.png);
+
+            @media screen and (max-width: $breakpoint-sp) {
+                background-image: none;
+            }
+        }
+
+        &--02 {
+            background-image: url(../images/teacher-textbg02.png);
+
+            @media screen and (max-width: $breakpoint-sp) {
+                background-image: none;
+            }
+        }
+
+        &--03 {
+            background-image: url(../images/teacher-textbg03.png);
+
+            @media screen and (max-width: $breakpoint-sp) {
+                background-image: none;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+            height: auto;
+            min-height: auto;
+            padding: 20px 0;
+            font-size: 18px;
+            background-image: none !important; // Reset individual bgs
+
+            &+& {
+                margin-top: 20px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100px;
+                    height: 15px; // divider size
+                    background-image: url(../images/vision_underline.png); // Separator
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    margin: 0 auto 20px;
+                }
+            }
+        }
+    }
+}

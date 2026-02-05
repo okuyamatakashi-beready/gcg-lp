@@ -117,13 +117,13 @@
     &__img--right {
         // Remove absolute positioning
         position: absolute;
-        width: 50%; // User request
+        width: 44%; // User request
         max-width: none;
         flex-shrink: 0; // Prevent shrinking
         margin-left: -260px; // Force overlap (approx 670 + 60% of 1080 - 1080)
         z-index: 1;
-        right: -15%;
-        top: -4%;
+        right: -10%;
+        top: -7%;
 
         @media screen and (max-width: $breakpoint-sp) {
             width: 100%;

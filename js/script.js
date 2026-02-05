@@ -18,21 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Course Slider
-    if (document.querySelector('.course__slider')) {
-        const courseSwiper = new Swiper('.course__slider', {
+    // Pickup Slider
+    if (document.querySelector('.pickup__slider')) {
+        new Swiper('.pickup__slider', {
             loop: true,
             speed: 600,
             slidesPerView: 'auto',
             centeredSlides: true,
             spaceBetween: 40,
-            navigation: {
-                nextEl: '.course__next',
-                prevEl: '.course__prev',
-            },
             autoplay: {
-                delay: 3000,
+                delay: 4000,
                 disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.pickup__next',
+                prevEl: '.pickup__prev',
             },
             breakpoints: {
                 768: {
@@ -40,5 +40,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+    }
+
+    // Course Slider
+    const courseSliderSelector = '.course__slider';
+    if (document.querySelector(courseSliderSelector)) {
+        let courseSwiper = undefined;
+
+        const initCourseSwiper = () => {
+            const isSP = window.matchMedia('(max-width: 767px)').matches;
+
+            if (isSP && courseSwiper === undefined) {
+                courseSwiper = new Swiper(courseSliderSelector, {
+                    loop: true,
+                    speed: 600,
+                    slidesPerView: 'auto',
+                    centeredSlides: true,
+                    spaceBetween: 40,
+                    navigation: {
+                        nextEl: '.course__button-next',
+                        prevEl: '.course__button-prev',
+                    },
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                });
+            } else if (!isSP && courseSwiper !== undefined) {
+                courseSwiper.destroy(true, true);
+                courseSwiper = undefined;
+            }
+        };
+
+        initCourseSwiper();
+        window.addEventListener('resize', initCourseSwiper);
     }
 });

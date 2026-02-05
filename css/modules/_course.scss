@@ -1,76 +1,169 @@
 .course {
-    padding: 80px 0;
     width: 100%;
+    position: relative;
+    background-image: url(../images/course-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    padding: 100px 0 150px;
+    margin-top: -60px; // Overlap for wave effect
+
+    @media screen and (max-width: $breakpoint-sp) {
+        padding: 60px 0;
+    }
 
     &__inner {
-        position: relative;
-        width: 100%;
-        max-width: 1200px; // Wider container to hold arrows
+        max-width: 1200px;
         margin: 0 auto;
-        padding: 0 20px; // Safe padding
-    }
-
-    &__slider-wrap {
-        width: 100%;
-        max-width: 1000px; // Visible slider area
-        margin: 0 auto;
-        overflow: hidden; // Clip side slides here
+        padding: 0 40px;
         position: relative;
-    }
-
-    &__slider {
-        width: 100%;
-        padding: 40px 0;
-        overflow: visible; // Allow slides to overflow inside the wrapper
-    }
-
-    .swiper-slide {
-        width: 600px;
-        height: auto;
-        opacity: 0.4;
-        transition: opacity 0.3s;
-
-        &.swiper-slide-active {
-            opacity: 1;
-            z-index: 2;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
 
         @media screen and (max-width: $breakpoint-sp) {
-            width: 80%;
+            padding: 0 20px;
         }
     }
 
-    &__nav {
+    &__title-wrap {
+        position: relative;
+        width: fit-content;
+        margin: 0 auto 60px;
+    }
+
+    &__title-deco {
         position: absolute;
         top: 50%;
+        left: 100%;
         transform: translateY(-50%);
-        width: 60px; // Slightly larger touch area
+        width: 180px;
+        margin-left: 20px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            width: 120px;
+            margin: 10px auto 0;
+            display: block;
+        }
+    }
+
+    // Swiper container styles
+    &__slider {
+        position: relative;
+        padding: 0 40px; // Space for arrows on SP? Or arrows outside?
+
+        @media screen and (min-width: 769px) {
+            // PC: Disable Swiper styles visually if JS doesn't run, or override
+            // actually we will rely on flex layout of swiper-wrapper
+            padding: 0;
+            max-width: 100%;
+            overflow: visible; // Show all
+        }
+    }
+
+    &__wrapper {
+        @media screen and (min-width: 769px) {
+            display: flex;
+            justify-content: center;
+            gap: 25px; // Reduced to fit 370px * 3 within 1200px container
+            transform: none !important; // Disable swiper transform
+            align-items: stretch;
+        }
+    }
+
+    &__item {
+        width: 370px; // Fixed width for images? Or auto?
         height: auto;
-        cursor: pointer;
-        z-index: 20;
+        flex-shrink: 0;
+        text-align: center;
+
+        &-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 0.1em;
+            line-height: 1.4;
+            min-height: 52px;
+
+            .course__item-subtitle {
+                display: block;
+                font-size: 14px;
+                color: #333; // Or a slightly lighter color maybe? 
+                margin-top: 5px;
+                font-family: sans-serif; // Usually subtitles might be sans if Japanese is different or keep standard
+                font-weight: normal;
+                letter-spacing: 0.05em;
+            }
+
+            @media screen and (max-width: $breakpoint-sp) {
+                font-size: 20px; // Keep same?
+                margin-bottom: 15px;
+            }
+        }
 
         img {
             width: 100%;
             height: auto;
+            border-radius: 20px; // Adjust if design needs rounded corners
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (min-width: 769px) {
+            width: 370px;
+            margin-right: 0 !important;
         }
 
         @media screen and (max-width: $breakpoint-sp) {
-            width: 40px;
+            width: 280px; // Carousel item width
+            // Center active slide?
         }
     }
 
-    &__prev {
-        left: 0; // At edge of 1200px container
+    // Navigation Arrows (SP Only per request?)
+    &__button-prev,
+    &__button-next {
+        display: none; // Hidden on PC
+
+        @media screen and (max-width: $breakpoint-sp) {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            cursor: pointer;
+
+            &::after {
+                content: none; // Remove default swiper arrow font
+            }
+        }
     }
 
-    &__next {
-        right: 0; // At edge of 1200px container
+    &__button-prev {
+        background-image: url(../images/course-prev.png);
+        left: 0;
+    }
+
+    &__button-next {
+        background-image: url(../images/course-next.png);
+        right: 0;
+    }
+
+    &__note {
+        margin-top: 40px;
+        font-size: 16px;
+        line-height: 1.8;
+        font-feature-settings: "palt";
+
+        @media screen and (max-width: $breakpoint-sp) {
+            margin-top: 30px;
+            font-size: 11px; // Smaller on mobile
+            text-align: left;
+        }
     }
 }

@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Pickup Section
+   ========================================================================== */
+.pickup {
+    width: 100%;
+    padding: 60px 0;
+    overflow: hidden;
+
+    &__inner {
+        width: 100%;
+        max-width: 1200px;
+        /* User request: Slider itself 1200px */
+        margin: 0 auto;
+        position: relative;
+        padding: 0;
+        /* overflow: hidden; Removed to allow arrows outside */
+    }
+
+    &__slider-wrap {
+        width: 100%;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+        /* Cut off content outside 1200px */
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 0;
+        }
+    }
+
+    &__slider {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .swiper-slide {
+        width: 80%;
+        /* SP default */
+        height: auto;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+
+        &.swiper-slide-active {
+            opacity: 1;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media screen and (min-width: 769px) {
+            width: 600px;
+            /* User request: Slide itself 600px */
+        }
+    }
+
+    /* Navigation Arrows */
+    &__nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        z-index: 10;
+        /* Assuming images are green circles as per user request/image */
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 30px;
+            height: 30px;
+            display: none;
+            /* Often hidden on SP carousel */
+        }
+    }
+
+    &__prev {
+        left: -70px;
+    }
+
+    &__next {
+        right: -70px;
+    }
+}

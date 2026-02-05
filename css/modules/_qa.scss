@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   QA Section
+   ========================================================================== */
+.qa {
+    position: relative;
+    padding: 150px 0;
+    margin-top: -60px;
+    background: url("../images/qa-bg.png") top center/cover no-repeat;
+    /* User requested "top center" and "like other sections". Assuming cover or enough height. */
+
+    @media screen and (max-width: $breakpoint-sp) {
+        padding: 60px 0;
+    }
+
+    &__inner {
+        position: relative;
+        max-width: 1000px;
+        /* Adjust based on design, maybe slightly narrower than 1200 for centralized look */
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Title Area */
+    &__title-wrap {
+        position: relative;
+        text-align: center;
+        margin-bottom: 60px;
+        background: url("../images/qa-ttl-bg.png") center center/contain no-repeat;
+        width: 420px;
+        /* Approximate based on visual */
+        height: 334px;
+        /* Approximate based on visual */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 280px;
+            height: 200px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__title-logo {
+        width: 198px;
+        /* Corrected to 198px based on user feedback */
+        margin-top: 50px;
+        /* Increased margin slightly for better spacing with larger logo */
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 140px;
+            /* Adjusted proportionally for SP */
+        }
+    }
+
+    &__title-text {
+        font-family: $font-family-base;
+        font-size: 47px;
+        font-weight: 500;
+        letter-spacing: -0.08em;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 18px;
+        }
+    }
+
+    &__title-deco {
+        /* "Question" text decoration */
+        position: absolute;
+        bottom: -20px;
+        right: -60px;
+        width: 150px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            bottom: -10px;
+            right: -40px;
+            width: 100px;
+        }
+    }
+
+
+    /* List Layout */
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        /* Using columnar layout or flex for masonry-like feel 
+           Based on design:
+           Left col: Q1, Q3
+           Right col: Q2, Q4
+           Q5 centered? Or maybe plain flow.
+           Visual shows Q1 left, Q2 right (slightly lower), Q3 left, Q4 right, Q5 center.
+           This suggests two columns.
+        */
+        position: relative;
+        z-index: 1;
+    }
+
+    &__col {
+        width: 46%;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+            gap: 40px;
+        }
+
+        &--left {
+            margin-top: 0;
+        }
+
+        &--right {
+            margin-top: 80px;
+            /* Stagger effect */
+
+            @media screen and (max-width: $breakpoint-sp) {
+                margin-top: 40px;
+            }
+        }
+    }
+
+
+
+
+    /* Individual Item */
+    &__item {
+        position: relative;
+        background: url("../images/qa-item-bg.png") center center/100% 100% no-repeat;
+        /* Using 100% 100% to stretch bg to content size which is variable. 
+           If the bg has texture that shouldn't distort, 
+           we might need slice or just contain if ratio is similar. 
+           "qa-item-bg.png" implies a paper-like texture. 
+        */
+        padding: 60px 40px 40px;
+        margin-bottom: 50px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 50px 30px 30px;
+        }
+    }
+
+    &__q-number {
+        position: absolute;
+        top: -70px;
+        left: 20px;
+        width: 109px;
+        height: 109px;
+        background: url("../images/qa-number-bg.png") center center/contain no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-family: $font-family-base;
+        font-size: 32px;
+        font-weight: bold;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 60px;
+            height: 60px;
+            font-size: 16px;
+            top: -20px;
+            left: 10px;
+        }
+    }
+
+    &__question {
+        font-size: 24px;
+        margin-top: 0;
+        font-weight: 500;
+        line-height: 1.6;
+        margin-bottom: 10px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 16px;
+        }
+    }
+
+    &__line {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__answer {
+        font-size: 20px;
+        line-height: 1.8;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 14px;
+        }
+    }
+
+
+    /* Decorative Illustrations */
+    &__illust-wrap {
+        position: absolute;
+        bottom: 20px;
+        left: 90px;
+        width: 400px;
+        pointer-events: none;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            position: relative;
+            bottom: auto;
+            left: auto;
+            margin: 0 auto;
+            width: 150px;
+            text-align: center;
+        }
+    }
+}

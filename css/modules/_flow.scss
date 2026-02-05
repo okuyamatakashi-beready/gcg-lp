@@ -1,0 +1,173 @@
+.flow {
+    padding: 120px 0;
+    position: relative;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        padding: 60px 0;
+    }
+
+    &__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 0 20px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 60px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            flex-direction: column;
+            gap: 80px;
+            align-items: center;
+        }
+    }
+
+    &__item {
+        width: 680px;
+        min-height: 500px; // Adjust based on bg image aspect ratio
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        padding: 60px 40px 267px; // Bottom padding for photo space
+        box-sizing: border-box;
+        text-align: center;
+
+        // Backgrounds
+        &--01 {
+            background-image: url(../images/flow-text01.png);
+
+            @media screen and (max-width: $breakpoint-sp) {
+                background-image: url(../images/flow-text01--sp.png);
+            }
+        }
+
+        &--02 {
+            background-image: url(../images/flow-text02.png);
+
+            @media screen and (max-width: $breakpoint-sp) {
+                background-image: url(../images/flow-text02--sp.png);
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 375/500; // Approx aspect ratio for SP bg if needed, or just auto
+            padding: 80px 30px 150px;
+        }
+    }
+
+    &__badge {
+        position: absolute;
+        top: 20px;
+        left: 50px;
+        width: 112px;
+        height: 112px;
+        background-image: url(../images/flow__badge01.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 500;
+        font-size: 32px;
+
+        &--02 {
+            background-image: url(../images/flow__badge02.png);
+            left: auto;
+            right: 50px; // Adjust position if needed based on design
+
+            @media screen and (min-width: 769px) {
+                left: 50px; // Keep left on PC? Design shows it on left too usually? 
+                // Looking at design: Left item badge is Top-Left. Right item badge is Top-Left?
+                // Actually in design image: Left item badge is Top-Left (Pink). Right item badge is Top-Left (Green).
+                right: auto;
+            }
+        }
+    }
+
+    &__item-title {
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    &__line {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto 80px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__sub-title {
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 0px;
+
+        &--01 {
+            color: #3b429d;
+        }
+
+        // Blue
+        &--02 {
+            color: #eb6ea5;
+        }
+
+        // Pink
+    }
+
+    &__desc {
+        font-size: 20px;
+        line-height: 1.8;
+        text-align: center;
+        display: inline-block; // For justify text in centered block
+    }
+
+    &__photo {
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 180px;
+        height: 180px;
+        border-radius: 50%; // Rounded masking? User said mask image? "Mask in shape"
+        // Design shows custom blob mask or circle. Assuming circle or user provided image is already masked.
+        // If rectangular image provided, use border-radius: 50% or blob.
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__deco {
+        position: absolute;
+        bottom: 100px;
+        right: -130px;
+        width: 312px;
+        z-index: 1;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            top: 50%;
+            bottom: auto;
+            right: 0;
+            width: 150px;
+        }
+    }
+}
