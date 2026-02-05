@@ -47,9 +47,9 @@
         animation-fill-mode: forwards;
 
         &--01 {
-            top: 0;
+            top: -90px;
             left: -6%;
-            width: 26%; // Reduced from 33%
+            width: 35%; // Reduced from 33%
             // max-width: 514px; // Removed to allow scaling
             animation-name: slideInTopLeft;
             animation-delay: 0.2s;
@@ -79,9 +79,9 @@
         }
 
         &--04 {
-            top: 266px;
-            right: 2%;
-            width: 20%; // Adjusted for better visibility
+            top: -120px;
+            right: -5%; // Push further right (partially cut off is distinct)
+            width: 35%; // Adjusted for better visibility
             max-width: 450px;
             animation-name: slideInTopRight;
             animation-delay: 0.6s;
@@ -98,7 +98,7 @@
             top: 50%;
             right: -30px;
             transform: translateY(-50%);
-            width: 7%; // Reduced from 8.5%
+            width: 13%; // Reduced from 8.5%
             max-width: 130px;
             animation-name: slideInRight;
             animation-delay: 0.8s;

@@ -148,13 +148,14 @@
         }
 
         &--01 {
-            background-image: url(../images/feature-text01.png);
-            z-index: 1;
+            .feature__item-title {
+                color: #fff;
+            }
 
             @media screen and (max-width: $breakpoint-sp) {
                 background-image: url(../images/feature-text01--sp.png);
                 text-align: center;
-                color: #fff; // White text for title? Need to check specific elements
+                // color: #fff; // Removed as we only want title white on PC, and SP seems to revert to dark or specific handling
                 padding-bottom: 120px !important; // Make space for image? or let it overlap
                 height: 560px;
                 min-height: 400px; // Ensure size
@@ -165,7 +166,7 @@
                 }
 
                 .feature__item-title {
-                    color: #fff;
+                    color: $font-color-base; // Reset to dark on SP
                     text-align: center;
                     display: block; // Center icon
 
@@ -195,7 +196,10 @@
             background-image: url(../images/feature-text03.png);
             z-index: 1;
             width: 460px;
-            height: 640px;
+
+            .feature__item-title {
+                color: #fff;
+            }
 
             @media screen and (max-width: $breakpoint-sp) {
                 background-image: url(../images/feature-text03--sp.png);
@@ -204,6 +208,10 @@
 
                 .feature__item-content {
                     margin-top: -30px;
+                }
+
+                .feature__item-title {
+                    color: $font-color-base; // Reset to dark on SP
                 }
             }
         }

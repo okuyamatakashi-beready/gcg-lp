@@ -5,23 +5,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.js-menu-close');
     const navLinks = document.querySelectorAll('.header__item a');
 
+    const floatBtn = document.querySelector('.float-btn');
+
     if (hamburger && nav) {
         hamburger.addEventListener('click', () => {
+            const floatBtn = document.querySelector('.float-btn'); // Re-select to be sure
             hamburger.classList.toggle('is-active');
             nav.classList.toggle('is-active');
+            if (floatBtn) {
+                if (nav.classList.contains('is-active')) {
+                    floatBtn.classList.add('is-hidden');
+                } else {
+                    floatBtn.classList.remove('is-hidden');
+                }
+            }
         });
 
         if (closeBtn) {
             closeBtn.addEventListener('click', () => {
+                const floatBtn = document.querySelector('.float-btn');
                 hamburger.classList.remove('is-active');
                 nav.classList.remove('is-active');
+                if (floatBtn) floatBtn.classList.remove('is-hidden');
             });
         }
 
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
+                const floatBtn = document.querySelector('.float-btn');
                 hamburger.classList.remove('is-active');
                 nav.classList.remove('is-active');
+                if (floatBtn) floatBtn.classList.remove('is-hidden');
             });
         });
     }

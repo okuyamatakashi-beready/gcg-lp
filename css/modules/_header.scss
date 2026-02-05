@@ -234,25 +234,19 @@
             &.is-active {
                 span {
                     background-color: #fff;
-                    // Disable rotation if we want to keep it as hamburger
-                    // based on the user image showing hamburger icon while menu is open
-                    // Or maybe it does rotate? The image is a bit ambiguous, but typically overlays have X.
-                    // BUT user image HAS a separate close button.
-                    // So I will KEEP the hamburger shape but make it white.
 
-                    // Resetting transform to default (no X)
                     &:nth-child(1) {
-                        top: 0;
-                        transform: none;
+                        top: 50%;
+                        transform: translateY(-50%) rotate(45deg);
                     }
 
                     &:nth-child(2) {
-                        opacity: 1;
+                        opacity: 0;
                     }
 
                     &:nth-child(3) {
-                        bottom: 0;
-                        transform: none;
+                        bottom: 50%;
+                        transform: translateY(50%) rotate(-45deg);
                     }
                 }
             }

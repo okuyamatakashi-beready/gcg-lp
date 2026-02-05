@@ -1,7 +1,7 @@
 /* Float Button */
 .float-btn {
     position: fixed;
-    top: 120px;
+    top: 90px;
     right: 24px;
     width: 220px;
     height: 220px;
@@ -78,6 +78,13 @@
         &__sub {
             font-size: 11px;
         }
+    }
+
+    &.is-hidden {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transition: opacity 0.3s;
     }
 }
 
