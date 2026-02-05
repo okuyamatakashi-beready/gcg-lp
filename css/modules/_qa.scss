@@ -11,7 +11,7 @@
     /* User requested "top center" and "like other sections". Assuming cover or enough height. */
 
     @media screen and (max-width: $breakpoint-sp) {
-        padding: 60px 0;
+        padding: 120px 0;
     }
 
     &__inner {
@@ -19,6 +19,7 @@
         max-width: 1000px;
         /* Adjust based on design, maybe slightly narrower than 1200 for centralized look */
         margin: 0 auto;
+
         padding: 0 20px;
     }
 
@@ -41,7 +42,7 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             width: 280px;
-            height: 200px;
+            height: 230px;
             margin-bottom: 40px;
         }
     }
@@ -65,7 +66,7 @@
         letter-spacing: -0.08em;
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 18px;
+            font-size: 32px;
         }
     }
 
@@ -144,6 +145,7 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             padding: 50px 30px 30px;
+            margin-bottom: 0px;
         }
     }
 
@@ -179,7 +181,7 @@
         margin-bottom: 10px;
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 16px;
+            font-size: 20px;
         }
     }
 
@@ -198,7 +200,7 @@
         line-height: 1.8;
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 14px;
+            font-size: 16px;
         }
     }
 

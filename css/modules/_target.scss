@@ -12,7 +12,7 @@
     // Text inside blobs should be dark.
 
     @media screen and (max-width: $breakpoint-sp) {
-        padding: 60px 0 100px;
+        padding: 120px 0; // Standardized SP padding
     }
 
     &__inner {
@@ -23,7 +23,7 @@
         text-align: center;
 
         @media screen and (max-width: $breakpoint-sp) {
-            padding: 0 20px;
+            padding: 0;
         }
     }
 
@@ -47,7 +47,7 @@
         margin-bottom: 80px;
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 14px;
+            font-size: 20px;
             margin-bottom: 50px;
         }
     }
@@ -89,6 +89,7 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-56%, -46%);
+
             }
 
             @media screen and (max-width: $breakpoint-sp) {
@@ -96,6 +97,11 @@
 
                 .target__bg-img {
                     width: 100%;
+                }
+
+                .target__text-box {
+                    transform: translate(-63%, -46%);
+                    height: auto;
                 }
             }
         }
@@ -123,6 +129,12 @@
                 .target__bg-img {
                     width: 100%;
                 }
+
+                .target__text-box {
+                    transform: translate(-32%, 7%);
+                    width: 70%;
+                    height: auto;
+                }
             }
         }
 
@@ -143,9 +155,15 @@
 
             @media screen and (max-width: $breakpoint-sp) {
                 margin-left: 0;
+                margin-top: -20px;
 
                 .target__bg-img {
                     width: 100%;
+                }
+
+                .target__text-box {
+                    transform: translate(-54%, -13%);
+                    height: auto;
                 }
             }
         }
@@ -168,9 +186,15 @@
 
             @media screen and (max-width: $breakpoint-sp) {
                 margin-right: 0;
+                margin-top: -180px;
 
                 .target__bg-img {
                     width: 100%;
+                }
+
+                .target__text-box {
+                    transform: translate(-65%, 24%);
+                    height: auto;
                 }
             }
         }
@@ -195,6 +219,11 @@
                 .target__bg-img {
                     width: 100%;
                 }
+
+                .target__text-box {
+                    transform: translate(-40%, 6%);
+                    height: auto;
+                }
             }
         }
     }
@@ -216,8 +245,14 @@
         }
 
         @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+            overflow: hidden;
+
             img {
-                width: 100%;
+                width: 100%; // 30% wider
+                max-width: 100%;
+                margin-left: 50%;
+                transform: translateX(-50%);
             }
         }
     }
@@ -283,7 +318,7 @@
         line-height: 1.6;
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 18px;
+            font-size: 24px;
             margin-bottom: 15px;
         }
     }
@@ -294,7 +329,8 @@
         font-weight: 500;
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 13px;
+            font-size: 16px;
+            margin-top: 0;
         }
     }
 
@@ -315,6 +351,7 @@
             transform: none;
             text-align: center;
             width: 100%;
+            display: none;
         }
 
         img {

@@ -16,7 +16,14 @@
         transform: translate(-50%, -50%);
         width: 100%;
         height: 100%;
+        min-width: 1280px; // Prevent overlap on narrow width
+        min-height: 800px; // Prevent overlap on short height
         z-index: 0;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            min-width: 100%;
+            min-height: 100%;
+        }
 
         .mv__base-bg {
             position: absolute;
@@ -41,59 +48,99 @@
 
         &--01 {
             top: 0;
-            left: -4%;
-            width: 33%; // Increased for overlap
+            left: -6%;
+            width: 26%; // Reduced from 33%
             // max-width: 514px; // Removed to allow scaling
             animation-name: slideInTopLeft;
             animation-delay: 0.2s;
+
+            @media screen and (max-width: $breakpoint-sp) {
+                width: 60%;
+                left: -10%;
+                top: -5%;
+            }
         }
 
         &--03 {
             bottom: 0;
             left: 0;
-            width: 45%; // Increased for overlap
+            width: 36%; // Reduced from 45%
             // max-width: 830px; // Removed to allow scaling
             animation-name: slideInBottomLeft;
             animation-delay: 0.4s;
+
+            @media screen and (max-width: $breakpoint-sp) {
+                width: 128%;
+                left: 0%;
+                max-width: 200%;
+                bottom: 5%;
+            }
         }
 
         &--04 {
-            top: -40px;
-            right: -60px;
-            width: 32.4%;
-            max-width: 565px;
+            top: 266px;
+            right: -10%;
+            width: 10%; // Reduced from 32.4%
+            max-width: 450px;
             animation-name: slideInTopRight;
             animation-delay: 0.6s;
+
+            @media screen and (max-width: $breakpoint-sp) {
+                width: 50%;
+                right: -10%;
+                top: -5%;
+                max-width: none;
+            }
         }
 
         &--05 {
             top: 50%;
             right: -30px;
             transform: translateY(-50%);
-            width: 8.5%;
-            max-width: 164px;
+            width: 7%; // Reduced from 8.5%
+            max-width: 130px;
             animation-name: slideInRight;
             animation-delay: 0.8s;
+
+            @media screen and (max-width: $breakpoint-sp) {
+                // Secondary decoration, maybe hide or position freely
+                width: 68px;
+                right: 0;
+                top: 50%;
+            }
         }
 
         &--02 {
             bottom: 13%;
             left: 6%; // Slightly offset to separate/layer
-            width: 25.7%; // 416px / 1920px
-            max-width: 416px;
+            width: 20%; // Reduced from 25.7%
+            max-width: 330px;
             z-index: 2; // Ensure it's above 03
             animation-name: slideInBottomLeft;
             animation-delay: 0.5s;
+
+            @media screen and (max-width: $breakpoint-sp) {
+                // Adjust position to not overlap text
+                width: 205px;
+                left: 0;
+                bottom: 7%;
+            }
         }
 
         &--06 {
             bottom: 10%;
             right: 0;
-            width: 30.2%; // 580px / 1920px
-            max-width: 580px;
+            width: 24%; // Reduced from 30.2%
+            max-width: 460px;
             animation-name: slideInBottomRight;
             animation-delay: 0.9s;
             // Overlap with 05 (Right Center) will happen naturally as this is Bottom Right
+
+            @media screen and (max-width: $breakpoint-sp) {
+                width: 265px;
+                right: -5%;
+                bottom: 25%;
+            }
         }
     }
 
@@ -125,20 +172,7 @@
         }
 
         @media screen and (max-width: $breakpoint-sp) {
-            width: 260px;
-            height: auto;
-            top: auto;
-            bottom: 20px;
-            right: auto;
-            left: 50%;
-            margin-left: -130px;
-            padding: 20px 10px;
-            background-size: 100% 100%;
-
-            &-list {
-                font-size: 12px;
-                padding-left: 10px;
-            }
+            display: none; // Hide on SP as per design image
         }
     }
 
@@ -214,10 +248,14 @@
         justify-content: center;
         align-items: center;
         transform: translateY(-60px); // Shift up by 60px as requested
+
+        @media screen and (max-width: $breakpoint-sp) {
+            transform: translateY(-140px); // Adjust for SP
+        }
     }
 
     &__tagline {
-        font-size: 32px;
+        font-size: clamp(20px, 2.5vw, 32px); // Fluid typography
         font-weight: 500;
         text-align: center;
         letter-spacing: 0.1em;
@@ -225,16 +263,18 @@
         line-height: 1.8;
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 20px; // Adjusted proportionally
-            margin-bottom: 20px;
+            font-size: 16px; // Matching design small text
+            margin-bottom: 15px;
+            white-space: nowrap; // Ensure single lines if possible or broken naturally
         }
     }
 
     &__logo {
-        width: 44%;
-        max-width: 670px; // Adjust based on logo size preference
+        width: 35%; // Reduced from 44%
+        max-width: 500px; // Reduced from 670px
 
         @media screen and (max-width: $breakpoint-sp) {
+            width: 265px; // Larger relative on SP
             max-width: 250px;
         }
 
@@ -258,12 +298,49 @@
         @media screen and (max-width: $breakpoint-sp) {
             top: 20px;
             left: 20px;
+            filter: brightness(0) invert(1); // Make white
 
             img {
-                width: 100px;
+                width: 80px;
             }
         }
+    }
+}
 
+// Relocated Intro for SP
+.mv__intro-sp {
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 0px; // Spacing after about
+    display: flex;
+    justify-content: center;
+    margin-top: -80px;
 
+    &-inner {
+        width: 335px;
+        height: 207px; // Aspect ratio of mv-intro-bg.png ~ 1.87 (387/207) or similar? 
+        // Original PC: 387x207. 387/207 = ~1.87
+        // 280 / ? = 1.87 => ? = 150
+        background: url(../images/mv-intro-bg.png) no-repeat center center / contain;
+        display: flex;
+        justify-content: center;
+        margin: 0px auto 0 auto;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+        padding-bottom: 6px; // Adjust for visual centering
+    }
+
+    .mv__intro-list {
+        font-family: "Kiwi Maru", serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.6;
+        letter-spacing: -0.05em;
+        color: #333;
+        list-style: none;
+        padding: 0;
+        margin-top: 30px;
+        margin-right: 10px; // Similar offset to PC if needed
     }
 }

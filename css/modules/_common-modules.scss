@@ -33,6 +33,14 @@
     @media screen and (max-width: $breakpoint-sp) {
         font-size: 32px;
         margin: 0 auto 30px;
+        flex-direction: column; // Stack vertically
+        align-items: center; // Center align
+        gap: 10px; // Reduce gap slightly
+        width: 80%; // User request
+
+        &::after {
+            background-image: url(../images/c-title-line--sp.png); // User request
+        }
 
         &__logo {
             width: 150px; // Slightly smaller on mobile? 206px might be too big for 32px text?

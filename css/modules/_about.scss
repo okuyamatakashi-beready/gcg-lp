@@ -9,6 +9,13 @@
     padding: 140px 0 140px; // Increased top padding to account for overlap and wave height
     width: 100%;
 
+    @media screen and (max-width: $breakpoint-sp) {
+        background-image: url(../images/about_bg--sp.png);
+        // If the wave shape is different or simpler, we might adjust padding/margin too, but keeping it simple first.
+        padding: 60px 0; // Standardized SP padding
+        margin-top: -70px; // Less overlap
+    }
+
     &__inner {
         max-width: 1000px;
         margin: 0 auto;

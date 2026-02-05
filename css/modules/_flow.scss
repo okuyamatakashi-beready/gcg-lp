@@ -57,10 +57,11 @@
         }
 
         @media screen and (max-width: $breakpoint-sp) {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 375/500; // Approx aspect ratio for SP bg if needed, or just auto
-            padding: 80px 30px 150px;
+            width: 120vw;
+            margin-left: calc(50% - 60vw);
+            margin-right: calc(50% - 60vw);
+            height: 567px;
+            padding: 60px 40px 150px;
         }
     }
 
@@ -80,6 +81,15 @@
         font-weight: 500;
         font-size: 32px;
 
+        @media screen and (max-width: $breakpoint-sp) {
+            top: -20px;
+            display: none;
+            left: 10px;
+            width: 90px;
+            height: 90px;
+            font-size: 24px;
+        }
+
         &--02 {
             background-image: url(../images/flow__badge02.png);
             left: auto;
@@ -98,8 +108,12 @@
         font-size: 32px;
         font-weight: bold;
         letter-spacing: 0.1em;
-        margin-bottom: 0;
         margin-top: 0;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
     }
 
     &__line {
@@ -111,12 +125,22 @@
             width: 100%;
             height: auto;
         }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
     }
 
     &__sub-title {
         font-size: 28px;
         font-weight: 500;
         margin-bottom: 0px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 24px;
+            margin-top: 0;
+        }
 
         &--01 {
             color: #3b429d;
@@ -135,6 +159,11 @@
         line-height: 1.8;
         text-align: center;
         display: inline-block; // For justify text in centered block
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 16px;
+            text-align: center; // Design looks left aligned or justify-left
+        }
     }
 
     &__photo {
@@ -154,6 +183,13 @@
             height: 100%;
             object-fit: cover;
         }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 240px;
+            height: 240px;
+            bottom: -120px;
+            z-index: 2;
+        }
     }
 
     &__deco {
@@ -164,10 +200,11 @@
         z-index: 1;
 
         @media screen and (max-width: $breakpoint-sp) {
-            top: 50%;
-            bottom: auto;
-            right: 0;
-            width: 150px;
+            bottom: -100px;
+            right: 20px;
+            width: 180px;
+            z-index: 3;
+            transform: rotate(5deg); // Small slant based on design
         }
     }
 }

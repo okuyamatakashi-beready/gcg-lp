@@ -1,4 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Hamburger Menu
+    const hamburger = document.querySelector('.js-hamburger');
+    const nav = document.querySelector('.header__nav');
+    const closeBtn = document.querySelector('.js-menu-close');
+    const navLinks = document.querySelectorAll('.header__item a');
+
+    if (hamburger && nav) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                hamburger.classList.remove('is-active');
+                nav.classList.remove('is-active');
+            });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('is-active');
+                nav.classList.remove('is-active');
+            });
+        });
+    }
+
     // MV Animation (if any JS needed, though mostly CSS)
 
     // Scroll Animation (Fade In)
@@ -123,9 +150,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+
     // Sticky Header
     const header = document.querySelector('.header');
     const aboutSection = document.querySelector('#about');
+
 
     if (header && aboutSection) {
         window.addEventListener('scroll', () => {

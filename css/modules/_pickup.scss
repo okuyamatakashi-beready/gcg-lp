@@ -36,10 +36,10 @@
     }
 
     .swiper-slide {
-        width: 80%;
-        /* SP default */
+        width: 62.4%;
+        /* 234px / 375px = 62.4% */
         height: auto;
-        opacity: 0.5;
+        opacity: 0; // Hidden on SP when not active
         transition: opacity 0.3s;
 
         &.swiper-slide-active {
@@ -55,7 +55,11 @@
 
         @media screen and (min-width: 769px) {
             width: 600px;
-            /* User request: Slide itself 600px */
+            opacity: 0.5; // Visible on PC when not active
+
+            &.swiper-slide-active {
+                opacity: 1;
+            }
         }
     }
 
@@ -76,18 +80,25 @@
         }
 
         @media screen and (max-width: $breakpoint-sp) {
-            width: 30px;
-            height: 30px;
-            display: none;
-            /* Often hidden on SP carousel */
+            width: 40px; // Adjusted size for SP
+            height: 40px;
+            display: block; // Show on SP
         }
     }
 
     &__prev {
         left: -70px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            left: 2%; // Inside viewport
+        }
     }
 
     &__next {
         right: -70px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            right: 2%; // Inside viewport
+        }
     }
 }

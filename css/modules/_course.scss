@@ -9,7 +9,7 @@
     margin-top: -60px; // Overlap for wave effect
 
     @media screen and (max-width: $breakpoint-sp) {
-        padding: 60px 0;
+        padding: 120px 0;
     }
 
     &__inner {
@@ -23,10 +23,21 @@
         }
     }
 
+    .c-title {
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+            margin-bottom: 0px;
+        }
+    }
+
     &__title-wrap {
         position: relative;
         width: fit-content;
         margin: 0 auto 60px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            margin: 0 auto 20px;
+        }
     }
 
     &__title-deco {
@@ -44,7 +55,7 @@
             transform: none;
             width: 120px;
             margin: 10px auto 0;
-            display: block;
+            display: none;
         }
     }
 
@@ -162,7 +173,7 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             margin-top: 30px;
-            font-size: 11px; // Smaller on mobile
+            font-size: 12px; // Smaller on mobile
             text-align: left;
         }
     }

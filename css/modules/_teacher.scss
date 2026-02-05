@@ -9,7 +9,7 @@
     margin-top: -60px;
 
     @media screen and (max-width: $breakpoint-sp) {
-        padding: 60px 0;
+        padding: 60px 0 260px; // Extra padding for absolute photo
     }
 
     &__inner {
@@ -20,6 +20,21 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             padding: 0 20px;
+        }
+    }
+
+    // Override generic title style for SP
+    .c-title {
+        @media screen and (max-width: $breakpoint-sp) {
+            flex-direction: row;
+            align-items: center;
+            width: fit-content;
+        }
+
+        &__logo {
+            @media screen and (max-width: $breakpoint-sp) {
+                width: 120px;
+            }
         }
     }
 
@@ -38,6 +53,7 @@
             display: flex;
             flex-direction: column;
             gap: 40px;
+            align-items: center;
 
             .teacher__block--01 {
                 order: 1;
@@ -59,9 +75,6 @@
                 order: 5;
             }
 
-            .teacher__photo {
-                order: 6;
-            }
         }
     }
 
@@ -107,6 +120,12 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             font-size: 14px;
+            text-align: center;
+
+            // Specifically for the last message/block
+            .teacher__block--03 & {
+                font-size: 16px;
+            }
         }
     }
 
@@ -173,16 +192,22 @@
         }
 
         @media screen and (max-width: $breakpoint-sp) {
-            position: relative;
+            position: absolute;
             top: auto;
-            right: auto;
-            width: 100%;
-            grid-area: photo; // Restore grid flow
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            margin-left: 0;
+            grid-area: auto;
             text-align: center;
+            line-height: 0;
+            z-index: 5; // Ensure it stays on top
 
             img {
                 max-width: 100%;
                 width: 100%;
+                border-radius: 0; // Remove radius for full-width bottom photo
             }
         }
     }
@@ -211,11 +236,11 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             // Mobile adjustments? User didn't specify Title mobile styles, assuming responsive scale
-            width: 300px;
-            font-size: 20px;
-            background-size: contain;
+            width: 225px;
+            font-size: 24px;
             background-position: center;
-            height: 90px;
+            height: 163px;
+            line-height: 1.4;
         }
     }
 
@@ -230,8 +255,14 @@
             background-image: url(../images/teacher-textbg02.png); // One big bg
             background-repeat: no-repeat;
             background-size: 100% 100%;
-            padding: 40px 20px;
+            padding: 50px 30px 40px;
             align-items: center;
+            margin-top: -40px;
+
+            // Force full viewport width
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
         }
     }
 
@@ -278,24 +309,28 @@
             width: 100%;
             height: auto;
             min-height: auto;
-            padding: 20px 0;
-            font-size: 18px;
-            background-image: none !important; // Reset individual bgs
+            padding: 10px 0;
+            font-size: 20px;
+            background-image: none !important;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            flex-direction: column;
 
             &+& {
-                margin-top: 20px;
+                margin-top: 8px;
                 position: relative;
 
                 &::before {
                     content: "";
                     display: block;
-                    width: 100px;
-                    height: 15px; // divider size
-                    background-image: url(../images/vision_underline.png); // Separator
+                    width: 240px; // Match line length in design
+                    height: 15px;
+                    background-image: url(../images/teacher_underline--sp.png);
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center;
-                    margin: 0 auto 20px;
+                    margin: 0 auto 8px;
                 }
             }
         }

@@ -15,6 +15,14 @@
         top: 0;
     }
 
+    @media screen and (max-width: $breakpoint-sp) {
+        top: 0 !important; // Always visible on SP
+        background: none; // Remove background image on SP (assuming transparent)
+        height: auto; // Let content dictate height (or 0)
+        padding-bottom: 0;
+        transition: none; // Disable slide transition on SP
+    }
+
     &__inner {
         max-width: $layout-width-inner;
         margin: 0 auto;
@@ -57,19 +65,38 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background-color: rgba(255, 255, 255, 0.98);
+            background-color: rgba(128, 128, 128, 0.95); // Gray overlay
             display: flex;
+            flex-direction: column; // Stack box and close button
             align-items: center;
             justify-content: center;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
-            z-index: 900;
+            z-index: 3000; // Increased to be above float-btn (2000)
 
             &.is-active {
                 opacity: 1;
                 visibility: visible;
             }
+        }
+    }
+
+    &__nav-box {
+        display: none; // Hidden on PC
+
+        @media screen and (max-width: $breakpoint-sp) {
+            display: block;
+            background: url(../images/header__nav-bg.png) no-repeat center center;
+            background-size: 100% 100%; // Fit to box
+            width: 86%;
+            max-width: 320px;
+            padding: 50px 30px; // Increased padding slightly for safe area inside image
+            border-radius: 0; // Reset border-radius as image likely handles corners or is a paper texture
+            box-shadow: none; // Remove shadow if image has it, or keep? Assuming image is the "box". 
+            // Often these images have their own shadow or specific shape. I'll remove CSS shadow to be safe.
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1)); // Apply shadow to the image shape itself
+            position: relative;
         }
     }
 
@@ -84,22 +111,22 @@
         @media screen and (max-width: $breakpoint-sp) {
             flex-direction: column;
             text-align: center;
-            gap: 30px;
+            gap: 20px;
+            width: 100%;
         }
     }
 
     &__item {
         font-size: 16px;
-        font-weight: 500;
+        font-weight: 700;
         letter-spacing: 0.05em;
         white-space: nowrap;
-        /* Prevent wrapping */
 
         a {
             color: #333;
-            /* Ensure text is visible on background */
             text-decoration: none;
             transition: opacity 0.3s;
+            display: block; // Make clickable area larger
 
             &:hover {
                 opacity: 0.7;
@@ -107,7 +134,63 @@
         }
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 20px;
+            font-size: 15px;
+            width: 100%;
+            padding-bottom: 15px;
+            position: relative;
+
+            // Separator line
+            &::after {
+                content: "";
+                display: block;
+                width: 80%;
+                height: 1px;
+                background-color: #333;
+                margin: 15px auto 0;
+                // Make it look scratchy/handwritten if using image later, for now solid
+                opacity: 0.3;
+            }
+
+            &:last-child::after {
+                display: none; // No line under last item
+            }
+        }
+    }
+
+    &__menu-close {
+        display: none;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 30px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+
+            &-icon {
+                font-size: 20px;
+                background: #fff;
+                color: #888; // Inverse for the icon circle if needed, or just text?
+                // Design shows a white circle with X maybe? Or just text.
+                // Assuming simple text "x CLOSE" for now based on description.
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 1;
+                padding-bottom: 2px; // optical adjustment
+            }
+
+            &:hover {
+                opacity: 0.8;
+            }
         }
     }
 
@@ -118,11 +201,13 @@
             display: block;
             width: 30px;
             height: 24px;
-            position: relative;
+            position: fixed; // Fixed to viewport
+            top: 20px; // User requested top-left
+            left: 20px;
             background: none;
             border: none;
             cursor: pointer;
-            z-index: 1000; // Above nav
+            z-index: 3001; // Increased to be above nav (3000)
 
             span {
                 position: absolute;
@@ -146,20 +231,30 @@
                 }
             }
 
+            // Design shows hamburger icon persisting in open state (top left)
+            // But usually it changes color to white against the gray overlay
             &.is-active {
                 span {
+                    background-color: #fff;
+                    // Disable rotation if we want to keep it as hamburger
+                    // based on the user image showing hamburger icon while menu is open
+                    // Or maybe it does rotate? The image is a bit ambiguous, but typically overlays have X.
+                    // BUT user image HAS a separate close button.
+                    // So I will KEEP the hamburger shape but make it white.
+
+                    // Resetting transform to default (no X)
                     &:nth-child(1) {
-                        top: 50%;
-                        transform: translateY(-50%) rotate(45deg);
+                        top: 0;
+                        transform: none;
                     }
 
                     &:nth-child(2) {
-                        opacity: 0;
+                        opacity: 1;
                     }
 
                     &:nth-child(3) {
-                        top: 50%;
-                        transform: translateY(-50%) rotate(-45deg);
+                        bottom: 0;
+                        transform: none;
                     }
                 }
             }

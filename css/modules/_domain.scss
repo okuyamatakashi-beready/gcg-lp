@@ -7,9 +7,13 @@
     @media screen and (max-width: $breakpoint-sp) {
         background-image: url(../images/domain-bg--sp.png);
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 120%;
+        background-color: transparent;
+        margin-top: -100px;
+        position: relative;
+        z-index: 10;
         background-position: top center;
-        padding: 80px 0 100px;
+        padding: 120px 0 0 0; // Standardized SP padding
     }
 
     &__inner {
@@ -19,7 +23,7 @@
         position: relative;
 
         @media screen and (max-width: $breakpoint-sp) {
-            padding: 0 20px;
+            padding: 0;
         }
     }
 
@@ -54,6 +58,7 @@
             top: auto;
             right: auto;
             width: 80%;
+            display: none;
             margin: -20px auto 0;
         }
 
@@ -68,6 +73,10 @@
         margin-bottom: 100px;
         position: relative; // Ensure z-index works if needed
         z-index: 2;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            margin-bottom: 40px;
+        }
     }
 
     &__desc {
@@ -76,8 +85,8 @@
         font-weight: 500;
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 14px;
-            text-align: left;
+            font-size: 20px;
+            text-align: center;
         }
     }
 
@@ -96,6 +105,7 @@
         @media screen and (max-width: $breakpoint-sp) {
             position: relative;
             top: auto;
+            display: none;
             left: auto;
             text-align: center;
             margin-bottom: 40px;
@@ -112,8 +122,24 @@
         gap: 20px;
 
         @media screen and (max-width: $breakpoint-sp) {
-            flex-direction: column;
-            gap: 40px;
+            display: none;
+        }
+    }
+
+    &__sp-image {
+        width: 100%;
+        margin: 0 auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            // ensure it's displayed if u-sp-only handles visibility, but here we can ensure layout
+            display: block;
+            width: 100%;
         }
     }
 
@@ -126,6 +152,10 @@
             width: 100%;
             display: flex;
             justify-content: center; // Center the item if it has max-width
+
+            &:nth-child(n+2) {
+                margin-top: -180px;
+            }
         }
     }
 
@@ -140,14 +170,16 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             width: 100%;
-            // Check if user wants full width of screen? 
-            // "横幅いっぱいで表示されるように調整"
-            // Usually means width: 100% of container or screen?
-            // Container has padding 20px. 
-            // To be full screen width, we need negative margin on container or item.
-            // But usually full width of content area is fine.
-            // I'll keep it 100% of container for now.
-            margin-bottom: 0; // Text is absolute
+            margin-bottom: 0; // Text is absolute/hidden
+            overflow: hidden;
+
+            img {
+                width: 115%; // Wider than container
+                max-width: 200%;
+                margin-left: 50%;
+                transform: translateX(-50%);
+                display: block;
+            }
         }
     }
 
@@ -160,15 +192,7 @@
         color: #333;
 
         @media screen and (max-width: $breakpoint-sp) {
-            position: absolute;
-            top: 50%;
-            left: 50%; // Or right? User said "Inside shape".
-            // Shape layout depends on image.
-            // Assuming center or specific position per item?
-            // "シェイプの中に４つの項目のタイトルを表示する"
-            // Images are shapes. Text should be centered?
-            transform: translate(-50%, -50%);
-            width: 100%;
+            display: none;
         }
     }
 

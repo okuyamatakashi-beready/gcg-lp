@@ -30,15 +30,21 @@
                 <a href="#"><img src="./images/gakken-logo.png" alt="Gakken" width="120" height="40"></a>
             </h1>
             <nav class="header__nav">
-                <ul class="header__list">
-                    <li class="header__item"><a href="#vision">教室のビジョン</a></li>
-                    <li class="header__item"><a href="#feature">特長</a></li>
-                    <li class="header__item"><a href="#teacher">講師について</a></li>
-                    <li class="header__item"><a href="#flow">授業の流れ</a></li>
-                    <li class="header__item"><a href="#course">コースのご案内</a></li>
-                    <li class="header__item"><a href="#qa">よくある質問</a></li>
-                    <li class="header__item"><a href="#voice">保護者の声</a></li>
-                </ul>
+                <div class="header__nav-box">
+                    <ul class="header__list">
+                        <li class="header__item"><a href="#vision">教室のビジョン</a></li>
+                        <li class="header__item"><a href="#feature">特長</a></li>
+                        <li class="header__item"><a href="#teacher">講師について</a></li>
+                        <li class="header__item"><a href="#flow">授業の流れ</a></li>
+                        <li class="header__item"><a href="#course">コースのご案内</a></li>
+                        <li class="header__item"><a href="#qa">よくある質問</a></li>
+                        <li class="header__item"><a href="#voice">保護者の声</a></li>
+                    </ul>
+                </div>
+                <!-- Close Button for SP -->
+                <div class="header__menu-close js-menu-close">
+                    <span class="header__menu-close-icon">×</span> CLOSE
+                </div>
             </nav>
             <button class="header__hamburger js-hamburger" aria-label="Menu">
                 <span></span>
@@ -64,7 +70,7 @@
                 <img src="./images/mv-img05.png" alt="" class="mv__img mv__img--05" role="presentation">
                 <img src="./images/mv-img06.png" alt="" class="mv__img mv__img--06" role="presentation">
 
-                <div class="mv__intro">
+                <div class="mv__intro u-pc-only">
                     <ul class="mv__intro-list">
                         <li>・対象：0歳（5ヶ月）〜小学校高学年</li>
                         <li>・場所：有明ガーデン4F</li>
@@ -92,9 +98,9 @@
                 </p>
                 <p class="about__text js-fade u-delay-100">
                     Gakken Creative Garden (GCG) は、<br>
-                    小学校受験で問われるレベルの思考力を育みながら、<br>
-                    受験のために型にはめるのではなく、子ども自身の興味や違和感を出発点に、<br>
-                    多様な視点と出会い、思考と創造を深めていく学びの場です。
+                    小学校受験で問われるレベルの<br class="u-sp-only">思考力を育みながら、<br>
+                    受験のために型にはめるのではなく、<br class="u-sp-only">子ども自身の興味や違和感を出発点に、<br>
+                    多様な視点と出会い、<br class="u-sp-only">思考と創造を深めていく学びの場です。
                 </p>
                 <p class="about__text js-fade u-delay-200">
                     考えることを、急がせない。<br>
@@ -102,6 +108,17 @@
                 </p>
             </div>
         </section>
+
+        <!-- MV Intro for SP (Relocated) -->
+        <div class="mv__intro-sp u-sp-only">
+            <div class="mv__intro-sp-inner">
+                <ul class="mv__intro-list">
+                    <li>・対象：0歳（5ヶ月）〜小学校高学年</li>
+                    <li>・場所：有明ガーデン4F</li>
+                    <li>・少人数制クラス</li>
+                </ul>
+            </div>
+        </div>
 
         <!-- Pickup Section -->
         <section id="pickup" class="section pickup">
@@ -152,8 +169,11 @@
                             <img src="./images/vision-img.png" alt="Children viewing through magnifier">
                         </div>
                         <div class="vision__text js-fade u-delay-200">
-                            <p>AIが答えを出す時代に、<br>子どもたちに必要なのは「正解を選ぶ力」ではなく、<br>「問いを生み出す力」。</p>
-                            <p>GCGは、知育（小学校受験レベルの思考力）・<br>創造・自然・テクノロジーを分けずに循環させながら、<br>0→1の創造性と、1→100の思考力を<br>幼児期から育てていきます。
+                            <p>AIが答えを出す時代に、<br class="u-sp-only"><br>子どもたちに必要なのは<br class="u-sp-only">「正解を選ぶ力」ではなく、<br
+                                    class="u-sp-only"><br>「問いを生み出す力」。</p>
+                            <p>GCGは、<br class="u-sp-only">知育（小学校受験レベルの思考力）・<br class="u-sp-only"><br>創造・自然・テクノロジーを<br
+                                    class="u-sp-only">分けずに循環させながら、<br class="u-sp-only">0→1の創造性と、1→100の思考力を<br
+                                    class="u-sp-only">幼児期から育てていきます。
                             </p>
                         </div>
                     </div>
@@ -163,9 +183,10 @@
             <div class="vision__inner">
                 <div class="vision__row vision__row--2">
                     <div class="vision__text vision__text--green">
-                        <h3 class="vision__sub-title js-fade">「正解」を教える教育から「問い」を生み出す教育へ。</h3>
+                        <h3 class="vision__sub-title js-fade">「正解」を教える教育から<br class="u-sp-only">「問い」を生み出す教育へ。</h3>
                         <div class="vision__desc">
-                            <p>AIが瞬時に答えを出す時代。<br>お子様が大人になる20年後、知識の量そのものに価値は<br class="u-sp-none">なくなっているかもしれません。</p>
+                            <p>AIが瞬時に答えを出す時代。<br><br class="u-sp-only">お子様が大人になる20年後、知識の量そのものに価値は<br
+                                    class="u-sp-none">なくなっているかもしれません。</p>
                             <p>今、私たちが子どもたちに手渡せる最高のギフト。<br>それは、自らを感じ、考え、新しい価値を創造する「人間だけの力」です。<br>既存の枠組みに当てはめるのではなく、内側にある100の可能性を解き放つこと。<br>10年後、20年後の世界を、凛として歩むための知性と感性を、今ここで。
                             </p>
                         </div>
@@ -184,7 +205,10 @@
         <section id="difference" class="section difference">
             <div class="difference__inner">
                 <h2 class="c-title js-fade">
-                    <img src="./images/logo.png" alt="GCG" class="c-title__logo"> と他教室との違い
+                    <span class="c-title__line-1">
+                        <img src="./images/logo.png" alt="GCG" class="c-title__logo"> と
+                    </span>
+                    <span class="c-title__line-2">他教室との違い</span>
                 </h2>
                 <div class="difference__content">
                     <div class="difference__col difference__col--general js-fade">
@@ -196,6 +220,8 @@
                             <li>・評価軸が外在</li>
                         </ul>
                     </div>
+
+                    <p class="difference__connector u-sp-only">ですが、</p>
 
                     <div class="difference__arrow js-fade u-delay-100">
                         <img src="./images/difference-arrow.png" alt="To GCG">
@@ -237,11 +263,14 @@
                             <p class="feature__desc">
                                 GCGのレッスンは、知育から<br>創造へと流れる構成です。<br>考えたことを、感じ、表してみる。<br>その循環が、学びを深めていきます。
                             </p>
+                            <div class="feature__illust feature__illust--01 js-fade u-delay-100">
+                                <img src="./images/feature-illust01.png" alt="" role="presentation">
+                            </div>
+                            <!-- SP Decoration -->
+                            <div class="feature__illust feature__illust--bulb-sp">
+                                <img src="./images/feature-illust02.png" alt="" role="presentation">
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="feature__illust feature__illust--01 js-fade u-delay-100">
-                        <img src="./images/feature-illust01.png" alt="" role="presentation">
                     </div>
 
                     <div class="feature__item feature__item--02 js-fade u-delay-200">
@@ -289,7 +318,7 @@
                 <div class="domain__intro js-fade u-delay-100">
                     <p class="domain__desc">
                         GCGは4領域の統合設計。<br>
-                        単独ではなく掛け合わせることで「立体的成長」を実現します。
+                        単独ではなく掛け合わせることで<br class="u-sp-only">「立体的成長」を実現します。
                     </p>
                 </div>
 
@@ -350,6 +379,11 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- SP Only Image -->
+                <div class="domain__sp-image u-sp-only">
+                    <img src="./images/domain-item--sp.png" alt="4 domains" role="presentation">
+                </div>
             </div>
         </section>
 
@@ -359,7 +393,7 @@
                 <h2 class="c-title target__title js-fade">
                     <img src="./images/logo-white.png" alt="GCG" class="c-title__logo"> で育む5つの力
                 </h2>
-                <p class="target__intro js-fade">GCGは「受験対策だけの教室」ではありません。</p>
+                <p class="target__intro js-fade">GCGは「受験対策だけの教室」<br class="u-sp-only">ではありません。</p>
 
                 <div class="target__list">
                     <!-- Item 1 -->
@@ -465,7 +499,9 @@
                     <!-- Text Block 1 -->
                     <div class="teacher__block teacher__block--01 js-fade u-delay-100">
                         <p class="teacher__text">
-                            GCG講師は、長年にわたり小学校受験指導に携わり、<br>多くの合格実績を積み重ねてきたプロフェッショナルです。<br>子どもの発達段階や受験で求められる力を熟知しているからこそ、<br>今、何を大切にすべきかを見極めた関わりができます。
+                            GCG講師は、長年にわたり<br class="u-sp-only">小学校受験指導に携わり、<br>多くの合格実績を<br
+                                class="u-sp-only">積み重ねてきたプロフェッショナルです。<br>子どもの発達段階や受験で<br
+                                class="u-sp-only">求められる力を熟知しているからこそ、<br>今、何を大切にすべきかを<br class="u-sp-only">見極めた関わりができます。
                         </p>
                     </div>
 
@@ -480,26 +516,28 @@
                     <!-- Text Block 2 -->
                     <div class="teacher__block teacher__block--02 js-fade">
                         <p class="teacher__text">
-                            ただし、私たちが目指しているのは「合格する子」を育てることそのものではありません。<br>
-                            受験をゴールにするのではなく、その先の学びや人生につながる<br>思考力・感性・主体性を育てることを何よりも大切にしています。<br>
-                            活動の中で講師が重視しているのは、知識を一方的に教え込むことではなく、<br>子ども自身の「気づき」や「問い」に寄り添い、ともに考える姿勢です。
+                            ただし、私たちが目指しているのは<br class="u-sp-only">「合格する子」を育てること<br class="u-sp-only">そのものではありません。<br>
+                            受験をゴールにするのではなく、<br class="u-sp-only">その先の学びや人生につながる<br>思考力・感性・主体性を育てることを<br
+                                class="u-sp-only">何よりも大切にしています。<br>
+                            活動の中で講師が重視しているのは、<br class="u-sp-only">知識を一方的に教え込むことではなく、<br>子ども自身の「気づき」や「問い」に寄り添い、<br
+                                class="u-sp-only">ともに考える姿勢です。
                         </p>
                     </div>
 
                     <!-- Values Section (Middle on SP, Bottom on PC) -->
                     <div class="teacher__values js-fade">
                         <div class="teacher__values-title-wrap">
-                            <h3 class="teacher__values-title">講師が大切にしていること</h3>
+                            <h3 class="teacher__values-title">講師が大切に<br class="u-sp-only">していること</h3>
                         </div>
                         <div class="teacher__values-list">
                             <div class="teacher__value-item teacher__value-item--01 js-fade u-delay-100">
-                                子どもの発想を<br>否定せず、<br>まず受け止めること
+                                子どもの発想を<br class="u-pc-only">否定せず、<br>まず受け止めること
                             </div>
                             <div class="teacher__value-item teacher__value-item--02 js-fade u-delay-200">
-                                答えを急がせず、<br>「考える時間」<br>を守ること
+                                答えを急がせず、<br>「考える時間」<br class="u-pc-only">を守ること
                             </div>
                             <div class="teacher__value-item teacher__value-item--03 js-fade u-delay-300">
-                                一人ひとりの<br>違いを尊重し、<br>学びを深めること
+                                一人ひとりの<br class="u-pc-only">違いを尊重し、<br>学びを深めること
                             </div>
                         </div>
                     </div>
@@ -507,10 +545,10 @@
                     <!-- Text Block 3 -->
                     <div class="teacher__block teacher__block--03">
                         <p class="teacher__text">
-                            答えを先に示すのではなく、考えるプロセスを支え、深めていく――<br>
+                            答えを先に示すのではなく、<br class="u-sp-only">考えるプロセスを支え、深めていく――<br>
                             講師は、子どもたちの探求に並走する存在です。<br>
                             受験指導で培ってきた確かな専門性と、<br>子どもとフラットに向き合う探究的なスタンス。<br>その両立こそが、GCGの講師の大きな特長です。<br>
-                            まずは体験会で、<br>講師と子どもたちが対話を重ねながら学びを広げていく教室の空気を、<br>ぜひ実際に感じてみてください。
+                            まずは体験会で、<br>講師と子どもたちが対話を重ねながら<br class="u-sp-only">学びを広げていく教室の空気を、<br>ぜひ実際に感じてみてください。
                         </p>
                     </div>
 
@@ -539,7 +577,7 @@
                         </div>
                         <p class="flow__sub-title flow__sub-title--01">考える感覚を、整える時間</p>
                         <p class="flow__desc">
-                            数や形、順序にふれながら、話を聞き、考えてみます。<br>
+                            数や形、順序にふれながら、<br class="u-sp-only">話を聞き、考えてみます。<br>
                             答えを急がず、「わかる」手前の<br>
                             気づきを大切にします。
                         </p>

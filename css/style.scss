@@ -26,6 +26,7 @@ body {
     color: $font-color-base;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden; // Prevent horizontal scroll globally
 }
 
 img {

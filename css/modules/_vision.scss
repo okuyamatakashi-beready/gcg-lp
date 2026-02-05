@@ -9,6 +9,13 @@
         background-position: center;
         padding: 150px 0 180px;
         width: 100%;
+        position: relative; // Added for positioning context
+
+        @media screen and (max-width: $breakpoint-sp) {
+            background-image: url(../images/vision-bg--sp.png);
+            padding: 60px 0;
+            margin-bottom: 260px;
+        }
     }
 
     &__inner {
@@ -30,6 +37,7 @@
         @media screen and (max-width: $breakpoint-sp) {
             flex-direction: column;
             gap: 40px;
+            width: 100%;
         }
     }
 
@@ -38,6 +46,24 @@
         max-width: 768px;
         flex-shrink: 0;
         margin-left: -5%; // Reduced stick out to fit
+
+        @media screen and (max-width: $breakpoint-sp) {
+            position: absolute;
+            bottom: -30%; // Stick out
+            right: 15%; // Align right or left? Assuming right for balance or left? 
+            // Usually if it was left before (-5%), maybe left?
+            // "最下層" -> Bottom layer.
+            // Let's try right: 0; width: 80%? or keeping 54%?
+            // I'll set width: 60%; right: 0; z-index: 10;
+            // And remove margin-left.
+            width: 100%; // Make it visible
+            max-width: none;
+            margin-left: 0;
+            z-index: 10; // Ensure visible? or -1? "最下層" might mean z-index -1.
+            // But if it's an image content, usually it should be seen.
+            // "visionの最下層" -> "Bottom of Vision section".
+            // I'll play safe with z-index positive but below modal navigations (which are 2000+).
+        }
     }
 
 
@@ -59,6 +85,7 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             font-size: 18px;
+            width: 100%;
             text-align: center; // Center text on mobile often looks better, or keep left if strict
 
             br {
@@ -79,6 +106,7 @@
             flex-direction: column-reverse;
             margin-top: 80px;
             align-items: flex-start;
+            gap: 0;
         }
     }
 
@@ -102,12 +130,18 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             font-size: 22px;
+            text-align: center;
         }
     }
 
     &__desc {
-        font-size: clamp(14px, 2vw, 20px);
+        font-size: clamp(16px, 2vw, 20px);
         line-height: 1.8;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 74.7%;
+            margin: 0 auto;
+        }
 
         p {
             margin-bottom: 24px;
@@ -126,8 +160,12 @@
         top: -7%;
 
         @media screen and (max-width: $breakpoint-sp) {
+            position: relative; // Reset absolute
+            top: auto;
+            right: auto;
             width: 100%;
             margin-left: 0;
+            margin-top: -70px;
             margin-bottom: 30px;
         }
     }
@@ -155,7 +193,17 @@
         @media screen and (max-width: $breakpoint-sp) {
             width: 100%;
             margin-top: 40px;
+            overflow: hidden;
             max-width: 100%;
+
+            // Correct nesting
+            img {
+                width: 120%;
+                max-width: 200%;
+                margin-left: 50%;
+                transform: translateX(-50%);
+                display: block;
+            }
         }
     }
 }

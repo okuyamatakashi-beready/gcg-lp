@@ -10,11 +10,11 @@
     padding: 200px 0 150px; // Increase top padding to compensate for pull-up
 
     @media screen and (max-width: $breakpoint-sp) {
-        margin-top: -80px;
-        background-image: url(../images/feature-bg--sp.png);
+        margin-top: 50px;
+        background-image: none;
         background-size: 100% auto;
         background-position: top center;
-        padding: 120px 0 100px;
+        padding: 0px 0px 60px; // Standardized SP padding
     }
 
     &__inner {
@@ -24,7 +24,8 @@
         position: relative;
 
         @media screen and (max-width: $breakpoint-sp) {
-            padding: 0 20px;
+            padding: 0px;
+
         }
     }
 
@@ -32,12 +33,21 @@
         @media screen and (max-width: $breakpoint-sp) {
             background-image: url(../images/feature-ttl-bg--sp.png);
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: cover;
             background-position: center;
-            padding: 40px 0; // Adjust based on image aspect ratio
+            padding: 80px 0; // Adjust based on image aspect ratio
             width: 100%;
             height: auto;
             // Ensure logo/text is centered
+            flex-direction: row !important; // Override default column stack
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+
+            &::after {
+                content: none;
+            }
         }
     }
 
@@ -51,8 +61,15 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             flex-direction: column;
+            background-image: url(../images/feature-bg--sp.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
             align-items: center;
-            gap: 40px; // Keep gap on mobile, or overlap vertically? 
+            padding-top: 100px;
+            margin-top: -80px;
+            padding-bottom: 120px;
+            gap: 0px; // Keep gap on mobile, or overlap vertically? 
             // Usually vertical stack has gap.
         }
     }
@@ -70,8 +87,13 @@
             max-width: 140px;
 
             @media screen and (max-width: $breakpoint-sp) {
-                position: static;
-                margin: -20px auto 20px;
+                position: absolute;
+                bottom: -20px; // Overlap bottom
+                left: -20px; // Overlap left
+                margin: 0;
+                width: 180px; // Adjust size
+                z-index: 5; // Above background
+                display: none;
             }
         }
 
@@ -84,6 +106,20 @@
 
             @media screen and (max-width: $breakpoint-sp) {
                 top: -50px;
+                display: none;
+            }
+        }
+
+        &--bulb-sp {
+            position: absolute;
+            bottom: -30px;
+            right: -10px;
+            width: 70px; // Adjust approx size
+            z-index: 5;
+            display: none;
+
+            @media screen and (max-width: $breakpoint-sp) {
+                display: none;
             }
         }
 
@@ -107,12 +143,40 @@
         position: relative;
         margin: 0 -60px; // Increased horizontal overlap
 
+        @media screen and (max-width: $breakpoint-sp) {
+            background-size: 100%;
+        }
+
         &--01 {
             background-image: url(../images/feature-text01.png);
             z-index: 1;
 
             @media screen and (max-width: $breakpoint-sp) {
                 background-image: url(../images/feature-text01--sp.png);
+                text-align: center;
+                color: #fff; // White text for title? Need to check specific elements
+                padding-bottom: 120px !important; // Make space for image? or let it overlap
+                height: 560px;
+                min-height: 400px; // Ensure size
+                margin-top: -20px;
+
+                .feature__item-content {
+                    margin-top: -30px;
+                }
+
+                .feature__item-title {
+                    color: #fff;
+                    text-align: center;
+                    display: block; // Center icon
+
+                    .feature__search-icon {
+                        margin-left: 10px;
+                    }
+                }
+
+                .feature__desc {
+                    color: #333;
+                }
             }
         }
 
@@ -122,6 +186,8 @@
 
             @media screen and (max-width: $breakpoint-sp) {
                 background-image: url(../images/feature-text02--sp.png);
+
+                .feature__item-content {}
             }
         }
 
@@ -134,14 +200,16 @@
             @media screen and (max-width: $breakpoint-sp) {
                 background-image: url(../images/feature-text03--sp.png);
                 width: 100%;
-                height: 350px;
+                height: 380px;
+
+                .feature__item-content {
+                    margin-top: -30px;
+                }
             }
         }
 
         @media screen and (max-width: $breakpoint-sp) {
             width: 100%;
-            max-width: 350px; // Mobile width
-            height: 350px; // Mobile height
             padding: 50px 30px;
             margin: 0; // Reset margin for mobile
         }
@@ -161,7 +229,8 @@
         display: inline-block; // For icon positioning
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 18px;
+            font-size: 24px;
+            margin-bottom: 0px;
         }
     }
 
@@ -178,7 +247,7 @@
         font-weight: 500;
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 13px;
+            font-size: 16px;
         }
     }
 }

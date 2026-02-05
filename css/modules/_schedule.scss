@@ -8,7 +8,7 @@
     padding: 100px 0;
 
     @media screen and (max-width: $breakpoint-sp) {
-        padding: 60px 0;
+        padding: 120px 0;
     }
 
     &__inner {
@@ -19,6 +19,15 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             padding: 0 20px;
+        }
+    }
+
+    // Override global .c-title to prevent line breaks on SP
+    .c-title {
+        @media screen and (max-width: $breakpoint-sp) {
+            flex-direction: row;
+            align-items: center;
+            width: fit-content;
         }
     }
 
@@ -37,13 +46,15 @@
         margin-left: 20px;
 
         @media screen and (max-width: $breakpoint-sp) {
-            position: relative;
-            top: auto;
+            position: absolute;
+            top: -10px;
+            right: -20px;
             left: auto;
-            transform: none;
-            width: 150px;
-            margin: 10px auto 0;
-            display: block;
+            transform: rotate(-10deg);
+            width: 130px;
+            margin: 0;
+            display: block; // Re-enable and reposition
+            opacity: 0.8;
         }
     }
 
@@ -81,8 +92,10 @@
         display: inline-block; // Center the block but align text left
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 12px;
+            font-size: 11px;
             display: block; // Full width on mobile
+            margin-top: 40px;
+            padding: 0 10px;
         }
     }
 }

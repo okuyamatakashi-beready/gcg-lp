@@ -43,3 +43,26 @@
         }
     }
 }
+
+/* Utility */
+.u-pc-only {
+    display: block;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        display: none !important;
+    }
+}
+
+.u-sp-only {
+    display: none !important;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        display: block !important;
+    }
+}
+
+.u-sp-none {
+    @media screen and (max-width: $breakpoint-sp) {
+        display: none !important;
+    }
+}
