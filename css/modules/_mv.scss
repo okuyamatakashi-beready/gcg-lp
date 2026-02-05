@@ -180,60 +180,60 @@
     @keyframes slideInTopLeft {
         0% {
             opacity: 0;
-            transform: translate(-100%, -100%);
+            transform: translate(-100%, -100%) rotate(-5deg);
         }
 
         100% {
             opacity: 1;
-            transform: translate(0, 0);
+            transform: translate(0, 0) rotate(0deg);
         }
     }
 
     @keyframes slideInBottomLeft {
         0% {
             opacity: 0;
-            transform: translate(-100%, 100%);
+            transform: translate(-100%, 100%) rotate(-5deg);
         }
 
         100% {
             opacity: 1;
-            transform: translate(0, 0);
+            transform: translate(0, 0) rotate(0deg);
         }
     }
 
     @keyframes slideInTopRight {
         0% {
             opacity: 0;
-            transform: translate(100%, -100%);
+            transform: translate(100%, -100%) rotate(5deg);
         }
 
         100% {
             opacity: 1;
-            transform: translate(0, 0);
+            transform: translate(0, 0) rotate(0deg);
         }
     }
 
     @keyframes slideInRight {
         0% {
             opacity: 0;
-            transform: translate(100%, -50%);
+            transform: translate(100%, -50%) rotate(5deg);
         }
 
         100% {
             opacity: 1;
-            transform: translate(0, -50%);
+            transform: translate(0, -50%) rotate(0deg);
         }
     }
 
     @keyframes slideInBottomRight {
         0% {
             opacity: 0;
-            transform: translate(100%, 100%);
+            transform: translate(100%, 100%) rotate(5deg);
         }
 
         100% {
             opacity: 1;
-            transform: translate(0, 0);
+            transform: translate(0, 0) rotate(0deg);
         }
     }
 
