@@ -880,6 +880,13 @@ a:hover {
 @media screen and (max-width: 768px) {
   .course__item {
     width: 280px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .course__item.swiper-slide-active {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 .course__button-prev, .course__button-next {

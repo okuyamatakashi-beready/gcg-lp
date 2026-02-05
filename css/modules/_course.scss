@@ -127,7 +127,14 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             width: 280px; // Carousel item width
-            // Center active slide?
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none; // Prevent clicking hidden slides
+
+            &.swiper-slide-active {
+                opacity: 1;
+                pointer-events: auto;
+            }
         }
     }
 
