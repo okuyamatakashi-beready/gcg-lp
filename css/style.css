@@ -671,7 +671,7 @@ a:hover {
 }
 @media screen and (max-width: 768px) {
   .mv__static-logo {
-    top: 20px;
+    top: 60px;
     left: 20px;
     filter: brightness(0) invert(1);
   }
