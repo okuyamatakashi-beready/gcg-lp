@@ -148,6 +148,9 @@
         }
 
         &--01 {
+            background-image: url(../images/feature-text01.png);
+            z-index: 1;
+
             .feature__item-title {
                 color: #fff;
             }
