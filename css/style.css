@@ -1525,6 +1525,7 @@ a:hover {
   .flow {
     padding: 60px 0;
     overflow: hidden;
+    margin-top: 80px;
   }
 }
 .flow__inner {
@@ -2477,7 +2478,7 @@ a:hover {
   .teacher__photo {
     position: absolute;
     top: auto;
-    bottom: -80px;
+    bottom: -340px;
     left: 50%;
     transform: translateX(-50%);
     width: 100vw;
