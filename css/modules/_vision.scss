@@ -92,6 +92,10 @@
                 display: none; // Disable manual breaks on mobile if they break awkward
             }
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 14px;
+        }
     }
 
     &__row--2 {
@@ -132,6 +136,10 @@
             font-size: 22px;
             text-align: center;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 18px;
+        }
     }
 
     &__desc {
@@ -141,6 +149,10 @@
         @media screen and (max-width: $breakpoint-sp) {
             width: 74.7%;
             margin: 0 auto;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
         }
 
         p {

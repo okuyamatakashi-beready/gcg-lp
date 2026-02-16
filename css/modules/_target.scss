@@ -50,6 +50,10 @@
             font-size: 20px;
             margin-bottom: 50px;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 16px;
+        }
     }
 
     &__list {
@@ -322,6 +326,10 @@
             font-size: 24px;
             margin-bottom: 15px;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 19px;
+        }
     }
 
     &__item-desc {
@@ -332,6 +340,10 @@
         @media screen and (max-width: $breakpoint-sp) {
             font-size: 16px;
             margin-top: 0;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
         }
     }
 
@@ -408,6 +420,12 @@
 
             p {
                 font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            p {
+                font-size: 13px;
             }
         }
     }

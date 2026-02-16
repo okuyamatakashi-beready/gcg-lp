@@ -68,6 +68,10 @@
         @media screen and (max-width: $breakpoint-sp) {
             font-size: 32px;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 26px;
+        }
     }
 
     &__title-deco {
@@ -199,6 +203,10 @@
             top: -20px;
             left: 10px;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
+        }
     }
 
     &__question {
@@ -210,6 +218,10 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             font-size: 20px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 16px;
         }
     }
 
@@ -229,6 +241,10 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             font-size: 16px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
         }
     }
 

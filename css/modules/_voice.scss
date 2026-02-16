@@ -65,6 +65,10 @@
         @media screen and (max-width: $breakpoint-sp) {
             font-size: 32px;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 26px;
+        }
     }
 
     /* Content Area */
@@ -79,6 +83,7 @@
         /* Bring above title bg if overlapping */
         @media screen and (max-width: $breakpoint-sp) {
             margin-top: 50px;
+            padding: 0;
         }
     }
 
@@ -144,9 +149,12 @@
                 background-image: url("../images/voice-text02--sp.png");
                 background-size: cover;
                 background-position: top left;
-                margin-left: calc(50% - 30vw); // Shifted further right
-                width: 369px;
-                height: 369px;
+                margin-left: auto; // Reset
+                margin-right: 0; // Align right
+                width: 90vw; // Fluid width
+                max-width: 369px;
+                height: 90vw; // Maintain square aspect ratio based on width
+                max-height: 369px;
             }
         }
     }
@@ -164,6 +172,10 @@
             font-size: 20px;
             margin-top: 40px;
             text-align: center;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 16px;
         }
     }
 
@@ -210,6 +222,10 @@
             line-height: 1.8;
             text-align: center;
             /* Or center depending on design */
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 16px;
         }
     }
 }

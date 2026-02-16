@@ -121,10 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         nextEl: '.course__button-next',
                         prevEl: '.course__button-prev',
                     },
-                    autoplay: {
-                        delay: 3000,
-                        disableOnInteraction: false,
-                    },
                 });
             } else if (!isSP && courseSwiper !== undefined) {
                 courseSwiper.destroy(true, true);
@@ -180,6 +176,26 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 header.classList.remove('is-active');
             }
+        });
+    }
+
+    // Page Top Button
+    const pagetopBtn = document.getElementById('pagetop');
+    if (pagetopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Show after scrolling 300px
+                pagetopBtn.classList.add('is-active');
+            } else {
+                pagetopBtn.classList.remove('is-active');
+            }
+        });
+
+        pagetopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     }
 });

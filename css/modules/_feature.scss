@@ -15,6 +15,7 @@
         background-size: 100% auto;
         background-position: top center;
         padding: 0px 0px 60px; // Standardized SP padding
+        overflow: hidden; // Clip breakout components
     }
 
     &__inner {
@@ -191,7 +192,7 @@
             @media screen and (max-width: $breakpoint-sp) {
                 background-image: url(../images/feature-text02--sp.png);
 
-                .feature__item-content {}
+                // .feature__item-content {} // Removed empty rule
             }
         }
 
@@ -243,6 +244,10 @@
             font-size: 24px;
             margin-bottom: 0px;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 19px;
+        }
     }
 
     &__search-icon {
@@ -259,6 +264,10 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             font-size: 16px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
         }
     }
 }

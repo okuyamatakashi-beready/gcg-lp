@@ -125,6 +125,10 @@
             // Specifically for the last message/block
             .teacher__block--03 & {
                 font-size: 16px;
+
+                @media screen and (max-width: 375px) {
+                    font-size: 13px;
+                }
             }
         }
     }
@@ -242,6 +246,10 @@
             height: 163px;
             line-height: 1.4;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 19px;
+        }
     }
 
     &__values-list {
@@ -312,6 +320,11 @@
             padding: 10px 0;
             font-size: 20px;
             background-image: none !important;
+
+            @media screen and (max-width: 375px) {
+                font-size: 16px;
+            }
+
             justify-content: center;
             text-align: center;
             width: 100%;
