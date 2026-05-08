@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Pickup Section
+   ========================================================================== */
+.pickup {
+    width: 100%;
+    padding: 60px 0;
+    overflow: hidden;
+
+    &__inner {
+        width: 100%;
+        max-width: 900px;
+        /* User request: Slider itself 1200px */
+        margin: 0 auto;
+        position: relative;
+        padding: 0;
+        /* overflow: hidden; Removed to allow arrows outside */
+    }
+
+    &__slider-wrap {
+        width: 100%;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+        /* Cut off content outside 1200px */
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 0;
+        }
+    }
+
+    &__slider {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .swiper-slide {
+        width: 62.4%;
+        /* 234px / 375px = 62.4% */
+        height: auto;
+        opacity: 0; // Hidden on SP when not active
+        transition: opacity 0.3s;
+
+        &.swiper-slide-active {
+            opacity: 1;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+        }
+
+        @media screen and (min-width: 769px) {
+            width: 600px;
+            opacity: 0.5; // Visible on PC when not active
+
+            &.swiper-slide-active {
+                opacity: 1;
+            }
+        }
+    }
+
+    /* Navigation Arrows */
+    &__nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        z-index: 10;
+        /* Assuming images are green circles as per user request/image */
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 40px; // Adjusted size for SP
+            height: 40px;
+            display: block; // Show on SP
+        }
+    }
+
+    &__prev {
+        left: -70px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            left: 2%; // Inside viewport
+        }
+    }
+
+    &__next {
+        right: -70px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            right: 2%; // Inside viewport
+        }
+    }
+}

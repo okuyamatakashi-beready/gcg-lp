@@ -26,6 +26,7 @@ body {
     color: $font-color-base;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden; // Prevent horizontal scroll globally
 }
 
 img {
@@ -66,9 +67,18 @@ a {
 @import "modules/vision";
 @import "modules/difference";
 @import "modules/feature";
+@import "modules/flow";
+@import "modules/schedule";
+
 @import "modules/service";
 @import "modules/news";
 @import "modules/contact";
 @import "modules/footer";
 @import "modules/domain";
+@import "modules/teacher";
 @import "modules/target";
+@import "modules/qa";
+@import "modules/voice";
+@import "modules/pickup";
+@import "modules/float-btn";
+@import "modules/animation";@import "modules/pagetop";

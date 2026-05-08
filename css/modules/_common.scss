@@ -17,6 +17,10 @@
             font-size: 32px;
             margin-bottom: 40px;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 26px;
+        }
     }
 }
 
@@ -37,9 +41,36 @@
         font-size: 16px;
         font-weight: bold;
 
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
+        }
+
         &:hover {
             background-color: #555;
             transform: translateY(-2px);
         }
+    }
+}
+
+/* Utility */
+.u-pc-only {
+    display: block;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        display: none !important;
+    }
+}
+
+.u-sp-only {
+    display: none !important;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        display: block !important;
+    }
+}
+
+.u-sp-none {
+    @media screen and (max-width: $breakpoint-sp) {
+        display: none !important;
     }
 }

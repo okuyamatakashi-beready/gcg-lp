@@ -1,0 +1,50 @@
+/* Scroll Animation */
+.js-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.0s ease-out, transform 1.0s ease-out;
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade Left */
+.js-fade-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1.0s ease-out, transform 1.0s ease-out;
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Delays */
+.u-delay {
+    &-100 {
+        transition-delay: 0.1s;
+    }
+
+    &-200 {
+        transition-delay: 0.2s;
+    }
+
+    &-300 {
+        transition-delay: 0.3s;
+    }
+
+    &-400 {
+        transition-delay: 0.4s;
+    }
+
+    &-500 {
+        transition-delay: 0.5s;
+    }
+
+    &-600 {
+        transition-delay: 0.6s;
+    }
+}
