@@ -145,7 +145,7 @@
         margin: 0 -60px; // Increased horizontal overlap
 
         @media screen and (max-width: $breakpoint-sp) {
-            background-size: 100%;
+            background-size: cover;
         }
 
         &--01 {
@@ -191,6 +191,10 @@
 
             @media screen and (max-width: $breakpoint-sp) {
                 background-image: url(../images/feature-text02--sp.png);
+
+                .feature__item-content {
+                    margin-top: 10px;
+                }
 
                 // .feature__item-content {} // Removed empty rule
             }
@@ -246,7 +250,7 @@
         }
 
         @media screen and (max-width: 375px) {
-            font-size: 19px;
+            font-size: 24px;
         }
     }
 
@@ -267,7 +271,7 @@
         }
 
         @media screen and (max-width: 375px) {
-            font-size: 13px;
+            font-size: 14px;
         }
     }
 }

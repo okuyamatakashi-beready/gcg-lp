@@ -138,6 +138,8 @@
                     transform: translate(-32%, 7%);
                     width: 70%;
                     height: auto;
+                    top: 53%;
+                    left: 51%;
                 }
             }
         }
@@ -152,7 +154,7 @@
             }
 
             .target__text-box {
-                top: 50%;
+                top: 53%;
                 left: 50%;
                 transform: translate(-66%, -57%);
             }
@@ -168,6 +170,7 @@
                 .target__text-box {
                     transform: translate(-54%, -13%);
                     height: auto;
+                    top: 53%;
                 }
             }
         }
@@ -183,8 +186,9 @@
 
             .target__text-box {
                 top: 50%;
-                left: 50%;
-                width: 88%;
+                left: 62%;
+                width: 52%;
+
                 transform: translate(-24%, -56%);
             }
 
@@ -199,6 +203,8 @@
                 .target__text-box {
                     transform: translate(-65%, 24%);
                     height: auto;
+                    width: 75%;
+                    left: 53%;
                 }
             }
         }
@@ -228,6 +234,8 @@
                     transform: translate(-40%, 6%);
                     height: auto;
                     width: 73%;
+                    top: 54%;
+                    left: 52%;
                 }
             }
         }
@@ -323,9 +331,10 @@
         line-height: 1.6;
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 24px;
+            font-size: 19px;
             margin-bottom: 15px;
         }
+
 
         @media screen and (max-width: 375px) {
             font-size: 19px;

@@ -37,7 +37,7 @@
         background-repeat: no-repeat;
         background-size: 100% 100%;
         position: relative;
-        padding: 60px 40px 267px; // Bottom padding for photo space
+        padding: 60px 40px 300px; // Bottom padding for photo space
         box-sizing: border-box;
         text-align: center;
 
@@ -59,10 +59,10 @@
         }
 
         @media screen and (max-width: $breakpoint-sp) {
-            width: 120vw;
+            width: 145vw;
             margin-left: calc(50% - 60vw);
             margin-right: calc(50% - 60vw);
-            height: 567px;
+            height: 560px;
             padding: 60px 40px 150px;
         }
     }
@@ -129,7 +129,7 @@
     &__line {
         width: 100%;
         max-width: 250px;
-        margin: 0 auto 80px;
+        margin: 0 auto 50px;
 
         img {
             width: 100%;
@@ -175,7 +175,7 @@
         display: inline-block; // For justify text in centered block
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 16px;
+            font-size: 14px;
             text-align: center; // Design looks left aligned or justify-left
         }
 

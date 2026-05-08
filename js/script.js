@@ -70,7 +70,12 @@ document.addEventListener('DOMContentLoaded', () => {
             let targetElement = document.getElementById(href.replace('#', ''));
             const rect = targetElement.getBoundingClientRect().top;
             const offset = window.pageYOffset;
-            const target = rect + offset;
+            let gap = 0;
+            const isSP = window.matchMedia('(max-width: 767px)').matches;
+            if (isSP) {
+                gap = 120; // Offset for mobile floating button
+            }
+            const target = rect + offset - gap;
             window.scrollTo({
                 top: target,
                 behavior: 'smooth',
