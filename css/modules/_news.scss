@@ -33,6 +33,10 @@
         font-size: 16px;
         transition: color 0.3s;
 
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
+        }
+
         &:hover {
             color: #0000ff; // Example accent color
             text-decoration: underline;

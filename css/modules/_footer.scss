@@ -32,6 +32,10 @@
             font-size: 32px;
             margin-bottom: 40px;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 26px;
+        }
     }
 
     &__row {
@@ -54,6 +58,7 @@
         @media screen and (max-width: $breakpoint-sp) {
             width: 100%;
             text-align: center;
+            margin: auto;
         }
 
         &:first-child {
@@ -86,6 +91,10 @@
         @media screen and (max-width: $breakpoint-sp) {
             font-size: 16px;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
+        }
     }
 
     &__place-name {
@@ -95,6 +104,10 @@
 
         @media screen and (max-width: $breakpoint-sp) {
             font-size: 24px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 19px;
         }
     }
 
@@ -107,6 +120,10 @@
         @media screen and (max-width: $breakpoint-sp) {
             font-size: 16px;
             text-align: left;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
         }
     }
 

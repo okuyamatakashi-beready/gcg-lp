@@ -3,7 +3,7 @@
     position: relative;
 
     @media screen and (max-width: $breakpoint-sp) {
-        padding: 60px 0;
+        padding: 60px 0 80px 0;
         overflow: hidden;
         margin-top: 80px;
     }
@@ -37,7 +37,7 @@
         background-repeat: no-repeat;
         background-size: 100% 100%;
         position: relative;
-        padding: 60px 40px 267px; // Bottom padding for photo space
+        padding: 60px 40px 300px; // Bottom padding for photo space
         box-sizing: border-box;
         text-align: center;
 
@@ -59,10 +59,10 @@
         }
 
         @media screen and (max-width: $breakpoint-sp) {
-            width: 120vw;
+            width: 145vw;
             margin-left: calc(50% - 60vw);
             margin-right: calc(50% - 60vw);
-            height: 567px;
+            height: 560px;
             padding: 60px 40px 150px;
         }
     }
@@ -92,6 +92,10 @@
             font-size: 24px;
         }
 
+        @media screen and (max-width: 375px) {
+            font-size: 19px;
+        }
+
         &--02 {
             background-image: url(../images/flow__badge02.png);
             left: auto;
@@ -116,12 +120,16 @@
             font-size: 24px;
             margin-bottom: 10px;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 19px;
+        }
     }
 
     &__line {
         width: 100%;
         max-width: 250px;
-        margin: 0 auto 80px;
+        margin: 0 auto 50px;
 
         img {
             width: 100%;
@@ -144,6 +152,10 @@
             margin-top: 0;
         }
 
+        @media screen and (max-width: 375px) {
+            font-size: 19px;
+        }
+
         &--01 {
             color: #3b429d;
         }
@@ -163,8 +175,12 @@
         display: inline-block; // For justify text in centered block
 
         @media screen and (max-width: $breakpoint-sp) {
-            font-size: 16px;
+            font-size: 14px;
             text-align: center; // Design looks left aligned or justify-left
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
         }
     }
 

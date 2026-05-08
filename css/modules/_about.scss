@@ -39,5 +39,9 @@
             margin-bottom: 40px;
             text-align: center;
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
+        }
     }
 }

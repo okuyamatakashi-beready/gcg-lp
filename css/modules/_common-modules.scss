@@ -54,4 +54,8 @@
             // So .c-title__logo should target the img.
         }
     }
+
+    @media screen and (max-width: 375px) {
+        font-size: 26px;
+    }
 }

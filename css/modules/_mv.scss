@@ -268,6 +268,10 @@
             margin-bottom: 15px;
             white-space: nowrap; // Ensure single lines if possible or broken naturally
         }
+
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
+        }
     }
 
     &__logo {
@@ -318,7 +322,8 @@
     margin-top: -80px;
 
     &-inner {
-        width: 335px;
+        width: 90vw;
+        max-width: 335px;
         height: 207px; // Aspect ratio of mv-intro-bg.png ~ 1.87 (387/207) or similar? 
         // Original PC: 387x207. 387/207 = ~1.87
         // 280 / ? = 1.87 => ? = 150
@@ -343,5 +348,9 @@
         padding: 0;
         margin-top: 30px;
         margin-right: 10px; // Similar offset to PC if needed
+
+        @media screen and (max-width: 375px) {
+            font-size: 13px;
+        }
     }
 }
