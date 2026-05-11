@@ -1,234 +1,303 @@
-.course {
-    width: 100%;
+/* =========================
+   COURSES
+========================= */
+.courses {
     position: relative;
-    background-image: url(../images/course-bg.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
-    padding: 100px 0 150px;
-    margin-top: -60px; // Overlap for wave effect
+    padding: 80px 0 0;
 
     @media screen and (max-width: $breakpoint-sp) {
-        padding: 120px 0;
+        padding: 40px 0 0;
     }
 
     &__inner {
-        max-width: 1200px;
+        max-width: 1920px;
         margin: 0 auto;
-        padding: 0 40px;
-        position: relative;
+    }
+
+    &__title {
+        font-family: "Kiwi Maru", serif;
+        font-weight: normal;
+        font-size: 48px;
+        text-align: center;
+        color: #000;
+        margin-bottom: 40px;
 
         @media screen and (max-width: $breakpoint-sp) {
-            padding: 0 20px;
+            font-size: 29px;
+            margin-bottom: 20px;
+            padding: 0 16px;
         }
     }
 
-    .c-title {
-        @media screen and (max-width: $breakpoint-sp) {
-            width: 100%;
-            margin-bottom: 0px;
-        }
-    }
-
-    &__title-wrap {
-        position: relative;
-        width: fit-content;
-        margin: 0 auto 60px;
-
-        @media screen and (max-width: $breakpoint-sp) {
-            margin: 0 auto 20px;
-        }
-    }
-
-    &__title-deco {
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        transform: translateY(-50%);
-        width: 180px;
-        margin-left: 20px;
-
-        @media screen and (max-width: $breakpoint-sp) {
-            position: relative;
-            top: auto;
-            left: auto;
-            transform: none;
-            width: 120px;
-            margin: 10px auto 0;
-            display: none;
-        }
-    }
-
-    // Swiper container styles
     &__slider {
         position: relative;
-        padding: 0 40px; // Space for arrows on SP? Or arrows outside?
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        overflow-x: clip;
+        overflow-y: visible;
+    }
+}
 
-        @media screen and (min-width: 769px) {
-            // PC: Disable Swiper styles visually if JS doesn't run, or override
-            // actually we will rely on flex layout of swiper-wrapper
-            padding: 0;
-            max-width: 100%;
-            overflow: visible; // Show all
-        }
+.courses-swiper {
+    overflow: visible !important;
+    padding-bottom: 50px;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        padding-bottom: 0;
     }
 
-    &__wrapper {
-        @media screen and (min-width: 769px) {
-            display: flex;
-            justify-content: center;
-            gap: 25px; // Reduced to fit 370px * 3 within 1200px container
-            transform: none !important; // Disable swiper transform
-            align-items: stretch;
-        }
+    .swiper-wrapper {
+        align-items: stretch;
     }
 
-    &__item {
-        width: 370px; // Fixed width for images? Or auto?
+    .swiper-slide {
         height: auto;
-        flex-shrink: 0;
-        text-align: center;
+    }
+}
 
-        &-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            letter-spacing: 0.1em;
-            line-height: 1.4;
-            min-height: 52px;
+/* Slide */
+.course-slide {
+    position: relative;
+    padding: 60px 0 140px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 
-            .course__item-subtitle {
-                display: block;
-                font-size: 14px;
-                color: #333; // Or a slightly lighter color maybe? 
-                margin-top: 5px;
-                font-family: sans-serif; // Usually subtitles might be sans if Japanese is different or keep standard
-                font-weight: normal;
-                letter-spacing: 0.05em;
-            }
-
-            @media screen and (max-width: $breakpoint-sp) {
-                font-size: 20px; // Keep same?
-                margin-bottom: 15px;
-            }
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 20px; // Adjust if design needs rounded corners
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        @media screen and (min-width: 769px) {
-            width: 370px;
-            margin-right: 0 !important;
-        }
-
-        @media screen and (max-width: $breakpoint-sp) {
-            width: 280px; // Carousel item width
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none; // Prevent clicking hidden slides
-
-            &.swiper-slide-active {
-                opacity: 1;
-                pointer-events: auto;
-            }
-        }
+    @media screen and (max-width: $breakpoint-sp) {
+        padding: 40px 0 80px;
     }
 
-    // Navigation Arrows (SP Only per request?)
-    &__button-prev,
-    &__button-next {
-        display: none; // Hidden on PC
-
-        @media screen and (max-width: $breakpoint-sp) {
-            display: block;
-            width: 40px;
-            height: 40px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 10;
-            cursor: pointer;
-
-            &::after {
-                content: none; // Remove default swiper arrow font
-            }
-        }
+    /* Hide <picture> bg, use CSS background-image instead */
+    > .bg-picture {
+        display: none;
     }
 
-    &__button-prev {
-        background-image: url(../images/course-prev.png);
+    &--01 {
+        background-image: url(../images/webp/courses-slide01-bg.webp), url(../images/courses-slide01-bg.png);
+    }
+
+    &--02 {
+        background-image: url(../images/webp/courses-slide02-bg.webp), url(../images/courses-slide02-bg.png);
+    }
+
+    &--03 {
+        background-image: url(../images/webp/courses-slide03-bg.webp), url(../images/courses-slide03-bg.png);
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
         left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        pointer-events: none;
     }
 
-    &__button-next {
-        background-image: url(../images/course-next.png);
-        right: 0;
-    }
-
-    &__note {
-        margin-top: 40px;
-        font-size: 16px;
-        line-height: 1.8;
-        font-feature-settings: "palt";
+    &__title {
+        position: relative;
+        font-family: "Kiwi Maru", serif;
+        font-weight: normal;
+        font-size: 40px;
+        text-align: center;
+        color: #000;
+        margin-bottom: 10px;
 
         @media screen and (max-width: $breakpoint-sp) {
-            margin-top: 30px;
-            font-size: 12px; // Smaller on mobile
-            text-align: left;
+            font-size: 29px;
+            margin-bottom: 0;
         }
     }
 
-    &__bottom {
-        margin: 60px auto 0;
-        max-width: 1110px;
-        background-image: url(../images/course-another-bg.png);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        padding: 50px 50px;
+    &__subtitle {
+        position: relative;
+        font-family: "Kiwi Maru", serif;
+        font-size: 24px;
+        text-align: center;
+        color: #000;
+        margin-bottom: 30px;
 
         @media screen and (max-width: $breakpoint-sp) {
-            margin: 40px auto 0;
-            background-image: url(../images/course-another-bg-sp.png);
-            padding: 20px 20px 40px 20px;
-            width: 280px;
+            font-size: 17px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__card {
+        position: relative;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 90%;
+            padding: 20px 10px;
         }
 
-        &-title {
-            font-size: clamp(18px, 2.5vw, 24px);
-            font-weight: 500;
-            text-align: center;
-            margin-bottom: 25px;
-            line-height: 1.6;
-            letter-spacing: 0.05em;
+        &--01 {
+            margin-top: 60px;
 
             @media screen and (max-width: $breakpoint-sp) {
-                font-size: clamp(14px, 4.8vw, 18px);
-                margin-bottom: 20px;
+                margin-top: 40px;
             }
         }
+    }
 
-        &-text {
+    &__card-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    &__card-inner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 60px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            padding: 16px 20px;
+        }
+    }
+
+    &__badge {
+        display: inline-block;
+        font-family: "Kiwi Maru", serif;
+        font-size: 24px;
+        color: #fff;
+        padding: 4px 24px;
+        border-radius: 7px;
+        margin-bottom: 20px;
+        background: #7381af;
+
+        @media screen and (max-width: $breakpoint-sp) {
             font-size: 15px;
-            line-height: 2;
-            letter-spacing: 0.05em;
+        }
+    }
 
-            p {
-                margin: 0;
-            }
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 30px;
+        width: 100%;
+        font-family: "Kiwi Maru", serif;
+        font-size: 20px;
+        line-height: 1.8;
+        color: #000;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        li {
+            padding-left: 1.2em;
+            text-indent: -1.2em;
+            letter-spacing: -0.02em;
 
             @media screen and (max-width: $breakpoint-sp) {
-                font-size: 13px;
-                line-height: 1.8;
-                font-feature-settings: "palt";
+                font-size: 14px;
+            }
+
+            &::before {
+                content: "■";
+                color: #e79b9d;
+                margin-right: 0.2em;
             }
         }
+
+        &--blue li::before {
+            color: #63c2c7;
+        }
+
+        &--green li::before {
+            color: #b3c96c;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 945px;
+        max-width: 100%;
+        height: auto;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+        }
+    }
+}
+
+/* Arrows */
+.courses-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+
+    img {
+        display: block;
+        width: 36px;
+        height: auto;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 24px;
+        }
+    }
+
+    &--prev {
+        left: calc(50% - 620px);
+
+        @media screen and (max-width: $breakpoint-sp) {
+            left: 2px;
+        }
+    }
+
+    &--next {
+        right: calc(50% - 620px);
+
+        @media screen and (max-width: $breakpoint-sp) {
+            right: 2px;
+        }
+    }
+}
+
+/* Pagination */
+.courses-pagination {
+    bottom: 140px !important;
+    top: auto !important;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        bottom: 30px !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 16px;
+        height: 16px;
+        background: #fff;
+        opacity: 1;
+    }
+
+    .swiper-pagination-bullet:nth-child(1).swiper-pagination-bullet-active {
+        background: #e79b9d;
+    }
+
+    .swiper-pagination-bullet:nth-child(2).swiper-pagination-bullet-active {
+        background: #63c2c7;
+    }
+
+    .swiper-pagination-bullet:nth-child(3).swiper-pagination-bullet-active {
+        background: #b3c96c;
     }
 }

@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.js-menu-close');
     const navLinks = document.querySelectorAll('.header__item a');
 
-    const floatBtn = document.querySelector('.float-btn');
+    const floatBtn = document.querySelector('.float-nav');
 
     if (hamburger && nav) {
         hamburger.addEventListener('click', () => {
-            const floatBtn = document.querySelector('.float-btn'); // Re-select to be sure
+            const floatBtn = document.querySelector('.float-nav'); // Re-select to be sure
             hamburger.classList.toggle('is-active');
             nav.classList.toggle('is-active');
             if (floatBtn) {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (closeBtn) {
             closeBtn.addEventListener('click', () => {
-                const floatBtn = document.querySelector('.float-btn');
+                const floatBtn = document.querySelector('.float-nav');
                 hamburger.classList.remove('is-active');
                 nav.classList.remove('is-active');
                 if (floatBtn) floatBtn.classList.remove('is-hidden');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                const floatBtn = document.querySelector('.float-btn');
+                const floatBtn = document.querySelector('.float-nav');
                 hamburger.classList.remove('is-active');
                 nav.classList.remove('is-active');
                 if (floatBtn) floatBtn.classList.remove('is-hidden');
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // MV Animation (if any JS needed, though mostly CSS)
 
     // Scroll Animation (Fade In)
-    const fadeElements = document.querySelectorAll('.js-fade, .js-fade-left');
+    const fadeElements = document.querySelectorAll('.js-fade, .js-fade-left, .js-fade-right');
     if (fadeElements.length > 0) {
         const fadeObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -107,34 +107,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Course Slider
-    const courseSliderSelector = '.course__slider';
-    let courseSwiper = undefined; // Expose instance
-
-    if (document.querySelector(courseSliderSelector)) {
-        const initCourseSwiper = () => {
-            const isSP = window.matchMedia('(max-width: 767px)').matches;
-
-            if (isSP && courseSwiper === undefined) {
-                courseSwiper = new Swiper(courseSliderSelector, {
-                    loop: true,
-                    speed: 600,
-                    slidesPerView: 'auto',
-                    centeredSlides: true,
-                    spaceBetween: 40,
-                    navigation: {
-                        nextEl: '.course__button-next',
-                        prevEl: '.course__button-prev',
-                    },
-                });
-            } else if (!isSP && courseSwiper !== undefined) {
-                courseSwiper.destroy(true, true);
-                courseSwiper = undefined;
-            }
-        };
-
-        initCourseSwiper();
-        window.addEventListener('resize', initCourseSwiper);
+    // Courses Slider
+    let courseSwiper = undefined;
+    if (document.querySelector('.courses-swiper')) {
+        courseSwiper = new Swiper('.courses-swiper', {
+            loop: true,
+            pagination: {
+                el: '.courses-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.courses-arrow--next',
+                prevEl: '.courses-arrow--prev',
+            },
+        });
     }
 
     // Pickup Click Interaction
@@ -143,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pickupSlides.forEach(slide => {
             slide.addEventListener('click', (e) => {
                 const targetIndex = slide.getAttribute('data-slide-index');
-                const courseSection = document.getElementById('course');
+                const courseSection = document.getElementById('courses');
 
                 if (targetIndex !== null && courseSection) {
                     const headerOffset = 100; // Approx header height
@@ -155,9 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         behavior: "smooth"
                     });
 
-                    // If SP and Swiper is active, slide to target
-                    if (window.innerWidth <= 767 && courseSwiper) {
-                        // Use slideToLoop for looped slider
+                    if (courseSwiper) {
                         courseSwiper.slideToLoop(parseInt(targetIndex));
                     }
                 }

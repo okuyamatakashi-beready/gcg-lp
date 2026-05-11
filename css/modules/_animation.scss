@@ -22,6 +22,26 @@
     }
 }
 
+/* Fade Right */
+.js-fade-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 1.0s ease-out, transform 1.0s ease-out;
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    @media screen and (max-width: $breakpoint-sp) {
+        transform: translateY(30px);
+
+        &.is-visible {
+            transform: translateY(0);
+        }
+    }
+}
+
 /* Delays */
 .u-delay {
     &-100 {
