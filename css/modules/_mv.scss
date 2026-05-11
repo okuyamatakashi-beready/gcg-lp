@@ -55,92 +55,97 @@
             animation-delay: 0.2s;
 
             @media screen and (max-width: $breakpoint-sp) {
-                width: 60%;
-                left: -10%;
-                top: -5%;
+                width: 58%;
+                left: -5%;
+                top: -6%;
             }
         }
 
         &--03 {
-            bottom: 0;
+            bottom: 3%;
             left: 0;
-            width: 36%; // Reduced from 45%
-            // max-width: 830px; // Removed to allow scaling
+            width: 44.1%; // 847px @ 1920px
+            max-width: 847px;
             animation-name: slideInBottomLeft;
             animation-delay: 0.4s;
 
             @media screen and (max-width: $breakpoint-sp) {
-                width: 128%;
-                left: 50%;
-                margin-left: -64%; // Centering a 128% wide element
+                // Rainbow watercolor spans the bottom as a backdrop on SP (430px @ 375px = 114.67%)
+                width: 114.67%;
+                left: -2%;
+                margin-left: 0;
+                bottom: -2%;
                 max-width: none;
-                bottom: 5%;
             }
         }
 
         &--04 {
             top: -120px;
-            right: -5%; // Push further right (partially cut off is distinct)
-            width: 35%; // Adjusted for better visibility
-            max-width: 450px;
+            right: -3%; // Bring slightly inward so it bites into the content area
+            width: 46%; // Wider so it reaches further inside
+            max-width: 620px;
             animation-name: slideInTopRight;
             animation-delay: 0.6s;
 
             @media screen and (max-width: $breakpoint-sp) {
-                width: 50%;
-                right: -10%;
-                top: -5%;
+                width: 59%;
+                right: -3%;
+                top: -12%;
                 max-width: none;
             }
         }
 
         &--05 {
-            top: 50%;
-            right: -30px;
+            top: 42%;
+            right: 0;
             transform: translateY(-50%);
-            width: 13%; // Reduced from 8.5%
-            max-width: 130px;
+            width: 9%; // Small accent peeking from the right edge
+            max-width: 140px;
             animation-name: slideInRight;
             animation-delay: 0.8s;
 
             @media screen and (max-width: $breakpoint-sp) {
-                // Secondary decoration, maybe hide or position freely
-                width: 68px;
-                right: 0;
-                top: 50%;
+                // Yellow accent peeks from the right edge (69px @ 375px = 18.4%)
+                width: 18.4%;
+                max-width: none;
+                right: -5%;
+                top: 52%;
             }
         }
 
         &--02 {
             bottom: 13%;
             left: 6%; // Slightly offset to separate/layer
-            width: 20%; // Reduced from 25.7%
-            max-width: 330px;
+            width: 23.7%; // 455px @ 1920px
+            max-width: 455px;
             z-index: 2; // Ensure it's above 03
             animation-name: slideInBottomLeft;
             animation-delay: 0.5s;
 
             @media screen and (max-width: $breakpoint-sp) {
-                // Adjust position to not overlap text
-                width: 205px;
-                left: 0;
-                bottom: 7%;
+                // Boy photo anchored to the bottom-left on SP (222px @ 375px = 59.2%)
+                width: 59.2%;
+                max-width: none;
+                left: -10%;
+                bottom: 5%;
             }
         }
 
         &--06 {
-            bottom: 10%;
+            bottom: 0;
             right: 0;
-            width: 24%; // Reduced from 30.2%
-            max-width: 460px;
+            width: 30%; // Anchored to the bottom-right corner
+            max-width: 580px;
             animation-name: slideInBottomRight;
             animation-delay: 0.9s;
             // Overlap with 05 (Right Center) will happen naturally as this is Bottom Right
 
             @media screen and (max-width: $breakpoint-sp) {
-                width: 265px;
-                right: -5%;
-                bottom: 25%;
+                // Girl photo (266px @ 375px = 70.93%)
+                width: 70.93%;
+                right: -12%;
+                bottom: 22%;
+                max-width: none;
             }
         }
     }
@@ -251,7 +256,7 @@
         transform: translateY(-60px); // Shift up by 60px as requested
 
         @media screen and (max-width: $breakpoint-sp) {
-            transform: translateY(-140px); // Adjust for SP
+            transform: translateY(-120px); // Adjust for SP
         }
     }
 
@@ -275,11 +280,11 @@
     }
 
     &__logo {
-        width: 35%; // Reduced from 44%
-        max-width: 500px; // Reduced from 670px
+        width: 100%;
+        max-width: 673px; // 673px @ 1920px
 
         @media screen and (max-width: $breakpoint-sp) {
-            width: 265px; // Larger relative on SP
+            width: 100%;
             max-width: 250px;
         }
 
