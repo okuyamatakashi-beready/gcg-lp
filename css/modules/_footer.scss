@@ -158,6 +158,17 @@
         }
     }
 
+    &__place-img {
+        width: 300px;
+        margin-top: 40px;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
     &__bottom {
         background-color: #fff;
         padding: 30px 0;

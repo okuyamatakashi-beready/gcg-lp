@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=20260216">
+    <link rel="stylesheet" href="css/style.css?v=20260306">
 
     <!-- Preload Critical Images if any -->
 
@@ -38,7 +38,7 @@
                         <li class="header__item"><a href="#feature">特長</a></li>
                         <li class="header__item"><a href="#teacher">講師について</a></li>
                         <li class="header__item"><a href="#flow">授業の流れ</a></li>
-                        <li class="header__item"><a href="#course">コースのご案内</a></li>
+                        <li class="header__item"><a href="#courses">コースのご案内</a></li>
                         <li class="header__item"><a href="#qa">よくある質問</a></li>
                         <li class="header__item"><a href="#voice">保護者の声</a></li>
                     </ul>
@@ -128,6 +128,22 @@
                 <div class="pickup__slider-wrap">
                     <div class="swiper pickup__slider">
                         <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="images/bnrs02-sp.png?1" media="(max-width: 768px)">
+                                    <img src="images/bnrs02.png?1" alt="入会金0円キャンペーン実施中 4月入会の方対象のバナー画像" loading="lazy">
+                                </picture>
+                            </div>
+                            <!-- <div class="swiper-slide">
+                                <a href="https://contact.gakken.jp/user/op_enquete.gsp?sid=1356&mid=001175xZ&hid=GiW4c4Ufb_0"
+                                    target="_blank">
+                                    <picture>
+                                        <source srcset="images/bnrs01-sp.png?1" media="(max-width: 768px)">
+                                        <img src="images/bnrs01.png?1" alt="開校説明会 お申し込み・お問い合わせはこちらのバナー画像"
+                                            loading="lazy">
+                                    </picture>
+                                </a>
+                            </div> -->
                             <div class="swiper-slide js-pickup-slide" data-slide-index="0" style="cursor: pointer;">
                                 <img src="./images/course01.png" alt="Creative Thinking">
                             </div>
@@ -137,6 +153,20 @@
                             <div class="swiper-slide js-pickup-slide" data-slide-index="2" style="cursor: pointer;">
                                 <img src="./images/course03.png" alt="Course 03">
                             </div>
+                            <!-- <div class="swiper-slide">
+                                <picture>
+                                    <source srcset="images/bnrs02-sp.png?1" media="(max-width: 768px)">
+                                    <img src="images/bnrs02.png?1" alt="入会金0円キャンペーン実施中 4月入会の方対象のバナー画像" loading="lazy">
+                                </picture>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://contact.gakken.jp/user/op_enquete.gsp?sid=1356&mid=001175xZ&hid=GiW4c4Ufb_0" target="_blank">
+                                    <picture>
+                                        <source srcset="images/bnrs01-sp.png?1" media="(max-width: 768px)">
+                                        <img src="images/bnrs01.png?1" alt="開校説明会 お申し込み・お問い合わせはこちらのバナー画像" loading="lazy">
+                                    </picture>
+                                </a>
+                            </div> -->
                             <div class="swiper-slide js-pickup-slide" data-slide-index="0" style="cursor: pointer;">
                                 <img src="./images/course01.png" alt="Creative Thinking">
                             </div>
@@ -186,17 +216,17 @@
                 <div class="vision__row vision__row--2">
                     <div class="vision__text vision__text--green">
                         <h3 class="vision__sub-title js-fade">「正解」を教える教育から<br class="u-sp-only">「問い」を生み出す教育へ。</h3>
-                        <div class="vision__desc">
+                        <div class="vision__desc js-fade">
                             <p>AIが瞬時に答えを出す時代。<br><br class="u-sp-only">お子様が大人になる20年後、知識の量そのものに価値は<br
                                     class="u-sp-none">なくなっているかもしれません。</p>
                             <p>今、私たちが子どもたちに手渡せる最高のギフト。<br>それは、自らを感じ、考え、新しい価値を創造する「人間だけの力」です。<br>既存の枠組みに当てはめるのではなく、内側にある100の可能性を解き放つこと。<br>10年後、20年後の世界を、凛として歩むための知性と感性を、今ここで。
                             </p>
                         </div>
-                        <div class="vision__bottom-img">
+                        <div class="vision__bottom-img js-fade">
                             <img src="./images/vision-img03.png" alt="Child exploring nature">
                         </div>
                     </div>
-                    <div class="vision__img vision__img--right">
+                    <div class="vision__img vision__img--right js-fade-right u-delay-100">
                         <img src="./images/vision-img02.png" alt="Children engaging in creative learning">
                     </div>
                 </div>
@@ -223,7 +253,7 @@
                         </ul>
                     </div>
 
-                    <p class="difference__connector u-sp-only">ですが、</p>
+                    <p class="difference__connector u-sp-only js-fade">ですが、</p>
 
                     <div class="difference__arrow js-fade u-delay-100">
                         <img src="./images/difference-arrow.png" alt="To GCG">
@@ -485,7 +515,7 @@
                     </div>
                 </div>
 
-                <div class="target__bottom-text">
+                <div class="target__bottom-text js-fade">
                     <p>「合格できる子」ではなく、<br>「未来を切り開く合格者」を育てます。</p>
                 </div>
             </div>
@@ -546,7 +576,7 @@
 
                     <!-- Text Block 3 -->
                     <div class="teacher__block teacher__block--03">
-                        <p class="teacher__text">
+                        <p class="teacher__text js-fade">
                             答えを先に示すのではなく、<br class="u-sp-only">考えるプロセスを支え、深めていく――<br>
                             講師は、子どもたちの探求に並走する存在です。<br>
                             受験指導で培ってきた確かな専門性と、<br>子どもとフラットに向き合う探究的なスタンス。<br>その両立こそが、GCGの講師の大きな特長です。<br>
@@ -555,7 +585,7 @@
                     </div>
 
                     <!-- Photo -->
-                    <div class="teacher__photo">
+                    <div class="teacher__photo js-fade">
                         <img src="./images/teacher-img01.png" alt="Classroom atmosphere" loading="lazy">
                     </div>
                 </div>
@@ -638,75 +668,186 @@
 
         </section>
 
-        <!-- Course Section -->
-        <section id="course" class="section course">
-            <div class="course__inner">
-                <div class="course__title-wrap">
-                    <h2 class="c-title js-fade">
-                        <img src="./images/logo.png" alt="GCG" class="c-title__logo"> コースのご案内
-                    </h2>
-                    <img src="./images/course-text.png" alt="Course" class="course__title-deco js-fade u-delay-100">
+        <!-- Courses Section -->
+        <section class="courses" id="courses">
+            <div class="courses__inner">
+                <h2 class="courses__title js-fade">お子様に合わせた<br class="u-sp-only">3つのコース</h2>
+                <div class="courses__slider js-fade u-delay-200">
+                    <div class="swiper courses-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 01: 0,1,2歳コース -->
+                            <div class="swiper-slide">
+                                <div class="course-slide course-slide--01">
+                                    <picture class="bg-picture">
+                                        <source srcset="./images/webp/courses-slide01-bg.webp" type="image/webp">
+                                        <img src="./images/courses-slide01-bg.png" alt="" class="course-slide__bg">
+                                    </picture>
+                                    <h3 class="course-slide__title">0、1、2歳コース</h3>
+                                    <div class="course-slide__card course-slide__card--01">
+                                        <picture class="bg-picture">
+                                            <source srcset="./images/webp/courses-card-bg.webp" type="image/webp">
+                                            <img src="./images/courses-card-bg.png" alt=""
+                                                class="course-slide__card-bg">
+                                        </picture>
+                                        <div class="course-slide__card-inner">
+                                            <span class="course-slide__badge course-slide__badge--pink">コース内容</span>
+                                            <ul class="course-slide__list">
+                                                <li>五感を使った多様な体験を通じて、「感じる・気づく・試す」力を育てます。</li>
+                                                <li>手や身体を動かしながら、かたち・数・ことば・関係性に触れ、世界を自分なりに捉える土台をつくります。</li>
+                                                <li>「なぜ？」「どうなる？」という小さな探究を大切にし、自ら考えようとする姿勢を育みます。</li>
+                                                <li>遊びの中で、集中力・認識力・思考の芽を育て、将来の創造的な学びへとつながる基礎を築きます。</li>
+                                            </ul>
+                                            <picture>
+                                                <source srcset="./images/cource01-img-sp.png"
+                                                    media="(max-width: 768px)">
+                                                <img src="./images/cource01-img.png" alt="0、1、2歳コース詳細"
+                                                    class="course-slide__img">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 02: 創造思考コース -->
+                            <div class="swiper-slide">
+                                <div class="course-slide course-slide--02">
+                                    <picture class="bg-picture">
+                                        <source srcset="./images/webp/courses-slide02-bg.webp" type="image/webp">
+                                        <img src="./images/courses-slide02-bg.png" alt="" class="course-slide__bg">
+                                    </picture>
+                                    <h3 class="course-slide__title">創造思考コース</h3>
+                                    <p class="course-slide__subtitle">Creative Thinking</p>
+                                    <div class="course-slide__card">
+                                        <picture class="bg-picture">
+                                            <source srcset="./images/webp/courses-card-bg.webp" type="image/webp">
+                                            <img src="./images/courses-card-bg.png" alt=""
+                                                class="course-slide__card-bg">
+                                        </picture>
+                                        <div class="course-slide__card-inner">
+                                            <span class="course-slide__badge course-slide__badge--blue">コース内容</span>
+                                            <ul class="course-slide__list course-slide__list--blue">
+                                                <li>「なぜ？」「本当にそう？」という問いから、自分なりの答えをつくる力を育てます。</li>
+                                                <li>知識を覚えるのではなく、比べる・分ける・つなげる・疑うといった思考を通して、物事を多面的に捉える力を養います。</li>
+                                                <li>テーマに沿った探究活動の中で、仮説を立て、試し、考え直すプロセスを繰り返し、自分の考えを言葉や形で表現する力へとつなげます。</li>
+                                                <li>「正解を出す」から「意味をつくる」へ。これからの時代に必要な創造的な思考力の土台を育みます。</li>
+                                            </ul>
+                                            <picture>
+                                                <source srcset="./images/cource02-img-sp.png"
+                                                    media="(max-width: 768px)">
+                                                <img src="./images/cource02-img.png" alt="創造思考コース詳細"
+                                                    class="course-slide__img">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 03: 読解探究コース -->
+                            <div class="swiper-slide">
+                                <div class="course-slide course-slide--03">
+                                    <picture class="bg-picture">
+                                        <source srcset="./images/webp/courses-slide03-bg.webp" type="image/webp">
+                                        <img src="./images/courses-slide03-bg.png" alt="" class="course-slide__bg">
+                                    </picture>
+                                    <h3 class="course-slide__title">読解探究コース</h3>
+                                    <p class="course-slide__subtitle">Inquiry Reading</p>
+                                    <div class="course-slide__card">
+                                        <picture class="bg-picture">
+                                            <source srcset="./images/webp/courses-card-bg.webp" type="image/webp">
+                                            <img src="./images/courses-card-bg.png" alt=""
+                                                class="course-slide__card-bg">
+                                        </picture>
+                                        <div class="course-slide__card-inner">
+                                            <span class="course-slide__badge course-slide__badge--green">コース内容</span>
+                                            <ul class="course-slide__list course-slide__list--green">
+                                                <li>文章を「正しく読む」だけでなく、そこから意味を考え、自分の考えを深める力を育てます。</li>
+                                                <li>登場人物の意図や筆者の考えを読み取りながら、「なぜそうなるのか」「他の見方はあるか」を問い続け、一つの答えにとどまらない理解を目指します。
+                                                </li>
+                                                <li>要約・比較・批判的思考などを通じて、情報を整理し、自分の言葉で表現する力を養います。</li>
+                                            </ul>
+                                            <picture>
+                                                <source srcset="./images/cource03-img-sp.png"
+                                                    media="(max-width: 768px)">
+                                                <img src="./images/cource03-img.png" alt="読解探究コース詳細"
+                                                    class="course-slide__img">
+                                            </picture>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination courses-pagination"></div>
+                    </div>
+                    <div class="courses-arrow courses-arrow--prev"><img src="./images/courses-arrow-prev.png" alt="前へ">
+                    </div>
+                    <div class="courses-arrow courses-arrow--next"><img src="./images/courses-arrow-next.png" alt="次へ">
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Swiper -->
-                <div class="swiper course__slider js-fade u-delay-200">
-                    <div class="swiper-wrapper course__wrapper">
-                        <!-- Course 01 -->
-                        <div class="swiper-slide course__item">
-                            <h3 class="course__item-title">0、1、2歳コース</h3>
-                            <img src="./images/course01-img.png" alt="0, 1, 2歳コース">
+        <!-- Admission Section -->
+        <section class="admission" id="admission">
+            <div class="admission__inner">
+                <div class="admission__table js-fade">
+                    <div class="admission__header">
+                        <div class="admission__header-cell">
+                            <span class="admission__badge">入会金</span>
                         </div>
-                        <!-- Course 02 -->
-                        <div class="swiper-slide course__item">
-                            <h3 class="course__item-title">
-                                創造思考コース<br>
-                                <span class="course__item-subtitle">Creative Thinking</span>
-                            </h3>
-                            <img src="./images/course02-img.png" alt="創造思考コース">
-                        </div>
-                        <!-- Course 03 -->
-                        <div class="swiper-slide course__item">
-                            <h3 class="course__item-title">
-                                読解探求コース<br>
-                                <span class="course__item-subtitle">Inquiry Reading</span>
-                            </h3>
-                            <img src="./images/course03-img.png" alt="読解探求コース">
+                        <div class="admission__header-cell">
+                            <span class="admission__badge">施設教材費</span>
                         </div>
                     </div>
-
-                    <!-- Navigation Arrows (SP Only) -->
-                    <div class="course__button-prev"></div>
-                    <div class="course__button-next"></div>
-                </div>
-
-                <div class="course__note">
-                    ※月謝：11,000円(税込み)〜　※各コース定員は目安であり、お申し込み状況や編成の都合により変更となる場合がございます。<br>
-                    ※その他半年に一度施設教材費を頂戴します。<br>
-                    ※通室振替制度あり（教室規定に則っての取得となります。）<br>
-                    ※きょうだい割引制度あり<br>
-                    ※小学校受験サポートについて<br>
-                    　志望校に合わせての「願書の書き方」、「面接演習」等サポートいたします。<br>
-                    　詳しくはお尋ねください。
-                </div>
-
-                <div class="course__bottom js-fade">
-                    <p class="course__bottom-title">
-                        <span class="u-pc-only">2026年4月開講は、2歳児クラス・幼児クラス (創造思考コース) よりスタートします。</span>
-                        <span class="u-sp-only">
-                            2026年4月開講は<br>
-                            2歳児クラス・幼児クラス<br>
-                            (創造思考コース) より<br>
-                            スタートします。
-                        </span>
-                    </p>
-                    <div class="course__bottom-text">
-                        <p>
-                            Gakken Creative
-                            Gatewayは、“思考の入口”をつくる場所です。私たちが大切にしているのは、問いを立てる力の土台づくり。その土台は、幼児期に最も豊かに育ちます。「なぜ？」「どうして？」「もしこうしたら？」この時期の好奇心は、やがて探究・表現・創造へつながる思考の幹になります。だからこそGCGは、まず幼児期から始めます。<br>
-                            小学生（読解探究コース）クラスは、より高い完成度でお届けするため、段階的に開講予定です。（開講が決まり次第、こちらのサイトや公式SNSでお知らせいたします。）<br>
-                            未来へつながる学びの入口は、ここから始まります。
-                        </p>
+                    <div class="admission__body">
+                        <div class="admission__body-left">
+                            <div class="admission__price-block">
+                                <span class="admission__price">22,000</span>
+                                <span class="admission__yen">円</span><small class="admission__tax">(税込み)</small>
+                            </div>
+                        </div>
+                        <div class="admission__body-right">
+                            <div class="admission__row">
+                                <span class="admission__course admission__course--pink"><img
+                                        src="./images/admission-course-pink.png" alt=""
+                                        class="admission__course-bg"><span
+                                        class="admission__course-text">0、1、2歳コース</span></span>
+                                <div class="admission__price-wrap">
+                                    <span class="admission__price">11,000</span>
+                                    <span class="admission__yen">円</span><small
+                                        class="admission__tax">(税込み)</small><span class="admission__per">/半年</span>
+                                </div>
+                            </div>
+                            <div class="admission__row">
+                                <span class="admission__course admission__course--blue"><img
+                                        src="./images/admission-course-blue.png" alt=""
+                                        class="admission__course-bg"><span
+                                        class="admission__course-text">創造思考コース</span></span>
+                                <div class="admission__price-wrap">
+                                    <span class="admission__price">22,000</span>
+                                    <span class="admission__yen">円</span><small
+                                        class="admission__tax">(税込み)</small><span class="admission__per">/半年</span>
+                                </div>
+                            </div>
+                            <div class="admission__row">
+                                <span class="admission__course admission__course--green"><img
+                                        src="./images/admission-course-green.png" alt=""
+                                        class="admission__course-bg"><span
+                                        class="admission__course-text">読解探究コース</span></span>
+                                <div class="admission__price-wrap">
+                                    <span class="admission__price">22,000</span>
+                                    <span class="admission__yen">円</span><small
+                                        class="admission__tax">(税込み)</small><span class="admission__per">/半年</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="admission__notes js-fade">
+                    <p>※入会金：22,000円（税込み）</p>
+                    <p>※月謝：11,000円（税込み）～</p>
+                    <p>※各コース定員は目安であり、お申し込み状況や編成の都合により変更となる場合がございます。</p>
+                    <p>※その他、半年に一度施設教材費を頂戴します。</p>
+                    <p>※通室振替制度あり（教室規定に則っての取得となります。）</p>
+                    <p>※きょうだい割引制度あり</p>
+                    <p>※小学校受験サポートについて<br>志望校に合わせての「願書の書き方」、「面接演習」等サポートいたします。詳しくはお尋ねください。</p>
                 </div>
             </div>
         </section>
@@ -724,7 +865,7 @@
                     <!-- Left Column -->
                     <div class="qa__col qa__col--left">
                         <!-- Q1 -->
-                        <div class="qa__item">
+                        <div class="qa__item js-fade u-delay-100">
                             <div class="qa__q-number">Q.1</div>
                             <p class="qa__question">小学校受験を考えていますが、<br>GCGは受験対策教室ですか？</p>
                             <div class="qa__line"><img src="./images/qa-line.png" alt=""></div>
@@ -735,7 +876,7 @@
                         </div>
 
                         <!-- Q3 -->
-                        <div class="qa__item">
+                        <div class="qa__item js-fade u-delay-300">
                             <div class="qa__q-number">Q.3</div>
                             <p class="qa__question">まだ幼いのですが、<br>授業についていけますか？</p>
                             <div class="qa__line"><img src="./images/qa-line.png" alt=""></div>
@@ -749,7 +890,7 @@
                     <!-- Right Column -->
                     <div class="qa__col qa__col--right">
                         <!-- Q2 -->
-                        <div class="qa__item">
+                        <div class="qa__item js-fade u-delay-200">
                             <div class="qa__q-number">Q.2</div>
                             <p class="qa__question">遊びのように見えますが、<br>学力は身につきますか？</p>
                             <div class="qa__line"><img src="./images/qa-line.png" alt=""></div>
@@ -759,7 +900,7 @@
                         </div>
 
                         <!-- Q4 -->
-                        <div class="qa__item">
+                        <div class="qa__item js-fade u-delay-400">
                             <div class="qa__q-number">Q.4</div>
                             <p class="qa__question">どんな講師が教えていますか？</p>
                             <div class="qa__line"><img src="./images/qa-line.png" alt=""></div>
@@ -769,7 +910,7 @@
                         </div>
 
                         <!-- Q5 -->
-                        <div class="qa__item">
+                        <div class="qa__item js-fade u-delay-500">
                             <div class="qa__q-number">Q.5</div>
                             <p class="qa__question">月謝や通い方について<br>教えてください。</p>
                             <div class="qa__line"><img src="./images/qa-line.png" alt=""></div>
@@ -819,14 +960,14 @@
                     </div>
                 </div>
 
-                <div class="voice__note">
+                <div class="voice__note js-fade">
                     ※2025年10月の体験会に<br>
                     参加された保護者様の声
                 </div>
             </div>
 
             <!-- Last Message -->
-            <div class="voice__last">
+            <div class="voice__last js-fade">
                 <div class="container">
                     <p class="voice__last-text js-fade">
                         お子様の可能性を、<br class="u-sp-only">型にはめるには早すぎます。<br>
@@ -835,6 +976,16 @@
                     </p>
                 </div>
             </div>
+
+            <p class="cta__instagram-label js-fade">Instagramはこちら</p>
+            <p class="cta__follow js-fade">＼ Follow Me! ／</p>
+            <a href="https://www.instagram.com/gakken_creative_gateway/" target="_blank" rel="noopener noreferrer"
+                class="cta__instagram-icon js-fade">
+                <picture>
+                    <source srcset="images/webp/cta-instagram.webp" type="image/webp">
+                    <img src="images/cta-instagram.png" alt="Instagram" width="100" height="100">
+                </picture>
+            </a>
         </section>
 
         <div class="container">
@@ -843,15 +994,19 @@
         </div>
     </main>
 
-    <!-- Float Button -->
-    <a href="https://contact.gakken.jp/user/op_enquete.gsp?sid=1356&mid=001175xZ&hid=GiW4c4Ufb_0" target="_blank"
-        class="float-btn">
-        <div class="float-btn__inner">
-            <span class="float-btn__year">2026年</span>
-            <span class="float-btn__main">4月開校！</span>
-            <span class="float-btn__sub">お申し込みは<br>コチラ</span>
-        </div>
-    </a>
+    <!-- Float Buttons -->
+    <nav class="float-nav">
+        <a href="https://contact.gakken.jp/user/op_enquete.gsp?sid=1356&mid=001175xZ&hid=GiW4c4Ufb_0" target="_blank"
+            class="float-btn float-btn--trial">
+            <img src="images/float-btn01.svg" alt="" class="float-btn__bg">
+            <span class="float-btn__text">体験会<br>お申し込み</span>
+        </a>
+        <a href="https://contact.gakken.jp/user/op_enquete.gsp?sid=1356&mid=001175xZ&hid=GiW4c4Ufb_0" target="_blank"
+            class="float-btn float-btn--contact">
+            <img src="images/float-btn02.svg" alt="" class="float-btn__bg">
+            <span class="float-btn__text">資料請求<br>お問い合わせ</span>
+        </a>
+    </nav>
 
     <footer class="footer">
         <div class="footer__top">
@@ -867,6 +1022,9 @@
                             東京都江東区有明2丁目1-8 有明ガーデン4F<br>
                             TEL. 050-3111-4850
                         </p>
+                        <div class="footer__place-img">
+                            <img src="./images/footer-img.jpg" alt="有明ガーデン">
+                        </div>
                     </div>
                     <!-- Right Col -->
                     <div class="footer__col">

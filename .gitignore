@@ -7,6 +7,7 @@ node_modules/
 Thumbs.db
 .idea/
 .vscode/
+.claude/
 
 # Build outputs (optional, depending on workflow, but usually stick to source. 
 # Since this is a simple static site, committing css/style.css is often desired 

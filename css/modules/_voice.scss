@@ -11,7 +11,7 @@
     /* Space for bottom content */
 
     @media screen and (max-width: $breakpoint-sp) {
-        padding-bottom: 60px; // Standardized SP padding
+        padding-bottom: 20px; // Standardized SP padding
         overflow: hidden; // Clip breakout items
     }
 
@@ -196,16 +196,24 @@
 
     /* Last Message Area */
     &__last {
-        margin-top: 150px;
-        width: 100%;
-        background: url("../images/last-bg.png") center center/cover no-repeat;
-        padding: 100px 0;
+        margin: 150px auto 0;
+        width: 50.625vw;
+        height: 23.2813vw;
+        background: url("../images/last-bg.png") center center / 100% 100% no-repeat;
+        padding: 0;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         @media screen and (max-width: $breakpoint-sp) {
+            width: 100%;
+            height: auto;
             background-image: url("../images/last-bg--sp.png");
+            background-size: cover;
             padding: 80px 20px;
             margin-top: 50px;
+            display: block;
         }
     }
 
@@ -226,6 +234,59 @@
 
         @media screen and (max-width: 375px) {
             font-size: 16px;
+        }
+    }
+}
+
+/* ==========================================================================
+   Instagram (voice section末尾)
+   ========================================================================== */
+.cta__instagram-label {
+    font-family: "Kiwi Maru", serif;
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 30px;
+    margin-top: 80px;
+    text-align: center;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        font-size: 20px;
+        margin-bottom: 10px;
+        margin-top: 50px;
+    }
+}
+
+.cta__follow {
+    font-family: "Kiwi Maru", serif;
+    font-size: 48px;
+    color: #ea3b77;
+    margin-bottom: 51px;
+    text-align: center;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        font-size: 27px;
+        margin-bottom: 16px;
+    }
+}
+
+.cta__instagram-icon {
+    display: block;
+    width: 100px;
+    margin: 0 auto 90px;
+
+    @media screen and (max-width: $breakpoint-sp) {
+        width: 52px;
+        margin-bottom: 50px;
+    }
+
+    img {
+        display: block;
+        width: 100px;
+        height: 100px;
+
+        @media screen and (max-width: $breakpoint-sp) {
+            width: 52px;
+            height: 52px;
         }
     }
 }
