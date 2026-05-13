@@ -19,14 +19,18 @@ $font-family-base: "Kiwi Maru", "Helvetica Neue", Arial, "Hiragino Kaku Gothic P
     box-sizing: border-box;
 }
 
+html,
 body {
     margin: 0;
     padding: 0;
+    overflow-x: clip; // Prevent horizontal scroll globally (must be on both html and body for reliable propagation)
+}
+
+body {
     font-family: $font-family-base;
     color: $font-color-base;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden; // Prevent horizontal scroll globally
 }
 
 img {

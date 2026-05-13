@@ -7,6 +7,7 @@
     background-position: center;
     padding: 120px 0;
     margin-top: -60px;
+    overflow-x: clip; // Prevent horizontal overflow from full-width children (photo, values-list)
 
     @media screen and (max-width: $breakpoint-sp) {
         padding: 60px 0 260px; // Extra padding for absolute photo
@@ -199,9 +200,8 @@
             position: absolute;
             top: auto;
             bottom: -340px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100vw;
+            left: 0;
+            width: 100%;
             margin-left: 0;
             grid-area: auto;
             text-align: center;
