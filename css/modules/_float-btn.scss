@@ -1,17 +1,19 @@
 /* Float Buttons */
+// Design baseline width is 1920px — desktop values use vw so the nav
+// scales with viewport width (matches /gcg-new behavior).
 .float-nav {
     position: fixed;
-    top: 30px;
-    right: 36px;
+    top: 6.5625vw;
+    right: 1.875vw; // 36px @ 1920
     z-index: 2000;
     display: flex;
-    gap: 12px;
+    gap: 0.625vw; // 12px @ 1920
     transition: opacity 0.3s;
     animation: float-nav-bob 3s ease-in-out infinite;
 
     @media screen and (max-width: $breakpoint-sp) {
         top: 10px;
-        right: 0;
+        right: 25px;
         gap: 6px;
     }
 
@@ -39,8 +41,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 198px;
-    height: 204px;
+    width: 10.3125vw; // 198px @ 1920
+    height: 10.625vw; // 204px @ 1920
     text-decoration: none;
     transition: transform 0.3s ease;
 
@@ -60,7 +62,7 @@
     &__text {
         position: relative;
         font-family: "Kiwi Maru", serif;
-        font-size: 36px;
+        font-size: 1.875vw; // 36px @ 1920
         line-height: 1.2;
         text-align: center;
         letter-spacing: -0.02em;
@@ -72,7 +74,7 @@
 
     &--contact &__text {
         color: #fff;
-        font-size: 30px;
+        font-size: 1.5625vw; // 30px @ 1920
     }
 
     @media screen and (max-width: $breakpoint-sp) {
